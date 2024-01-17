@@ -37,8 +37,8 @@ const WidgetsSearchForm = () => {
           <label htmlFor="voice-search" className="sr-only">
             Search
           </label>
-          <div className="relative w-50">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <div className="w-50 relative">
+            <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
               <Search size={16} />
             </div>
             <input
@@ -47,7 +47,7 @@ const WidgetsSearchForm = () => {
               // value={searchTerm}
               //@ts-expect-error
               onInput={(e) => updateSearchTerm(e.target.value?.toLowerCase() || "")}
-              className="bg-gray-500 border border-gray-600 text-sm rounded-lg text-white block w-full pl-10 p-2 bg-opacity-25 h-8"
+              className="block h-8 w-full rounded-lg border border-gray-600 bg-gray-500 bg-opacity-25 p-2 pl-10 text-sm text-white"
               placeholder="Search"
               required
             />
@@ -56,7 +56,7 @@ const WidgetsSearchForm = () => {
       </div>
       <div
         className={cn(
-          "flex flex-col gap-2 mt-12 pl-4 relative transition-opacity h-[90vh] pb-8 mb-16 overflow-x-hidden overflow-y-auto no-scrollbar",
+          "no-scrollbar relative mb-16 mt-12 flex h-[90vh] flex-col gap-2 overflow-y-auto overflow-x-hidden pb-8 pl-4 transition-opacity",
           {
             "opacity-75": isTransitioning,
           }
@@ -69,18 +69,16 @@ const WidgetsSearchForm = () => {
                 key={app.id}
                 onClick={() => updateSelectedAppId(app.id)}
                 className={cn(
-                  "Item1 cursor-pointer w-52 h-10 px-2 py-2.5  rounded-lg justify-start items-center gap-2.5 inline-flex active:bg-white active:bg-opacity-10 peer-active:bg-transparent",
+                  "Item1 inline-flex h-10 w-52 cursor-pointer items-center  justify-start gap-2.5 rounded-lg px-2 py-2.5 active:bg-white active:bg-opacity-10 peer-active:bg-transparent",
                   {
                     "bg-white bg-opacity-10": selectedAppId === app.id,
                   }
                 )}
               >
-                <div className="AppIconsCalendar w-5 h-5 relative shadow">
+                <div className="AppIconsCalendar relative h-5 w-5 shadow">
                   <Image src={app.icon.png} width={26} height={26} alt={app.name} />
                 </div>
-                <div className="Text text-white text-xs font-normal font-['SF Pro Text'] leading-none">
-                  {app.name}
-                </div>
+                <div className="Text font-['SF Pro Text'] text-xs font-normal leading-none text-white">{app.name}</div>
               </div>
             )
           }}

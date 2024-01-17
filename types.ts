@@ -1,6 +1,4 @@
-
 export type Role = "ADMIN" | "USER"
-
 
 export type TAppStatus = {
   isMAXIMIZED: boolean
@@ -18,7 +16,7 @@ export interface IWidget {
   name: string
   description: string
   multiSized: boolean
-  component: (WidgetProps:any) => JSX.Element
+  component: (WidgetProps: any) => JSX.Element
   appId?: number
 }
 export interface IApp {

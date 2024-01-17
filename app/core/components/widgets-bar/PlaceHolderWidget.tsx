@@ -5,13 +5,13 @@ import React from "react"
 import WidgetBody from "../common/widgets/WidgetBody"
 
 const SmallWidget = () => {
-  return <div className="w-full h-full flex flex-col justify-between "></div>
+  return <div className="flex h-full w-full flex-col justify-between "></div>
 }
 
 const MediumWidget = () => {
   return (
     <div className="">
-      <div className="w-full h-full flex  justify-between "></div>
+      <div className="flex h-full w-full  justify-between "></div>
     </div>
   )
 }
@@ -19,7 +19,7 @@ const MediumWidget = () => {
 const LargeWidget = () => {
   return (
     <div className="">
-      <div className="w-full h-full flex  justify-between "></div>
+      <div className="flex h-full w-full  justify-between "></div>
     </div>
   )
 }
@@ -32,7 +32,7 @@ const PlaceHolderWidget = ({ className, ...rest }: WidgetProps) => {
       MediumWidget={MediumWidget}
       {...rest}
       className={cn(
-        "relative flex-shrink-0 bg-gradient-to-b to-[#000000] from-[#313131] rounded-2xl shadow p-4 overflow-hidden",
+        "relative flex-shrink-0 overflow-hidden rounded-2xl bg-gradient-to-b from-[#313131] to-[#000000] p-4 shadow",
         className
       )}
     />

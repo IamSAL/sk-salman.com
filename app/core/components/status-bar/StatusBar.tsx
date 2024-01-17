@@ -24,16 +24,16 @@ const StatusBar = () => {
 
   return (
     <div
-      className={cn(styles.StatusBar, "flex z-[9999] justify-between align-middle px-[12px]")}
+      className={cn(styles.StatusBar, "z-[9999] flex justify-between px-[12px] align-middle")}
       style={{
         display: shouldShow ? "flex" : "none",
       }}
     >
-      <div className="LeftSide flex align-middle gap-0">
+      <div className="LeftSide flex gap-0 align-middle">
         <StatusBarSystem />
         {runningApps.length > 0 ? currentStatusBar : null}
       </div>
-      <div className={cn(`RightSide flex align-middle gap-0 `, styles.RightSide)}>
+      <div className={cn(`RightSide flex gap-0 align-middle `, styles.RightSide)}>
         <StatusBarItem type="icon" icon={<IconMoon color="white" fontSize={"26px"} />} />
         <StatusBarItem type="icon" icon={<IconBattery color="white" fontSize={"26px"} />} />
         <StatusBarItem type="icon" icon={<IconWifi color="white" fontSize={"26px"} />} />

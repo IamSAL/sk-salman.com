@@ -9,7 +9,7 @@ const Finder = () => {
   useEffect(() => {
     setAppBarElement(FinderAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => { }
+    return () => {}
   }, [])
   return <div>Finder {app?.status.isMAXIMIZED ? "max" : "min"}</div>
 }

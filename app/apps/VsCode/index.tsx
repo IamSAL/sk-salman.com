@@ -15,15 +15,11 @@ const VsCode = () => {
   }, [])
   return (
     <div
-      className={cn(" h-full w-full bg-[#1e1e1e] flex flex-col", {
+      className={cn(" flex h-full w-full flex-col bg-[#1e1e1e]", {
         "h-[94vh]": app?.status.isMAXIMIZED,
       })}
     >
-      <iframe
-        allow="keyboard-map"
-        src={process.env.NEXT_PUBLIC_GITHUB_REPO}
-        className="flex-grow fade-in-75"
-      ></iframe>
+      <iframe allow="keyboard-map" src={process.env.NEXT_PUBLIC_GITHUB_REPO} className="fade-in-75 flex-grow"></iframe>
     </div>
   )
 }

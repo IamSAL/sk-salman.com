@@ -1,6 +1,5 @@
 import { Metadata } from "next"
 
-
 export const metadata: Metadata = {
   title: "Next.js Enterprise Boilerplate",
   twitter: {
@@ -19,9 +18,5 @@ export const metadata: Metadata = {
 }
 
 export default function Web() {
-  return (
-    <>
-      
-    </>
-  )
+  return <></>
 }

@@ -36,12 +36,9 @@ const WidgetsEditor = ({ isEditingMode = true }: TProps) => {
     .flatMap((app) => app.widgets || [])
     .filter(
       (widget) =>
-        widget.name.toLowerCase().includes(searchTerm) ||
-        widget.description.toLowerCase().includes(searchTerm)
+        widget.name.toLowerCase().includes(searchTerm) || widget.description.toLowerCase().includes(searchTerm)
     )
-  const matchedApps = apps.filter((app) =>
-    matchedWidgets?.some((widget) => widget.appId === app.id)
-  )
+  const matchedApps = apps.filter((app) => matchedWidgets?.some((widget) => widget.appId === app.id))
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(setDockStatus(DOCK_STATUS.HIDDEN))
@@ -76,27 +73,27 @@ const WidgetsEditor = ({ isEditingMode = true }: TProps) => {
             animate={"visible"}
             exit="hidden"
             variants={overlayVariants}
-            className="w-full h-full relative overflow-hidden"
+            className="relative h-full w-full overflow-hidden"
             tabIndex={0}
             ref={programRef}
             role="dialog"
           >
             <NextImage
               src="/static/images/wallpapers/dark.svg"
-              className="w-full h-full blur-lg absolute top-0 bottom-0 scale-125 z-10"
+              className="absolute bottom-0 top-0 z-10 h-full w-full scale-125 blur-lg"
               alt="launchpad-bg"
               width={100}
               height={100}
             />
-            <div className="w-full h-full blur-lg absolute top-0 bottom-0 bg-black bg-opacity-50 scale-125 z-10"></div>
+            <div className="absolute bottom-0 top-0 z-10 h-full w-full scale-125 bg-black bg-opacity-50 blur-lg"></div>
 
-            <div id="content" className="absolute top-0 left-0 w-full h-full z-20 fade-in-100">
+            <div id="content" className="fade-in-100 absolute left-0 top-0 z-20 h-full w-full">
               <div className="flex justify-between">
                 <div className="flex-[20%] justify-start">
                   {" "}
                   <WidgetsSearchForm />
                 </div>
-                <div className="flex-[80%] relative">
+                <div className="relative flex-[80%]">
                   <WidgetsSearchResult />
                 </div>
               </div>

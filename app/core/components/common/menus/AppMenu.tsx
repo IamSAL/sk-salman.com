@@ -33,7 +33,7 @@ const AppMenu = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <StatusBarItem type="text" label={app?.name || "s"} className="font-semibold px-1" />
+        <StatusBarItem type="text" label={app?.name || "s"} className="px-1 font-semibold" />
       </DropdownMenuTrigger>
 
       <DropdownMenuContent>

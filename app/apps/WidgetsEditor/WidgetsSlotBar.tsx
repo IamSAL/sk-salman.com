@@ -102,14 +102,14 @@ const WidgetsSlotBar = () => {
 
   return (
     <div
-      className="slot overflow-scroll h-[100vh] no-scrollbar  overflow-y-auto overflow-x-hidden flex justify-end"
+      className="slot no-scrollbar flex h-[100vh]  justify-end overflow-scroll overflow-y-auto overflow-x-hidden"
       ref={drop}
     >
       <div className="max-w-[384px]">
         {" "}
         <div
           className={cn(
-            "widgets-bar bg-gradient-to-l to-[#46464600] from-[#cccccc00]  p-8 max-w-[384px]  flex flex-wrap ",
+            "widgets-bar flex max-w-[384px] flex-wrap  bg-gradient-to-l from-[#cccccc00]  to-[#46464600] p-8 ",
             // {
             //   " bg-gradient-to-l to-transparent from-[#cccccc2a] transition-all duration-500":
             //     collectedProps.canDrop,
@@ -130,28 +130,24 @@ const WidgetsSlotBar = () => {
             )
           })}
           {previewWidget && isActive && (
-            <previewWidget.widget.component
-              size={previewWidget.size}
-              isEditing
-              className="opacity-25 "
-            />
+            <previewWidget.widget.component size={previewWidget.size} isEditing className="opacity-25 " />
           )}
         </div>
         <div
-          className="action flex justify-center relative align-middle   z-[9999]"
+          className="action relative z-[9999] flex justify-center   align-middle"
           ref={scrollDivRef}
           id="scrollBarBottom"
         >
           {isEditing ? (
             <button
               onClick={onWidgetSlotExit}
-              className="outline-none bg-black bg-opacity-50  mt-10 mb-16 rounded-full border transition-all duration-100 border-gray-500 py-1 text-xs px-4 text-white text-opacity-80 active:text-opacity-90 active:bg-opacity-30"
+              className="mb-16 mt-10 rounded-full  border border-gray-500 bg-black bg-opacity-50 px-4 py-1 text-xs text-white text-opacity-80 outline-none transition-all duration-100 active:bg-opacity-30 active:text-opacity-90"
             >
               Done
             </button>
           ) : (
             <AppLauncher appId={12}>
-              <button className="outline-none bg-black bg-opacity-50 mt-10 mb-16 rounded-full border transition-all duration-100 border-gray-500 py-1 text-xs px-4 text-white text-opacity-80 active:text-opacity-90 active:bg-opacity-30">
+              <button className="mb-16 mt-10 rounded-full border border-gray-500 bg-black bg-opacity-50 px-4 py-1 text-xs text-white text-opacity-80 outline-none transition-all duration-100 active:bg-opacity-30 active:text-opacity-90">
                 Edit Widgets
               </button>
             </AppLauncher>
@@ -172,9 +168,9 @@ export const WidgetsBarDrawer = NiceModal.create(({ content }: { content: string
         }
       }}
     >
-      <DrawerContent className="bg-transparent border-0 shadow-none px-3  " role="dialog">
+      <DrawerContent className="border-0 bg-transparent px-3 shadow-none  " role="dialog">
         <div className="relative">
-          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b to-transparent from-[#21242adc] blur-lg" />
+          <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#21242adc] to-transparent blur-lg" />
           <div className="px-0 ">
             <WidgetsEditor isEditingMode={false} />
           </div>

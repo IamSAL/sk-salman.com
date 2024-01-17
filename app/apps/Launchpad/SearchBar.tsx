@@ -17,13 +17,13 @@ const SearchBar = () => {
   )
 
   return (
-    <div className="flex justify-center w-full mt-12 mb-12">
+    <div className="mb-12 mt-12 flex w-full justify-center">
       <form className="flex items-center" action="#">
         <label htmlFor="voice-search" className="sr-only">
           Search
         </label>
         <div className="relative w-full">
-          <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             {/* <IconControl /> */}
           </div>
           <input
@@ -38,7 +38,7 @@ const SearchBar = () => {
                 setVal(inputStr)
               }
             }}
-            className="bg-gray-500 border border-gray-600 text-sm rounded-lg text-white block w-full pl-10 p-2 bg-opacity-25 h-8"
+            className="block h-8 w-full rounded-lg border border-gray-600 bg-gray-500 bg-opacity-25 p-2 pl-10 text-sm text-white"
             placeholder="Search"
             required
           />

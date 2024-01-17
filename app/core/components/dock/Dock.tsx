@@ -19,36 +19,32 @@ const Dock = () => {
     DockStatus !== DOCK_STATUS.HIDDEN
 
   const allDockApps = runningApps
-    .concat(
-      apps.filter((app) => (app.config.isDefault || app.config.isPinned) && !app.config.isHidden)
-    )
+    .concat(apps.filter((app) => (app.config.isDefault || app.config.isPinned) && !app.config.isHidden))
     .filter((app, index, self) => self.findIndex((tempApp) => tempApp.id === app.id) === index)
     .sort((a, b) => a.id - b.id)
 
   // Filter apps into different categories
   const defaultApps = allDockApps.filter((app) => app.config.isDefault && app.config.isPinned)
   const pinnedApps = allDockApps.filter((app) => app.config.isPinned && !app.config.isDefault)
-  const otherRunningApps = allDockApps.filter(
-    (app) => !defaultApps.some((tempApp) => tempApp.id === app.id)
-  )
+  const otherRunningApps = allDockApps.filter((app) => !defaultApps.some((tempApp) => tempApp.id === app.id))
 
   return (
     <div className="dock-container z-[9999]" style={{ display: shouldShow ? "flex" : "none" }}>
-      <div className="mx-auto h-16 px-2 pt-1.5 pb-0.5 bg-gray-500 backdrop-blur-md dark:backdrop-blur-md bg-opacity-10 rounded-2xl border border-white border-opacity-25 flex-col justify-start items-start gap-2.5 inline-flex max-w-[80vw]">
-        <div className="justify-center items-center gap-2 flex w-full">
-          <div className="justify-center   flex">
+      <div className="mx-auto inline-flex h-16 max-w-[80vw] flex-col items-start justify-start gap-2.5 rounded-2xl border border-white border-opacity-25 bg-gray-500 bg-opacity-10 px-2 pb-0.5 pt-1.5 backdrop-blur-md dark:backdrop-blur-md">
+        <div className="flex w-full items-center justify-center gap-2">
+          <div className="flex   justify-center">
             {defaultApps.map((app, idx) => (
               <DockItem key={app.name} app={app} />
             ))}
           </div>
-          <div className="w-px h-12 bg-white bg-opacity-25" />
-          <div className="justify-center   flex">
+          <div className="h-12 w-px bg-white bg-opacity-25" />
+          <div className="flex   justify-center">
             {otherRunningApps.map((app, idx) => (
               <DockItem key={app.name} app={app} />
             ))}
           </div>
-          <div className="w-px h-12 bg-white bg-opacity-25" />
-          <div className="justify-center  flex">
+          <div className="h-12 w-px bg-white bg-opacity-25" />
+          <div className="flex  justify-center">
             {pinnedApps.map((app, idx) => (
               <DockItem key={app.name} app={app} />
             ))}

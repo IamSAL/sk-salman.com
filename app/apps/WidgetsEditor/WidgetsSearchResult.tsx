@@ -21,11 +21,11 @@ const WidgetsSearchResult = () => {
 
   return (
     <div
-      className={cn(" h-[100vh] no-scrollbar   flex justify-between ", {
+      className={cn(" no-scrollbar flex   h-[100vh] justify-between ", {
         "overflow-scroll overflow-y-auto": true,
       })}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8  left-0" ref={animeParent}>
+      <div className="left-0 grid grid-cols-1 gap-8 p-8  lg:grid-cols-2" ref={animeParent}>
         {/* <For each={matchedWidgets}>
           {(widget, idx) => {
             return <WidgetsPreview widget={widget as IWidget} key={widget?.name} />

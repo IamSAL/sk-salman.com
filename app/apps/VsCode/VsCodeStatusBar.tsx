@@ -5,7 +5,7 @@ import { StatusBarItem } from "@components"
 const VsCodeStatusBar = () => {
   return (
     <Fragment>
-      <StatusBarItem type="text" label="Code" className="font-semibold px-1" />
+      <StatusBarItem type="text" label="Code" className="px-1 font-semibold" />
       <StatusBarItem type="text" label="File" />
       <StatusBarItem type="text" label="Edit" />
       <StatusBarItem type="text" label="Selection" />

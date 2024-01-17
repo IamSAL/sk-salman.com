@@ -10,28 +10,19 @@ const AppControl = () => {
   const { onTerminate, onMaximize, onMinimize, onHide, app } = useAppContext()
 
   return (
-    <div className="ApplicationControlsActive w-11 h-2.5 justify-start items-start gap-2 inline-flex">
-      <div
-        className="Item1 w-2.5 h-2.5 bg-red-500 rounded-full shadow-inner"
-        onClick={onTerminate}
-      />
+    <div className="ApplicationControlsActive inline-flex h-2.5 w-11 items-start justify-start gap-2">
+      <div className="Item1 h-2.5 w-2.5 rounded-full bg-red-500 shadow-inner" onClick={onTerminate} />
       <div
         className={cn(
-          "Item2 w-2.5 h-2.5 bg-yellow-400 rounded-full shadow-inner",
+          "Item2 h-2.5 w-2.5 rounded-full bg-yellow-400 shadow-inner",
           `${app?.status.isMAXIMIZED ? "bg-gray-400" : ""}`
         )}
         onClick={onHide}
       />
       {app?.status.isMAXIMIZED ? (
-        <div
-          className="Item3 w-2.5 h-2.5 bg-green-500 rounded-full shadow-inner"
-          onClick={onMinimize}
-        />
+        <div className="Item3 h-2.5 w-2.5 rounded-full bg-green-500 shadow-inner" onClick={onMinimize} />
       ) : (
-        <div
-          className="Item3 w-2.5 h-2.5 bg-green-500 rounded-full shadow-inner"
-          onClick={onMaximize}
-        />
+        <div className="Item3 h-2.5 w-2.5 rounded-full bg-green-500 shadow-inner" onClick={onMaximize} />
       )}
     </div>
   )

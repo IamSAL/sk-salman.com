@@ -1,7 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 
-
-
 import AppStore from "app/apps/AppStore"
 import Calendar from "app/apps/Calendar"
 import Contacts from "app/apps/Contacts"

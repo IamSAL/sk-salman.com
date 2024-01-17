@@ -8,7 +8,7 @@ const Maps = () => {
   useEffect(() => {
     setAppBarElement(MapsAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => { }
+    return () => {}
   }, [])
   return <div>Maps</div>
 }

@@ -9,11 +9,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Provider store={store}>
-          <ModalsProvider>
-            {children}
-          </ModalsProvider>
+          <ModalsProvider>{children}</ModalsProvider>
         </Provider>
-        </body>
+      </body>
     </html>
   )
 }

@@ -8,7 +8,7 @@ const Safari = () => {
   useEffect(() => {
     setAppBarElement(SafariAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => { }
+    return () => {}
   }, [])
 
   return <div>Safari</div>

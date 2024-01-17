@@ -42,7 +42,7 @@ const AppImmersive = React.memo((props: IAppProps) => {
 
   return (
     <AppContext.Provider value={appContextValues}>
-      <div className=" h-screen w-screen z-[999] absolute top-0" ref={programRef}>
+      <div className=" absolute top-0 z-[999] h-screen w-screen" ref={programRef}>
         <AppBody component={app.component} />
       </div>
     </AppContext.Provider>

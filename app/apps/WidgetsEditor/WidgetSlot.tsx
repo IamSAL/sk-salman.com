@@ -106,15 +106,12 @@ const WidgetSlot = ({ SystemWidget, controls = true, className, index, moveWidge
   const opacity = isDragging ? 0.25 : 1
 
   return (
-    <div className={cn("relative group ", className)} ref={ref} style={{ opacity }}>
-      <div
-        className="peer hover:scale-100 transition-all duration-100 ease-in-out scale-95 my-2"
-        ref={containerRef}
-      >
+    <div className={cn("group relative ", className)} ref={ref} style={{ opacity }}>
+      <div className="peer my-2 scale-95 transition-all duration-100 ease-in-out hover:scale-100" ref={containerRef}>
         <button
           onClick={() => dispatch(removeWidget(SystemWidget))}
           className={cn(
-            "absolute z-50 left-[-5px] top-[-5px] h-5 w-5 rounded-full border border-white border-opacity-75 bg-white bg-opacity-75 text-black flex items-center text-sm justify-center  "
+            "absolute left-[-5px] top-[-5px] z-50 flex h-5 w-5 items-center justify-center rounded-full border border-white border-opacity-75 bg-white bg-opacity-75 text-sm text-black  "
           )}
           style={{
             display: controls ? "flex" : "none",
@@ -122,17 +119,11 @@ const WidgetSlot = ({ SystemWidget, controls = true, className, index, moveWidge
         >
           <Minus size={12} />
         </button>
-        {
-          <WidgetBody
-            component={SystemWidget.widget.component}
-            size={SystemWidget.size}
-            isEditing
-          />
-        }
+        {<WidgetBody component={SystemWidget.widget.component} size={SystemWidget.size} isEditing />}
       </div>
       <div
         className={cn(
-          "w-100 flex text-sm flex-col justify-center mt-2 items-center fade-in-50",
+          "w-100 fade-in-50 mt-2 flex flex-col items-center justify-center text-sm",
           {
             hidden: !controls,
           },
@@ -144,7 +135,7 @@ const WidgetSlot = ({ SystemWidget, controls = true, className, index, moveWidge
         )}
       >
         {app?.name}
-        <div className="text-xs text-gray-400 mb-1" ref={labelRef}>
+        <div className="mb-1 text-xs text-gray-400" ref={labelRef}>
           {SystemWidget.widget.name}
         </div>
       </div>

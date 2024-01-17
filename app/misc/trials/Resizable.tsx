@@ -31,11 +31,9 @@ export const Resizable: React.FC = () => {
   }, [isResizing])
 
   return (
-    <div className="relative w-[300px] h-[200px] bg-lightpink border border-red-500">
+    <div className="bg-lightpink relative h-[200px] w-[300px] border border-red-500">
       <div
-        className={`absolute bottom-0 right-0 w-4 h-4 bg-red-500 cursor-se-resize ${
-          isResizing ? "resize-active" : ""
-        }`}
+        className={`absolute bottom-0 right-0 h-4 w-4 cursor-se-resize bg-red-500 ${isResizing ? "resize-active" : ""}`}
         onMouseDown={handleMouseDown}
       />
       {/* Content of the resizable div */}

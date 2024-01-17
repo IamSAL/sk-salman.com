@@ -8,7 +8,7 @@ const Photos = () => {
   useEffect(() => {
     setAppBarElement(PhotosAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => { }
+    return () => {}
   }, [])
   return <div>Photos</div>
 }

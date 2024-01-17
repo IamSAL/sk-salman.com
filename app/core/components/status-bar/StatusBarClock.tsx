@@ -15,9 +15,15 @@ const StatusBarClock = () => {
     }
   }, [])
 
-  return <div onClick={async () => {
-    await NiceModal.show(CONSTANTS.MODALS.WIDGETS_BAR)
-  }}><StatusBarItem type="text" label={currentTime} className="min-w-[90px]" /></div>
+  return (
+    <div
+      onClick={async () => {
+        await NiceModal.show(CONSTANTS.MODALS.WIDGETS_BAR)
+      }}
+    >
+      <StatusBarItem type="text" label={currentTime} className="min-w-[90px]" />
+    </div>
+  )
 }
 
 export default StatusBarClock

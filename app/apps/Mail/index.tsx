@@ -8,7 +8,7 @@ const Mail = () => {
   useEffect(() => {
     setAppBarElement(MailAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => { }
+    return () => {}
   }, [])
   return <div>Mail</div>
 }

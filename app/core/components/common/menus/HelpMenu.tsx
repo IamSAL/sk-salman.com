@@ -1,6 +1,12 @@
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuPortal, DropdownMenuTrigger } from '@components/ui/dropdown-menu';
-import React from 'react';
-import StatusBarItem from '../../status-bar/StatusBarItem';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuPortal,
+  DropdownMenuTrigger,
+} from "@components/ui/dropdown-menu"
+import React from "react"
+import StatusBarItem from "../../status-bar/StatusBarItem"
 
 const HelpMenu = () => {
   return (
@@ -15,7 +21,7 @@ const HelpMenu = () => {
         </DropdownMenuContent>
       </DropdownMenuPortal>
     </DropdownMenu>
-  );
-};
+  )
+}
 
-export default HelpMenu;
+export default HelpMenu

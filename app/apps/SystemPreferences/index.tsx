@@ -8,7 +8,7 @@ const SystemPreferences = () => {
   useEffect(() => {
     setAppBarElement(SystemPreferencesAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => { }
+    return () => {}
   }, [])
   return <div>SystemPreferences</div>
 }

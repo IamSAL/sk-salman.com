@@ -20,11 +20,11 @@ export interface BoxProps {
 
 const WidgetBody = ({ component, ...props }: any) => {
   return (
-    <div className="relative group">
+    <div className="group relative">
       {" "}
       <button
         className={cn(
-          "absolute opacity-0 group-active:opacity-0 transition-opacity duration-75 group-hover:opacity-100 z-50 left-[-5px] top-[-5px] h-7 w-7 rounded-full  bg-green-500 shadow-md flex items-center text-sm justify-center"
+          "absolute left-[-5px] top-[-5px] z-50 flex h-7 w-7 items-center justify-center rounded-full bg-green-500 text-sm  opacity-0 shadow-md transition-opacity duration-75 group-hover:opacity-100 group-active:opacity-0"
         )}
       >
         <Plus size={20} color="white" />
@@ -143,20 +143,18 @@ const WidgetsPreview = ({ widget }: TProps) => {
   }
 
   return (
-    <div className="Item1 w-72 h-[450px] p-5 bg-white bg-opacity-10 rounded-2xl flex-col justify-start items-center  inline-flex">
+    <div className="Item1 inline-flex h-[450px] w-72 flex-col items-center justify-start rounded-2xl bg-white bg-opacity-10  p-5">
       {/* <DraggedPreview /> */}
 
-      <div className="TextContent w-64 h-10 flex-col justify-start items-start gap-1 inline-flex">
-        <div className="Title w-64 text-white text-base font-bold font-['SF Pro Display'] leading-tight">
-          {name}
-        </div>
-        <div className="Description w-64 text-white text-opacity-60 text-xs font-normal font-['SF Pro Text'] ">
+      <div className="TextContent inline-flex h-10 w-64 flex-col items-start justify-start gap-1">
+        <div className="Title font-['SF Pro Display'] w-64 text-base font-bold leading-tight text-white">{name}</div>
+        <div className="Description font-['SF Pro Text'] w-64 text-xs font-normal text-white text-opacity-60 ">
           {description}
         </div>
       </div>
       <motion.div
         className={cn(
-          "w-80 h-96 flex  justify-center items-center scale-75  transition-all duration-200 ease-in-out hover:scale-[0.8]",
+          "flex h-96 w-80  scale-75 items-center justify-center  transition-all duration-200 ease-in-out hover:scale-[0.8]",
           {
             "scale-75 hover:scale-75": isDragging,
           }
@@ -176,7 +174,7 @@ const WidgetsPreview = ({ widget }: TProps) => {
                 onClick={() => setselectedSize(s as ISizes)}
                 key={s}
                 className={cn(
-                  "h-8 w-8 rounded-full border border-white border-opacity-75 bg-transparent text-white flex items-center text-sm justify-center",
+                  "flex h-8 w-8 items-center justify-center rounded-full border border-white border-opacity-75 bg-transparent text-sm text-white",
                   {
                     "bg-gray-300 text-black": s === selectedSize,
                   }

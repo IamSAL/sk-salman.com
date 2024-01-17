@@ -10,14 +10,7 @@ type WidgetBodyProps = WidgetProps & {
   LargeWidget: () => JSX.Element
 }
 
-const WidgetBody = ({
-  size = "L",
-  className,
-  isEditing,
-  SmallWidget,
-  LargeWidget,
-  MediumWidget,
-}: WidgetBodyProps) => {
+const WidgetBody = ({ size = "L", className, isEditing, SmallWidget, LargeWidget, MediumWidget }: WidgetBodyProps) => {
   const getWidget = () => {
     switch (size) {
       case "S":
@@ -41,9 +34,9 @@ const WidgetBody = ({
     <div
       ref={animeParent}
       className={cn("", className, {
-        "WidgetsSmall w-40 h-40": size === "S",
-        "WidgetsMedium w-80 h-40 ": size === "M",
-        "WidgetsLarge w-80 h-80": size === "L",
+        "WidgetsSmall h-40 w-40": size === "S",
+        "WidgetsMedium h-40 w-80 ": size === "M",
+        "WidgetsLarge h-80 w-80": size === "L",
       })}
     >
       {getWidget()}

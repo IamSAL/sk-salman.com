@@ -10,11 +10,7 @@ import StatusBar from "../status-bar/StatusBar"
 import { AppContext, IAppContext, dummyContext } from "./appContext"
 import { useDispatch } from "react-redux"
 import { setMaximized } from "app/core/redux/system/system.slice"
-import {
-  updateAppStatus,
-  terminateApp,
-  setActiveAppContext,
-} from "app/core/redux/memory/memory.slice"
+import { updateAppStatus, terminateApp, setActiveAppContext } from "app/core/redux/memory/memory.slice"
 import { useClickAway, useEffectOnce } from "react-use"
 import CommonStatusBar from "app/core/components/common/CommonStatusBar"
 import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
@@ -175,7 +171,7 @@ const AppWindow = React.memo((props: IAppProps) => {
           <Resizable
             className={`border-white ${
               app.status.isMAXIMIZED ? "rounded-[0px]" : "rounded-[10px]"
-            }  shadow-lg flex flex-col  bg-white dark:bg-black backdrop-blur-md bg-opacity-50 dark:bg-opacity-50 overflow-hidden transition-all duration-75  ${
+            }  flex flex-col overflow-hidden  bg-white bg-opacity-50 shadow-lg backdrop-blur-md transition-all duration-75 dark:bg-black dark:bg-opacity-50  ${
               isResizing ? "border-0" : ""
             }`}
             onResizeStart={() => setisResizing(true)}

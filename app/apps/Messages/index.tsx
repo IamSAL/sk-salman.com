@@ -8,7 +8,7 @@ const Messages = () => {
   useEffect(() => {
     setAppBarElement(MessagesAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => { }
+    return () => {}
   }, [])
   return <div>Messages</div>
 }

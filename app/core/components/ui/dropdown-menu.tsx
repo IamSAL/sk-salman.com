@@ -44,7 +44,7 @@ const DropdownMenuSubContent = React.forwardRef<
   <DropdownMenuPrimitive.SubContent
     ref={ref}
     className={cn(
-      "z-50 ml-[2px] min-w-[8rem] overflow-hidden rounded-md border backdrop-blur-lg dark:backdrop-blur-lg border-slate-200 bg-white p-1 text-slate-950 shadow-md  data-[state=closed]:animate-out data-[state=closed]:fade-out-0  dark:border-slate-800 dark:bg-slate-950 dark:bg-opacity-50 dark:text-slate-50",
+      "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 z-50 ml-[2px] min-w-[8rem] overflow-hidden rounded-md border border-slate-200 bg-white p-1 text-slate-950 shadow-md  backdrop-blur-lg dark:border-slate-800  dark:bg-slate-950 dark:bg-opacity-50 dark:text-slate-50 dark:backdrop-blur-lg",
       className
     )}
     {...props}
@@ -61,7 +61,7 @@ const DropdownMenuContent = React.forwardRef<
       ref={ref}
       sideOffset={sideOffset}
       className={cn(
-        "z-50 min-w-[8rem] overflow-hidden rounded-md border backdrop-blur-lg dark:backdrop-blur-lg border-slate-200 bg-white p-1 text-slate-950 shadow-md  data-[state=closed]:animate-out data-[state=closed]:fade-out-0  dark:border-slate-800 dark:bg-slate-950 dark:bg-opacity-50 dark:text-slate-50",
+        "data-[state=closed]:animate-out data-[state=closed]:fade-out-0 z-50 min-w-[8rem] overflow-hidden rounded-md border border-slate-200 bg-white p-1 text-slate-950 shadow-md  backdrop-blur-lg dark:border-slate-800  dark:bg-slate-950 dark:bg-opacity-50 dark:text-slate-50 dark:backdrop-blur-lg",
         className
       )}
       {...props}

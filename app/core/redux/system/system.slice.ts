@@ -34,8 +34,7 @@ export const systemSlice = createSlice({
   },
 })
 
-export const { setMaximized, addWidget, removeWidget, setWidgets, setDockStatus } =
-  systemSlice.actions
+export const { setMaximized, addWidget, removeWidget, setWidgets, setDockStatus } = systemSlice.actions
 export default systemSlice.reducer
 export type ISystemWidget = { id?: string; widget: IWidget; size: ISizes; order?: number }
 interface ISystemState {

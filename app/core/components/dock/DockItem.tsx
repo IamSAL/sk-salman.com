@@ -21,18 +21,11 @@ const DockItem = ({ app }: TDockItemProps) => {
       <TooltipProvider>
         <Tooltip delayDuration={0}>
           <TooltipTrigger>
-            <div className="flex-col justify-start items-center gap-1 inline-flex px-1">
-              <div className="w-12 h-12 relative ">
-                <Image
-                  src={app?.icon.png || AppIconPlaceHolder}
-                  width={75}
-                  height={75}
-                  alt="finder"
-                ></Image>
+            <div className="inline-flex flex-col items-center justify-start gap-1 px-1">
+              <div className="relative h-12 w-12 ">
+                <Image src={app?.icon.png || AppIconPlaceHolder} width={75} height={75} alt="finder"></Image>
               </div>
-              {runningInstance && (
-                <div className="w-1 h-1 bg-white bg-opacity-25 rounded-full absolute bottom-1" />
-              )}
+              {runningInstance && <div className="absolute bottom-1 h-1 w-1 rounded-full bg-white bg-opacity-25" />}
             </div>
           </TooltipTrigger>
           <TooltipPortal>

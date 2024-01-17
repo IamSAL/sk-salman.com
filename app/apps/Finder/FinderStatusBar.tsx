@@ -2,11 +2,10 @@ import React, { Fragment } from "react"
 import AppControl from "app/core/components/app-window/AppControl"
 import { StatusBarItem } from "app/core/components"
 
-
 const FinderStatusBar = () => {
   return (
     <Fragment>
-      <StatusBarItem type="text" label="Finder" className="font-semibold px-1" />
+      <StatusBarItem type="text" label="Finder" className="px-1 font-semibold" />
       <StatusBarItem type="text" label="File" />
       <StatusBarItem type="text" label="Edit" />
 
