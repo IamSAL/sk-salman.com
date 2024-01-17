@@ -1,3 +1,4 @@
+import React from "react"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -5,8 +6,7 @@ import {
   DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@components/ui/dropdown-menu"
-import React from "react"
+} from "app/core/components/ui/dropdown-menu"
 import StatusBarItem from "../../status-bar/StatusBarItem"
 
 const EditMenu = () => {

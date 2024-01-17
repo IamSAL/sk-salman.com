@@ -111,6 +111,8 @@
     "@types/jest": "^29.5.10",
     "@types/node": "^20.10.0",
     "@types/react": "^18.2.38",
+    "@types/chance": "1.1.4",
+    "@types/lodash": "4.14.199",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.12.0",
     "@typescript-eslint/parser": "^6.12.0",

@@ -1,6 +1,6 @@
-import { StatusBarItem } from "@components"
-
 import React, { Fragment, useEffect } from "react"
+import { StatusBarItem } from "app/core/components"
+
 import { IAppContext, useAppContext } from "app/core/components/app-window/appContext"
 import AppMenu from "./menus/AppMenu"
 import EditMenu from "./menus/EditMenu"

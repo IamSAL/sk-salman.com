@@ -1,12 +1,12 @@
+import React from "react"
+import useActiveAppContext from "app/helpers/hooks/useActiveAppContext"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuPortal,
   DropdownMenuTrigger,
-} from "@components/ui/dropdown-menu"
-import React from "react"
-import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
+} from "app/core/components/ui/dropdown-menu"
 import StatusBarItem from "../../status-bar/StatusBarItem"
 
 const ViewMenu = () => {

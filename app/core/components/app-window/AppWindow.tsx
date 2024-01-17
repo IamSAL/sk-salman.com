@@ -1,19 +1,16 @@
 import { Resizable } from "re-resizable"
-import React, { useCallback, useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Draggable from "react-draggable"
 
 // import './Program.scss';
 import { useDispatch } from "react-redux"
-import { useClickAway, useEffectOnce } from "react-use"
-import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
-import CommonStatusBar from "app/core/components/common/CommonStatusBar"
+import { useClickAway } from "react-use"
 import { setActiveAppContext, terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { setMaximized } from "app/core/redux/system/system.slice"
-import { cn, getProgramData, initDisk, NumberUtil, updateProgramData } from "app/helpers/utils"
+import { getProgramData, initDisk, NumberUtil, updateProgramData } from "app/helpers/utils"
 import { IApp } from "types"
 import AppBar from "./AppBar"
-import { AppContext, dummyContext, IAppContext } from "./appContext"
-import StatusBar from "../status-bar/StatusBar"
+import { AppContext, IAppContext } from "./appContext"
 
 const defaultHeight = 480
 const defaultWidth = 640
@@ -23,6 +20,7 @@ const AppBody = React.memo(
   () => true
 )
 
+AppBody.displayName = "AppBody";
 interface IAppProps {
   app: IApp
 }
@@ -193,4 +191,5 @@ const AppWindow = React.memo((props: IAppProps) => {
   )
 })
 
+AppWindow.displayName ="AppWindow"
 export default AppWindow

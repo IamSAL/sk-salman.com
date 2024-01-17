@@ -2,7 +2,7 @@
 import Link from "next/link"
 import React from "react"
 import { useSelector } from "react-redux"
-import useMousePosition from "src/helpers/hooks/useMousePosition"
+import useMousePosition from "app/helpers/hooks/useMousePosition"
 import { AppState } from "app/core/redux/redux"
 import { apps } from "app/misc/placeholder-data/apps"
 import { DOCK_STATUS } from "types"

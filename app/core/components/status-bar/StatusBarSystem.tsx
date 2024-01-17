@@ -1,3 +1,7 @@
+import Image from "next/image"
+import React from "react"
+import { useSelector } from "react-redux"
+import useActiveAppContext from "app/helpers/hooks/useActiveAppContext"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,11 +15,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@components/ui/dropdown-menu"
-import Image from "next/image"
-import React from "react"
-import { useSelector } from "react-redux"
-import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
+} from "app/core/components/ui/dropdown-menu"
 import { AppState } from "app/core/redux/redux"
 import StatusBarItem from "./StatusBarItem"
 import AppLauncher from "../common/AppLauncher"

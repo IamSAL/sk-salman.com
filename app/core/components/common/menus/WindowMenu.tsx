@@ -1,13 +1,13 @@
+import React from "react"
+import { useDispatch } from "react-redux"
+import useActiveAppContext from "app/helpers/hooks/useActiveAppContext"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuPortal,
   DropdownMenuTrigger,
-} from "@components/ui/dropdown-menu"
-import React from "react"
-import { useDispatch } from "react-redux"
-import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
+} from "app/core/components/ui/dropdown-menu"
 import { terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { useAppContext } from "../../app-window/appContext"
 import StatusBarItem from "../../status-bar/StatusBarItem"

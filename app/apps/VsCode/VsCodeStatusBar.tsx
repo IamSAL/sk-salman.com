@@ -1,5 +1,5 @@
-import { StatusBarItem } from "@components"
 import React, { Fragment } from "react"
+import { StatusBarItem } from "app/core/components"
 import AppControl from "app/core/components/app-window/AppControl"
 
 const VsCodeStatusBar = () => {
