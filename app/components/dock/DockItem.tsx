@@ -31,7 +31,7 @@ const DockItem = ({ app }: TDockItemProps) => {
           <TooltipPortal>
             <TooltipContent sideOffset={10}>
               {app.name}
-              <TooltipArrow className=" dark:opacity-40" />
+              <TooltipArrow className="dark:opacity-40" />
             </TooltipContent>
           </TooltipPortal>
         </Tooltip>

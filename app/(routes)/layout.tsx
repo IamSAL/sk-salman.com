@@ -1,5 +1,4 @@
 "use client"
-import "styles/tailwind.scss"
 import "styles/globals.scss"
 import { Provider } from "react-redux"
 import { ModalsProvider } from "app/components"
