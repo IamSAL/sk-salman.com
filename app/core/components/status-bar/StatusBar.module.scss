@@ -1,0 +1,10 @@
+.StatusBar {
+  width: 100vw;
+  height: 24px;
+  background: var(--dark-quaternary, rgba(255, 255, 255, 0.1));
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.RightSide {
+}
