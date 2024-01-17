@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
 import { useAppContext } from "app/core/components/app-window/appContext"

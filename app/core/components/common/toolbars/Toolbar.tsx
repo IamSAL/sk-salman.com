@@ -1,7 +1,7 @@
 import React from "react"
-import IconExport from "/src/assets/icons/System/Export.svg"
-import IconPlus from "/src/assets/icons/System/Plus.svg"
-import IconPages from "/src/assets/icons/System/Pages.svg"
+import IconExport from "/app/assets/icons/System/Export.svg"
+import IconPlus from "/app/assets/icons/System/Plus.svg"
+import IconPages from "/app/assets/icons/System/Pages.svg"
 import ToolbarItem from "./ToolbarItem"
 
 const Toolbar = () => {

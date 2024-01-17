@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction } from "react"
+"use client"
+import React, { createContext, Dispatch, SetStateAction, useContext } from "react"
 import { IApp, IWidget } from "types"
 
 export interface IWidgetEditorContext {
@@ -25,8 +26,8 @@ export const dummyContext: IWidgetEditorContext = {
   isAnimating: false,
   setisAnimating: () => {},
 }
-export const WidgetEditorContext = React.createContext<IWidgetEditorContext>(dummyContext)
+export const WidgetEditorContext = createContext<IWidgetEditorContext>(dummyContext)
 
 export const useWidgetEditorContext = () => {
-  return React.useContext(WidgetEditorContext)
+  return useContext(WidgetEditorContext)
 }

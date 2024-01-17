@@ -1,3 +1,4 @@
+'use client';
 import AppWindow from "./app-window/AppWindow"
 import Dock from "./dock/Dock"
 import StatusBar from "./status-bar/StatusBar"

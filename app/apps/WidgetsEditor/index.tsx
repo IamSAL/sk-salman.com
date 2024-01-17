@@ -1,8 +1,9 @@
+"use client"
 import { motion, Variants } from "framer-motion"
 import NextImage from "next/image"
 import { HTML5toTouch } from "rdndmb-html5-to-touch"
 import React, { useEffect, useRef, useState } from "react"
-// import IconSearch from '/src/assets/icons/System/Search.svg';
+// import IconSearch from '/app/assets/icons/System/Search.svg';
 import { DndProvider } from "react-dnd"
 import { MultiBackend } from "react-dnd-multi-backend"
 import { useDispatch } from "react-redux"

@@ -4,8 +4,8 @@ import { IApp } from "types"
 import { useAppContext } from "./appContext"
 import AppControl from "./AppControl"
 import Toolbar from "../common/toolbars/Toolbar"
-import IconSearch from "/src/assets/icons/System/Search.svg"
-import IconShield from "/src/assets/icons/System/Shield.svg"
+import IconSearch from "/app/assets/icons/System/Search.svg"
+import IconShield from "/app/assets/icons/System/Shield.svg"
 
 const AppBar = () => {
   const { AppBarElement } = useAppContext()

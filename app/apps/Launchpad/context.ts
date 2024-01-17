@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction } from "react"
+"use client"
+import React, { createContext, Dispatch, SetStateAction, useContext } from "react"
 import { IApp, IWidget } from "types"
 
 export interface ILaunchpadContext {
@@ -11,8 +12,8 @@ export const dummyContext: ILaunchpadContext = {
   setsearchTerm: () => {},
   matchedApps: [],
 }
-export const LaunchpadContext = React.createContext<ILaunchpadContext>(dummyContext)
+export const LaunchpadContext = createContext<ILaunchpadContext>(dummyContext)
 
 export const useLaunchpadContext = () => {
-  return React.useContext(LaunchpadContext)
+  return useContext(LaunchpadContext)
 }

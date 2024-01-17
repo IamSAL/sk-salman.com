@@ -1,3 +1,4 @@
+"use client"
 import { useAutoAnimate } from "@formkit/auto-animate/react"
 import { For } from "million/react"
 import React from "react"

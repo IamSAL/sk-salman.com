@@ -1,4 +1,5 @@
-import React, { Dispatch, SetStateAction } from "react"
+"use client"
+import { createContext, Dispatch, SetStateAction, useContext } from "react"
 import { IApp } from "types"
 
 export interface IAppContext {
@@ -23,8 +24,8 @@ export const dummyContext: IAppContext = {
   onMaximize: () => null,
   onHide: () => null,
 }
-export const AppContext = React.createContext<IAppContext>(dummyContext)
+export const AppContext = createContext<IAppContext>(dummyContext)
 
 export const useAppContext = () => {
-  return React.useContext(AppContext)
+  return useContext(AppContext)
 }

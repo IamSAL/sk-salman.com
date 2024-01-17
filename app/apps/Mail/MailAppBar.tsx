@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect } from "react"
 import { useAppContext } from "app/core/components/app-window/appContext"
 import AppControl from "app/core/components/app-window/AppControl"

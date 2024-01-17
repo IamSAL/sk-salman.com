@@ -1,8 +1,9 @@
+"use client"
 import { useAutoAnimate } from "@formkit/auto-animate/react"
 import * as _ from "lodash"
 import Image from "next/image"
 import React, { startTransition, useEffect, useMemo, useRef, useState, useTransition } from "react"
-// import IconSearch from '/src/assets/icons/System/Search.svg';
+// import IconSearch from '/app/assets/icons/System/Search.svg';
 import { useDispatch } from "react-redux"
 import { useEffectOnce } from "react-use"
 import { Pagination } from "swiper/modules"

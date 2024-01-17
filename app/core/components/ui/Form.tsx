@@ -1,3 +1,4 @@
+"use client"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { PropsWithoutRef, ReactNode, useState } from "react"
 import { FormProvider, useForm, UseFormProps } from "react-hook-form"

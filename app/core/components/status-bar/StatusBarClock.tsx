@@ -1,3 +1,4 @@
+"use client"
 import NiceModal from "@ebay/nice-modal-react"
 import React, { useEffect, useState } from "react"
 import { CONSTANTS } from "app/helpers/constants"

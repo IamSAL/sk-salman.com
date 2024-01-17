@@ -1,3 +1,4 @@
+'use client';
 import NiceModal from "@ebay/nice-modal-react"
 import { useDispatch, useSelector } from "react-redux"
 import { AppState } from "app/core/redux/redux"
