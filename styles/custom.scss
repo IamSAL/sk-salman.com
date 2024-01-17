@@ -33,3 +33,11 @@
   }
 }
 
+.wallpaper {
+  background-image: url('https://9to5mac.com/wp-content/uploads/sites/6/2020/06/wwdc6.jpg?quality=82&strip=all');
+}
+
+.bg-frosted {
+  backdrop-filter: blur(5px);
+  background-color: rgb(255 255 255/ 20%);
+}
