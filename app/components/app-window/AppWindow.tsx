@@ -38,8 +38,8 @@ const AppWindow = React.memo((props: IAppProps) => {
   const dispatch = useDispatch()
   const { innerWidth: windowWidth, innerHeight: windowHeight } =
     typeof window != "undefined" ? window : { innerWidth: 1024, innerHeight: 768 }
-  const leftOffset = (w) => NumberUtil.modifyNumByRndPerc((windowWidth - w) * 0.25, 20)
-  const topOffset = (h) => NumberUtil.modifyNumByRndPerc((windowHeight - h) * 0.5, 10)
+  const leftOffset = (w:any) => NumberUtil.modifyNumByRndPerc((windowWidth - w) * 0.25, 20)
+  const topOffset = (h: any) => NumberUtil.modifyNumByRndPerc((windowHeight - h) * 0.5, 10)
   const initWindowHeight = app.config?.initWindowHeight || defaultHeight
   const initWindowWidth = app.config?.initWindowWidth || defaultWidth
   const programRef = useRef(null)
@@ -60,7 +60,7 @@ const AppWindow = React.memo((props: IAppProps) => {
   })
   const [oldDimensions, setoldDimensions] = useState(dimensions)
 
-  const handleDrag = (e, ui) => {
+  const handleDrag = (e:any, ui:any) => {
     console.log({ ui })
     updateDimensions((prev) => {
       const { x, y } = prev.delta
@@ -68,7 +68,7 @@ const AppWindow = React.memo((props: IAppProps) => {
     })
   }
 
-  const handleResize = (e, direction, ref, d) => {
+  const handleResize = (e:any, direction:string, ref:any, d:any) => {
     setisResizing(false)
     if (!app.status.isMAXIMIZED) {
       updateDimensions((prev) => {
@@ -122,6 +122,7 @@ const AppWindow = React.memo((props: IAppProps) => {
     app,
     AppBarElement,
     setAppBarElement,
+    //@ts-expect-error
     setStatusBarElement,
     onTerminate: onTerminate,
     onHide,

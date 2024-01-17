@@ -1,5 +1,5 @@
 import { Search } from "lucide-react"
-import { For } from "million/react"
+
 import Image from "next/image"
 import React, { useState, useTransition } from "react"
 import { useDebounce } from "react-use"
@@ -62,8 +62,8 @@ const WidgetsSearchForm = () => {
           }
         )}
       >
-        <For each={matchedApps}>
-          {(app, idx) => {
+     
+          {matchedApps.map((app, idx) => {
             return (
               <div
                 key={app.id}
@@ -81,8 +81,8 @@ const WidgetsSearchForm = () => {
                 <div className="Text font-['SF Pro Text'] text-xs font-normal leading-none text-white">{app.name}</div>
               </div>
             )
-          }}
-        </For>
+          })}
+       
       </div>
     </div>
   )

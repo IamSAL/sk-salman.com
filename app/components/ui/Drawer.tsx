@@ -6,8 +6,9 @@ import { cn } from "app/helpers/utils"
 const Drawer = DialogPrimitive.Root
 
 const DrawerTrigger = DialogPrimitive.Trigger
-
-const DialogPortal = ({ className, ...props }: DialogPrimitive.DialogPortalProps) => (
+type Props = DialogPrimitive.DialogPortalProps & { className: string }
+const DialogPortal = ({ className, ...props }: Props) => (
+  //@ts-expect-error
   <DialogPrimitive.Portal className={cn(className)} {...props} />
 )
 DialogPortal.displayName = DialogPrimitive.Portal.displayName
@@ -30,7 +31,8 @@ DialogOverlay.displayName = DialogPrimitive.Overlay.displayName
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+  >(({ className, children, ...props }, ref) => (
+  //@ts-expect-error
   <DialogPortal>
     <DialogOverlay className="opacity-0" />
     <DialogPrimitive.Content

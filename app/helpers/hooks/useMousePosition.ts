@@ -10,7 +10,7 @@ function useMousePosition({ offsetTop, offsetBottom }: Props) {
   const [isTouchingBottom, setIsTouchingBottom] = useState(false)
 
   useEffect(() => {
-    function handleMouseMove(event) {
+    function handleMouseMove(event:MouseEvent) {
       const mouseY = event.clientY
       const windowHeight = window.innerHeight
 

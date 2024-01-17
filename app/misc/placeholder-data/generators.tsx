@@ -3,7 +3,7 @@ import AppStore from "app/apps/AppStore"
 import PlaceHolderWidget from "app/components/widgets-bar/PlaceHolderWidget"
 import { IApp, IAppTemplate, IWidget } from "types"
 const AppIconPlaceHolder = "/static/images/icons/app-icons-placeholder.svg"
-const generateRandomWidgets = (count, appId?): IWidget[] => {
+const generateRandomWidgets = (count:number, appId?:number): IWidget[] => {
   let chance = new Chance()
 
   let randomWidgets: IWidget[] = []
@@ -21,7 +21,7 @@ const generateRandomWidgets = (count, appId?): IWidget[] => {
   return randomWidgets
 }
 
-const generateRandomApps = (count, appId?): IApp[] => {
+const generateRandomApps = (count: number, appId?: number): IApp[] => {
   let chance = new Chance()
 
   let randomApps: IApp[] = []

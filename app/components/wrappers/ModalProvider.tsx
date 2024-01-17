@@ -2,8 +2,9 @@
 import NiceModal from "@ebay/nice-modal-react"
 import { useDispatch, useSelector } from "react-redux"
 import { AppState } from "app/core/redux/redux"
+import { ReactNode } from "react";
 
-const ModalsProvider = ({ children }) => {
+const ModalsProvider = ({ children }:{children:ReactNode}) => {
   const modals = useSelector((s: AppState) => s.modals)
   const dispatch = useDispatch()
   return (

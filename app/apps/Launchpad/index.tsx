@@ -1,5 +1,6 @@
 "use client"
 import { useAutoAnimate } from "@formkit/auto-animate/react"
+import { motion } from "framer-motion"
 import * as _ from "lodash"
 import Image from "next/image"
 import React, { startTransition, useEffect, useMemo, useRef, useState, useTransition } from "react"
@@ -17,7 +18,6 @@ import { LaunchpadContext } from "./context"
 import SearchBar from "./SearchBar"
 import AppLauncher from "../../components/common/AppLauncher"
 import "swiper/css"
-import { motion } from "framer-motion"
 
 const SLIDE_CHUNK_SIZE = 28
 
@@ -56,7 +56,7 @@ const LaunchPad = () => {
   const ref = useRef<HTMLDivElement>()
   const pagination = {
     clickable: true,
-    renderBullet: function (index, className) {
+    renderBullet: function (index:number, className:string) {
       return `<div class=" bg-white rounded-full  ${className}"></div>`
     },
   }

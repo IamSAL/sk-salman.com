@@ -10,6 +10,7 @@ const AppBody = React.memo(
   ({ component, ...props }: any) => component(props),
   () => true
 )
+AppBody.displayName="AppBody"
 
 interface IAppProps {
   app: IApp
@@ -49,4 +50,5 @@ const AppImmersive = React.memo((props: IAppProps) => {
   )
 })
 
+AppImmersive.displayName ="AppImmersive"
 export default AppImmersive

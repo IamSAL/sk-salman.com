@@ -96,7 +96,7 @@ const LargeWidget = () => {
             </p>
             <p className="text-center text-xs text-gray-400">58°</p>
             <div className="w-[100px]   ">
-              <div className="my-1.5 h-1 w-[100px] rounded-md bg-gradient-to-r from-[#8eb48e] to-[#5b1f1f] to-[#df5151]" />
+              <div className="my-1.5 h-1 w-[100px] rounded-md bg-gradient-to-r from-[#8eb48e]  to-[#df5151]" />
             </div>
             <p className="text-center text-sm">60°</p>
           </div>

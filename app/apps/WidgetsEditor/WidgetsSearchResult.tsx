@@ -1,6 +1,6 @@
 "use client"
 import { useAutoAnimate } from "@formkit/auto-animate/react"
-import { For } from "million/react"
+
 import React from "react"
 import WidgetWeather from "app/components/widgets-bar/WidgetWeather"
 import { cn } from "app/helpers/utils"
@@ -13,7 +13,7 @@ import WidgetsSlotBar from "./WidgetsSlotBar"
 const WidgetsSearchResult = () => {
   const { matchedWidgets, selectedAppId, isAnimating } = useWidgetEditorContext()
   const [animeParent, enableAnimations] = useAutoAnimate()
-  const matchesAppId = (currentId) => {
+  const matchesAppId = (currentId:any) => {
     if (selectedAppId) {
       return currentId === selectedAppId
     }
