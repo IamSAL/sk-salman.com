@@ -1,10 +1,10 @@
 import React, { useEffect } from "react"
-import { useAppContext } from "app/core/components/app-window/appContext"
-import VsCodeAppBar from "./VsCodeAppBar"
 import { useDispatch } from "react-redux"
+import { useAppContext } from "app/core/components/app-window/appContext"
+import { cn } from "app/helpers/utils"
+import VsCodeAppBar from "./VsCodeAppBar"
 
 import VsCodeStatusBar from "./VsCodeStatusBar"
-import { cn } from "app/helpers/utils"
 
 const VsCode = () => {
   const { setAppBarElement, setStatusBarElement, app } = useAppContext()
@@ -19,7 +19,7 @@ const VsCode = () => {
         "h-[94vh]": app?.status.isMAXIMIZED,
       })}
     >
-      <iframe allow="keyboard-map" src={process.env.NEXT_PUBLIC_GITHUB_REPO} className="fade-in-75 flex-grow"></iframe>
+      <iframe allow="keyboard-map" src={process.env.NEXT_PUBLIC_GITHUB_REPO} className="fade-in-75 grow"></iframe>
     </div>
   )
 }

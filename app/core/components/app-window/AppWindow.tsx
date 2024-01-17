@@ -1,19 +1,19 @@
+import { Resizable } from "re-resizable"
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import Draggable from "react-draggable"
-import { Resizable } from "re-resizable"
 
 // import './Program.scss';
-import AppBar from "./AppBar"
-import { IApp } from "types"
-import { initDisk, updateProgramData, getProgramData, cn, NumberUtil } from "app/helpers/utils"
-import StatusBar from "../status-bar/StatusBar"
-import { AppContext, IAppContext, dummyContext } from "./appContext"
 import { useDispatch } from "react-redux"
-import { setMaximized } from "app/core/redux/system/system.slice"
-import { updateAppStatus, terminateApp, setActiveAppContext } from "app/core/redux/memory/memory.slice"
 import { useClickAway, useEffectOnce } from "react-use"
-import CommonStatusBar from "app/core/components/common/CommonStatusBar"
 import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
+import CommonStatusBar from "app/core/components/common/CommonStatusBar"
+import { setActiveAppContext, terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
+import { setMaximized } from "app/core/redux/system/system.slice"
+import { cn, getProgramData, initDisk, NumberUtil, updateProgramData } from "app/helpers/utils"
+import { IApp } from "types"
+import AppBar from "./AppBar"
+import { AppContext, dummyContext, IAppContext } from "./appContext"
+import StatusBar from "../status-bar/StatusBar"
 
 const defaultHeight = 480
 const defaultWidth = 640

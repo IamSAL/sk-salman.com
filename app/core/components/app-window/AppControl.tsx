@@ -1,9 +1,9 @@
 import { useModal } from "@ebay/nice-modal-react"
 import React from "react"
-import { useAppContext } from "./appContext"
 import { useDispatch } from "react-redux"
 import { terminateApp } from "app/core/redux/memory/memory.slice"
 import { cn } from "app/helpers/utils"
+import { useAppContext } from "./appContext"
 
 // million-ignore
 const AppControl = () => {

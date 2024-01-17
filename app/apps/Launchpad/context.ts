@@ -1,5 +1,5 @@
-import { IApp, IWidget } from "types"
 import React, { Dispatch, SetStateAction } from "react"
+import { IApp, IWidget } from "types"
 
 export interface ILaunchpadContext {
   searchTerm: string

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useAppContext } from "app/core/components/app-window/appContext"
-import MailAppBar from "./MailAppBar"
 import CommonStatusBar from "app/core/components/common/CommonStatusBar"
+import MailAppBar from "./MailAppBar"
 
 const Mail = () => {
   const { setAppBarElement, setStatusBarElement } = useAppContext()

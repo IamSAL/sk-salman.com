@@ -1,12 +1,12 @@
-import { DROPPABLES, DROPPABLE_ACTIONS, IDroppableItem, IWidget } from "types"
-import { cn } from "app/helpers/utils"
 import { Minus } from "lucide-react"
 import React, { useEffect, useRef, useState } from "react"
-import { useDrag, DragSourceMonitor, useDrop } from "react-dnd"
+import { DragSourceMonitor, useDrag, useDrop } from "react-dnd"
 import { useDispatch } from "react-redux"
 import { useEffectOnce, useEvent, useHover, useMouseHovered } from "react-use"
 import { ISystemWidget, removeWidget } from "app/core/redux/system/system.slice"
+import { cn } from "app/helpers/utils"
 import { apps } from "app/misc/placeholder-data/apps"
+import { DROPPABLE_ACTIONS, DROPPABLES, IDroppableItem, IWidget } from "types"
 
 const WidgetBody = ({ component, ...props }: any) => {
   return component(props)

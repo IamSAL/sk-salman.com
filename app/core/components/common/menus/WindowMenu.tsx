@@ -6,11 +6,11 @@ import {
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu"
 import React from "react"
-import StatusBarItem from "../../status-bar/StatusBarItem"
-import { useAppContext } from "../../app-window/appContext"
 import { useDispatch } from "react-redux"
-import { terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
+import { terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
+import { useAppContext } from "../../app-window/appContext"
+import StatusBarItem from "../../status-bar/StatusBarItem"
 
 const WindowMenu = () => {
   const { app, onTerminate, onHide } = useActiveAppContext()

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react"
+import { useDispatch } from "react-redux"
+import { useClickAway, useKey } from "react-use"
+import { terminateApp } from "app/core/redux/memory/memory.slice"
+import { setMaximized } from "app/core/redux/system/system.slice"
 import { IApp } from "types"
 import { AppContext, IAppContext } from "./appContext"
-import { useDispatch } from "react-redux"
-import { terminateApp } from "app/core/redux/memory/memory.slice"
-import { useClickAway, useKey } from "react-use"
-import { setMaximized } from "app/core/redux/system/system.slice"
 
 const AppBody = React.memo(
   ({ component, ...props }: any) => component(props),

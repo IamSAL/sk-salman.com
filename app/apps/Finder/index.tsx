@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import { useAppContext } from "app/core/components/app-window/appContext"
+import CommonStatusBar from "app/core/components/common/CommonStatusBar"
 import FinderAppBar from "./FInderAppBar"
 import FinderStatusBar from "./FinderStatusBar"
-import CommonStatusBar from "app/core/components/common/CommonStatusBar"
 
 const Finder = () => {
   const { setAppBarElement, setStatusBarElement, app } = useAppContext()

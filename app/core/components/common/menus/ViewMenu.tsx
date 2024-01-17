@@ -6,8 +6,8 @@ import {
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu"
 import React from "react"
-import StatusBarItem from "../../status-bar/StatusBarItem"
 import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
+import StatusBarItem from "../../status-bar/StatusBarItem"
 
 const ViewMenu = () => {
   const { onMaximize } = useActiveAppContext()

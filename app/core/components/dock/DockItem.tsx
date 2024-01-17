@@ -1,13 +1,13 @@
-import React from "react"
-import Image from "next/image"
-const AppIconPlaceHolder = "/static/images/icons/PNG/app-icons-placeholder.png"
-import { IApp } from "types"
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@components/ui/tooltip"
 import NiceModal from "@ebay/nice-modal-react"
-import AppLauncher from "../common/AppLauncher"
+import { TooltipArrow, TooltipPortal } from "@radix-ui/react-tooltip"
+import Image from "next/image"
+import React from "react"
 import { useSelector } from "react-redux"
 import { AppState } from "app/core/redux/redux"
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@components/ui/tooltip"
-import { TooltipPortal, TooltipArrow } from "@radix-ui/react-tooltip"
+import { IApp } from "types"
+import AppLauncher from "../common/AppLauncher"
+const AppIconPlaceHolder = "/static/images/icons/PNG/app-icons-placeholder.png"
 
 type TDockItemProps = {
   app: IApp

@@ -1,4 +1,4 @@
-import { indexedDB, connectIDB } from "./disk.connect"
+import { connectIDB, indexedDB } from "./disk.connect"
 
 const dispatchIDB = async ({ DB_NAME, DB_VERSION }, STORENAME, action) =>
   new Promise((resolve, reject) => {

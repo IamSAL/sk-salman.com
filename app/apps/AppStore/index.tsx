@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useAppContext } from "app/core/components/app-window/appContext"
-import AppStoreAppBar from "./AppStoreAppBar"
 import CommonStatusBar from "app/core/components/common/CommonStatusBar"
+import AppStoreAppBar from "./AppStoreAppBar"
 
 const AppStore = () => {
   const { setAppBarElement, setStatusBarElement } = useAppContext()

@@ -1,6 +1,6 @@
-import { cn } from "app/helpers/utils"
 import Image, { StaticImageData } from "next/image"
 import React from "react"
+import { cn } from "app/helpers/utils"
 
 export type IStatusBarItemProps =
   | {

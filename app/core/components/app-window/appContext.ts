@@ -1,5 +1,5 @@
-import { IApp } from "types"
 import React, { Dispatch, SetStateAction } from "react"
+import { IApp } from "types"
 
 export interface IAppContext {
   app?: IApp

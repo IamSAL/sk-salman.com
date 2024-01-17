@@ -1,12 +1,12 @@
-import React, { useState, useTransition } from "react"
-import AppLauncher from "app/core/components/common/AppLauncher"
-import { apps } from "app/misc/placeholder-data/apps"
-import Image from "next/image"
 import { Search } from "lucide-react"
-import { cn } from "app/helpers/utils"
 import { For } from "million/react"
-import { useWidgetEditorContext } from "./contex"
+import Image from "next/image"
+import React, { useState, useTransition } from "react"
 import { useDebounce } from "react-use"
+import AppLauncher from "app/core/components/common/AppLauncher"
+import { cn } from "app/helpers/utils"
+import { apps } from "app/misc/placeholder-data/apps"
+import { useWidgetEditorContext } from "./contex"
 
 const WidgetsSearchForm = () => {
   const [isTransitioning, startTransition] = useTransition()

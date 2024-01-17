@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import { useAppContext } from "app/core/components/app-window/appContext"
-import PhotosAppBar from "./PhotosAppBar"
 import CommonStatusBar from "app/core/components/common/CommonStatusBar"
+import PhotosAppBar from "./PhotosAppBar"
 
 const Photos = () => {
   const { setAppBarElement, setStatusBarElement } = useAppContext()

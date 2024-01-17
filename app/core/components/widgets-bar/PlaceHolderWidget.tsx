@@ -1,7 +1,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react"
-import { WidgetProps } from "types"
-import { cn } from "app/helpers/utils"
 import React from "react"
+import { cn } from "app/helpers/utils"
+import { WidgetProps } from "types"
 import WidgetBody from "../common/widgets/WidgetBody"
 
 const SmallWidget = () => {

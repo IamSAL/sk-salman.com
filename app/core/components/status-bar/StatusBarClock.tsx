@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"
-import StatusBarItem from "./StatusBarItem"
 import NiceModal from "@ebay/nice-modal-react"
+import React, { useEffect, useState } from "react"
 import { CONSTANTS } from "app/helpers/constants"
+import StatusBarItem from "./StatusBarItem"
 
 const StatusBarClock = () => {
   const [currentTime, setcurrentTime] = useState("")

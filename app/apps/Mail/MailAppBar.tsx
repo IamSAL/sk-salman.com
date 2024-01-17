@@ -1,6 +1,6 @@
 import React, { useEffect } from "react"
-import AppControl from "app/core/components/app-window/AppControl"
 import { useAppContext } from "app/core/components/app-window/appContext"
+import AppControl from "app/core/components/app-window/AppControl"
 import Toolbar from "app/core/components/common/toolbars/Toolbar"
 
 const MailAppBar = () => {

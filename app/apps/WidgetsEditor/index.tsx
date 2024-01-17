@@ -1,18 +1,18 @@
+import { motion, Variants } from "framer-motion"
 import NextImage from "next/image"
+import { HTML5toTouch } from "rdndmb-html5-to-touch"
 import React, { useEffect, useRef, useState } from "react"
 // import IconSearch from '/src/assets/icons/System/Search.svg';
+import { DndProvider } from "react-dnd"
+import { MultiBackend } from "react-dnd-multi-backend"
+import { useDispatch } from "react-redux"
+import { setDockStatus } from "app/core/redux/system/system.slice"
+import { apps } from "app/misc/placeholder-data/apps"
+import { DOCK_STATUS } from "types"
+import { WidgetEditorContext } from "./contex"
 import WidgetsSearchForm from "./WidgetsSearchForm"
 import WidgetsSearchResult from "./WidgetsSearchResult"
 import WidgetsSlotBar from "./WidgetsSlotBar"
-import { WidgetEditorContext } from "./contex"
-import { apps } from "app/misc/placeholder-data/apps"
-import { DndProvider } from "react-dnd"
-import { HTML5toTouch } from "rdndmb-html5-to-touch"
-import { MultiBackend } from "react-dnd-multi-backend"
-import { DOCK_STATUS } from "types"
-import { setDockStatus } from "app/core/redux/system/system.slice"
-import { useDispatch } from "react-redux"
-import { Variants, motion } from "framer-motion"
 
 type TProps = {
   isEditingMode?: boolean
@@ -80,12 +80,12 @@ const WidgetsEditor = ({ isEditingMode = true }: TProps) => {
           >
             <NextImage
               src="/static/images/wallpapers/dark.svg"
-              className="absolute bottom-0 top-0 z-10 h-full w-full scale-125 blur-lg"
+              className="absolute inset-y-0 z-10 h-full w-full scale-125 blur-lg"
               alt="launchpad-bg"
               width={100}
               height={100}
             />
-            <div className="absolute bottom-0 top-0 z-10 h-full w-full scale-125 bg-black bg-opacity-50 blur-lg"></div>
+            <div className="absolute inset-y-0 z-10 h-full w-full scale-125 bg-black bg-opacity-50 blur-lg"></div>
 
             <div id="content" className="fade-in-100 absolute left-0 top-0 z-20 h-full w-full">
               <div className="flex justify-between">

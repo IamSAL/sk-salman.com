@@ -1,17 +1,17 @@
 import React from "react"
-import styles from "./StatusBar.module.scss"
-
-import StatusBarItem from "./StatusBarItem"
+import { useSelector } from "react-redux"
 import IconBattery from "src/assets/icons/System/Battery.svg"
-import IconWifi from "src/assets/icons/System/Wi-Fi.svg"
+
+import IconBrightness from "src/assets/icons/System/Brightness.svg"
 import IconControl from "src/assets/icons/System/Control.svg"
 import IconMoon from "src/assets/icons/System/Moon.svg"
-import IconBrightness from "src/assets/icons/System/Brightness.svg"
-import { cn } from "app/helpers/utils"
-import StatusBarClock from "./StatusBarClock"
+import IconWifi from "src/assets/icons/System/Wi-Fi.svg"
 import useMousePosition from "src/helpers/hooks/useMousePosition"
-import { useSelector } from "react-redux"
 import { AppState } from "app/core/redux/redux"
+import { cn } from "app/helpers/utils"
+import styles from "./StatusBar.module.scss"
+import StatusBarClock from "./StatusBarClock"
+import StatusBarItem from "./StatusBarItem"
 import StatusBarSystem from "./StatusBarSystem"
 
 const StatusBar = () => {

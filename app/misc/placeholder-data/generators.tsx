@@ -1,7 +1,7 @@
-import { IApp, IAppTemplate, IWidget } from "types"
-import PlaceHolderWidget from "app/core/components/widgets-bar/PlaceHolderWidget"
 import Chance from "chance"
 import AppStore from "app/apps/AppStore"
+import PlaceHolderWidget from "app/core/components/widgets-bar/PlaceHolderWidget"
+import { IApp, IAppTemplate, IWidget } from "types"
 const AppIconPlaceHolder = "/static/images/icons/app-icons-placeholder.svg"
 const generateRandomWidgets = (count, appId?): IWidget[] => {
   let chance = new Chance()

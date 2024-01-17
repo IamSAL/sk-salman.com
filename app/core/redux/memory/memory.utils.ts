@@ -1,5 +1,5 @@
-import { IApp, TAppStatus } from "types"
 import app from "next/app"
+import { IApp, TAppStatus } from "types"
 
 export const updateAppsInstances = (data, app: IApp) => {
   if (data.some((runningApp: IApp) => runningApp.id == app.id)) {

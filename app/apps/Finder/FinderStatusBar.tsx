@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
-import AppControl from "app/core/components/app-window/AppControl"
 import { StatusBarItem } from "app/core/components"
+import AppControl from "app/core/components/app-window/AppControl"
 
 const FinderStatusBar = () => {
   return (

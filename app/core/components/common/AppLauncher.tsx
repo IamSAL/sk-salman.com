@@ -1,10 +1,10 @@
-import { IAppTemplate } from "types"
 import React, { Children } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { startApp, terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { AppState } from "app/core/redux/redux"
 import { setMaximized } from "app/core/redux/system/system.slice"
 import { apps } from "app/misc/placeholder-data/apps"
+import { IAppTemplate } from "types"
 
 export interface IAppLauncherProps {
   children: React.ReactNode

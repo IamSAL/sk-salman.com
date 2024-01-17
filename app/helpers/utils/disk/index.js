@@ -1,7 +1,7 @@
-import dispatchIDB from "./disk.dispatch"
-import writeInIDB from "./disk.write"
-import searchInIDB from "./disk.read"
 import deleteFromIDB from "./disk.delete"
+import dispatchIDB from "./disk.dispatch"
+import searchInIDB from "./disk.read"
+import writeInIDB from "./disk.write"
 
 export const updateProgramData = (DISK) => (STORENAME, data, callback) => {
   if (window)

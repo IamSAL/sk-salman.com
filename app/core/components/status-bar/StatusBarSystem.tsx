@@ -1,5 +1,3 @@
-import React from "react"
-import StatusBarItem from "./StatusBarItem"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -14,12 +12,14 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@components/ui/dropdown-menu"
-const AppIconPlaceHolder = "/static/images/icons/app-icons-placeholder.svg?url"
 import Image from "next/image"
+import React from "react"
 import { useSelector } from "react-redux"
-import { AppState } from "app/core/redux/redux"
-import AppLauncher from "../common/AppLauncher"
 import useActiveAppContext from "src/helpers/hooks/useActiveAppContext"
+import { AppState } from "app/core/redux/redux"
+import StatusBarItem from "./StatusBarItem"
+import AppLauncher from "../common/AppLauncher"
+const AppIconPlaceHolder = "/static/images/icons/app-icons-placeholder.svg?url"
 // import TfiAngleRight from "react-icons/tfi"
 
 const StatusBarSystem = () => {
