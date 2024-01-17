@@ -45,10 +45,10 @@ const MediumWidget = () => {
         {[1, 2, 3, 4, 5, 6].map((i) => (
           <div key={i} className="flex flex-col gap-1">
             <p className="text-center text-xs text-gray-400">2AM</p>
-            <p className="">
+            <p className="text-white">
               <CloudLightning size="20" />
             </p>
-            <p className="text-center text-sm">60°</p>
+            <p className="text-center text-sm text-white">60°</p>
           </div>
         ))}
       </div>

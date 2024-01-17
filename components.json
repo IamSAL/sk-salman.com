@@ -11,6 +11,6 @@
   },
   "aliases": {
     "components": "app/components",
-    "utils": "app/helpers/utils"
+    "utils": "app/helpers/utils/common"
   }
 }

@@ -34,7 +34,7 @@ export default function Web() {
         `bg-[url('/static/images/wallpapers/dark.svg')] w-screen h-screen bg-no-repeat bg-cover relative`
       )}
     >
-      {/* <StatusBar /> */}
+      <StatusBar />
       <div className="AppsContainer">
         {runningApps.map((app, idx) => {
           return app.config.template === IAppTemplate.IMMERSIVE ? (
@@ -46,7 +46,7 @@ export default function Web() {
       </div>
 
       <Dock />
-      {/* <LaunchPad /> */}
+  
     </div>
   )
 }

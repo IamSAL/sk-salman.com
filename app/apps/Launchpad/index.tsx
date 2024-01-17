@@ -124,7 +124,7 @@ const LaunchPad = () => {
               })}
             </Swiper>
           ) : (
-            <p className="text-4xl opacity-40 fade-in-10 font-light text-center h-[60%] flex items-center justify-center">
+            <p className="text-4xl text-white  fade-in-10 font-light text-center h-[60%] flex items-center justify-center">
               No Results
             </p>
           )}

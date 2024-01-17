@@ -53,7 +53,7 @@ const WidgetsEditor = ({ isEditingMode = true }: TProps) => {
   }, [programRef])
 
   return (
-    <DndProvider backend={MultiBackend} options={HTML5toTouch}>
+    
       <WidgetEditorContext.Provider
         value={{
           searchTerm,
@@ -104,7 +104,7 @@ const WidgetsEditor = ({ isEditingMode = true }: TProps) => {
           <WidgetsSlotBar />
         )}
       </WidgetEditorContext.Provider>
-    </DndProvider>
+  
   )
 }
 

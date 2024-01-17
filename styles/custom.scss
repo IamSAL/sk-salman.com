@@ -1,0 +1,35 @@
+
+.dock-container {
+  position: absolute;
+  bottom: 12px;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.AppsContainer {
+  & > .SingleApp.min {
+    position: absolute;
+  }
+}
+
+.LaunchpadContainer {
+  .AppsSlider {
+    .swiper-pagination {
+      margin-top: 24px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      .swiper-pagination-bullet {
+        cursor: pointer;
+        opacity: 0.5;
+        transition: all 0.5s;
+        padding: 5px;
+      }
+      .swiper-pagination-bullet-active {
+        opacity: 1;
+      }
+    }
+  }
+}
+

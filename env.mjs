@@ -8,7 +8,9 @@ export const env = createEnv({
       .optional()
       .transform((value) => value === "true"),
   },
-  client: {},
+  client: {
+    NEXT_PUBLIC_GITHUB_REPO: z.string().optional(),
+  },
   runtimeEnv: {
     ANALYZE: process.env.ANALYZE,
   },
