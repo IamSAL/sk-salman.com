@@ -15,7 +15,7 @@ import { DOCK_STATUS, IApp } from "types"
 import AppSlides from "./AppSlides"
 import { LaunchpadContext } from "./context"
 import SearchBar from "./SearchBar"
-import AppLauncher from "../../core/components/common/AppLauncher"
+import AppLauncher from "../../components/common/AppLauncher"
 import "swiper/css"
 import { motion } from "framer-motion"
 

@@ -13,7 +13,7 @@ import Safari from "app/apps/Safari"
 import SystemPreferences from "app/apps/SystemPreferences"
 import VsCode from "app/apps/VsCode"
 import WidgetsEditor from "app/apps/WidgetsEditor"
-import WidgetWeather from "app/core/components/widgets-bar/WidgetWeather"
+import WidgetWeather from "app/components/widgets-bar/WidgetWeather"
 import { IApp, IAppTemplate } from "types"
 import { generateRandomApps, generateRandomWidgets } from "./generators"
 

@@ -6,7 +6,7 @@ import {
   DropdownMenuPortal,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "app/core/components/ui/dropdown-menu"
+} from "app/components/ui/dropdown-menu"
 import StatusBarItem from "../../status-bar/StatusBarItem"
 
 const EditMenu = () => {

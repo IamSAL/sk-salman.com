@@ -1,6 +1,6 @@
 import React from "react"
-import AppControl from "app/core/components/app-window/AppControl"
-import Toolbar from "app/core/components/common/toolbars/Toolbar"
+import AppControl from "app/components/app-window/AppControl"
+import Toolbar from "app/components/common/toolbars/Toolbar"
 import IconSearch from "/app/assets/icons/System/Search.svg"
 import IconShield from "/app/assets/icons/System/Shield.svg"
 

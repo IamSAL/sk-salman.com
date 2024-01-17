@@ -2,7 +2,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react"
 import { For } from "million/react"
 import React from "react"
-import WidgetWeather from "app/core/components/widgets-bar/WidgetWeather"
+import WidgetWeather from "app/components/widgets-bar/WidgetWeather"
 import { cn } from "app/helpers/utils"
 import { apps } from "app/misc/placeholder-data/apps"
 import { IWidget } from "types"

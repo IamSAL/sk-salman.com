@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { IAppContext } from "app/core/components/app-window/appContext"
+import { IAppContext } from "app/components/app-window/appContext"
 import { AppState } from "app/core/redux/redux"
 
 const useActiveAppContext = () => {

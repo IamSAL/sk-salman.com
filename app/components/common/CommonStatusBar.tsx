@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect } from "react"
-import { StatusBarItem } from "app/core/components"
+import { StatusBarItem } from "app/components"
 
-import { IAppContext, useAppContext } from "app/core/components/app-window/appContext"
+import { IAppContext, useAppContext } from "app/components/app-window/appContext"
 import AppMenu from "./menus/AppMenu"
 import EditMenu from "./menus/EditMenu"
 import FileMenu from "./menus/FileMenu"

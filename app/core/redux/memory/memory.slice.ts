@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { dummyContext, IAppContext } from "app/core/components/app-window/appContext"
+import { dummyContext, IAppContext } from "app/components/app-window/appContext"
 import { IApp, TAppStatus } from "types"
 import { removeAppInstance, updateAppsInstances, updateAppStatuses } from "./memory.utils"
 

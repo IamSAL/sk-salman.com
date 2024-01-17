@@ -15,7 +15,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "app/core/components/ui/dropdown-menu"
+} from "app/components/ui/dropdown-menu"
 import { AppState } from "app/core/redux/redux"
 import StatusBarItem from "./StatusBarItem"
 import AppLauncher from "../common/AppLauncher"

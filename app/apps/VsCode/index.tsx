@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from "react"
 import { useDispatch } from "react-redux"
-import { useAppContext } from "app/core/components/app-window/appContext"
+import { useAppContext } from "app/components/app-window/appContext"
 import { cn } from "app/helpers/utils"
 import VsCodeAppBar from "./VsCodeAppBar"
 

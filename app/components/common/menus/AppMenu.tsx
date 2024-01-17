@@ -9,7 +9,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "app/core/components/ui/dropdown-menu"
+} from "app/components/ui/dropdown-menu"
 import { updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { AppState } from "app/core/redux/redux"
 import StatusBarItem from "../../status-bar/StatusBarItem"

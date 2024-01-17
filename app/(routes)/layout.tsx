@@ -2,7 +2,7 @@
 import "styles/tailwind.scss"
 import "styles/globals.scss"
 import { Provider } from "react-redux"
-import { ModalsProvider } from "app/core/components"
+import { ModalsProvider } from "app/components"
 
 import store from "app/core/redux/redux"
 

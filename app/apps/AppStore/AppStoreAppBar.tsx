@@ -1,5 +1,5 @@
 import React from "react"
-import AppControl from "app/core/components/app-window/AppControl"
+import AppControl from "app/components/app-window/AppControl"
 
 const AppStoreAppBar = () => {
   return (

@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect } from "react"
-import { useAppContext } from "app/core/components/app-window/appContext"
-import CommonStatusBar from "app/core/components/common/CommonStatusBar"
+import { useAppContext } from "app/components/app-window/appContext"
+import CommonStatusBar from "app/components/common/CommonStatusBar"
 import SystemPreferencesAppBar from "./SystemPreferencesAppBar"
 
 const SystemPreferences = () => {

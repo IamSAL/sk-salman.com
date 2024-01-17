@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuPortal,
   DropdownMenuTrigger,
-} from "app/core/components/ui/dropdown-menu"
+} from "app/components/ui/dropdown-menu"
 import { terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { useAppContext } from "../../app-window/appContext"
 import StatusBarItem from "../../status-bar/StatusBarItem"

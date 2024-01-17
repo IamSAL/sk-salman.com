@@ -1,7 +1,7 @@
 import { useAutoAnimate } from "@formkit/auto-animate/react"
 import Image from "next/image"
 import React from "react"
-import AppLauncher from "app/core/components/common/AppLauncher"
+import AppLauncher from "app/components/common/AppLauncher"
 import { IApp } from "types"
 
 type TProps = {
