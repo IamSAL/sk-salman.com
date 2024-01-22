@@ -104,7 +104,7 @@ export const apps: IApp[] = [
       description: "System default launcher", // A short description or tooltip
       version: "0.0.1", // App version number
     },
-    component: LaunchPad,
+    component: LaunchPad as any,
     config: {
       isHidden: false,
       initTitle: "Launchpad",

@@ -3,10 +3,12 @@ import StatusBarMobile from '../status-bar/StatusBarMobile'
 
 import DockMobile from '../dock/DockMobile'
 import LaunchPad from 'app/apps/Launchpad'
+import LockScreen from './LockScreen'
 
 const HomeScreen = () => {
   return (
       <main className="h-full w-full">
+          <LockScreen/>
           <div className="h-full w-full  bg-white bg-center bg-cover wallpaper">
               <StatusBarMobile/>
               <div className="h-full flex flex-col">

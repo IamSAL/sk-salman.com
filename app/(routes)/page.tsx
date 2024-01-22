@@ -9,6 +9,7 @@ import { cn } from "app/helpers/utils"
 import { IAppTemplate } from "types"
 import { useWindowSize } from "react-use"
 import HomeScreen from "app/components/ios/HomeScreen"
+import LockScreen from "app/components/ios/LockScreen"
 
 
 export default function Web() {
@@ -37,7 +38,8 @@ export default function Web() {
       </div>
 
       <div className="text-black md:hidden h-full">
-       <HomeScreen/>
+        <HomeScreen/>
+      
       </div>
     </>
   )
