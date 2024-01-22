@@ -18,8 +18,10 @@ import { LaunchpadContext } from "./context"
 import SearchBar from "./SearchBar"
 import AppLauncher from "../../components/common/AppLauncher"
 import "swiper/css"
+import IconSearch from "app/assets/icons/System/Search.svg"
+import useBoxCount from "app/helpers/hooks/useBoxCount"
+import DockMobile from "app/components/dock/DockMobile"
 
-const SLIDE_CHUNK_SIZE = 28
 
 const containerVariants = {
   hidden: {
@@ -40,8 +42,10 @@ const overlayVariants = {
     scale: 1,
   },
 }
-
-const LaunchPad = () => {
+type Props = {
+  variant?:"MOBILE"
+}
+const LaunchPad = ({variant}:Props) => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(setDockStatus(DOCK_STATUS.STICKY))
@@ -49,9 +53,10 @@ const LaunchPad = () => {
       dispatch(setDockStatus(DOCK_STATUS.NORMAL))
     }
   }, [dispatch])
+  const CHUNK_SIZE = useBoxCount({ boxWidth: 100, boxHeight: 140, gapPercentage: 2.5, ignoreHeightPercentage: 25, ignoreWidthPercentage: 5 });
   const [searchTerm, setsearchTerm] = useState("")
   const [matchedApps, setMatchedApps] = useState<IApp[]>([])
-  const [appChunks, setappChunks] = useState<IApp[][]>(_.chunk(apps, SLIDE_CHUNK_SIZE))
+  const [appChunks, setappChunks] = useState<IApp[][]>(_.chunk(apps, CHUNK_SIZE))
 
   const ref = useRef<HTMLDivElement>()
   const pagination = {
@@ -61,13 +66,14 @@ const LaunchPad = () => {
     },
   }
   useEffect(() => {
+    console.log({ CHUNK_SIZE })
     startTransition(() => {
       const matchingApps = apps.filter((app) => app.name.toLowerCase().includes(searchTerm))
       // setMatchedApps(matchingApps)
-      setappChunks(_.chunk(matchingApps, SLIDE_CHUNK_SIZE))
+      setappChunks(_.chunk(matchingApps, CHUNK_SIZE || 28))
     })
     return () => {}
-  }, [searchTerm])
+  }, [searchTerm, CHUNK_SIZE])
 
   return (
     <LaunchpadContext.Provider
@@ -80,19 +86,19 @@ const LaunchPad = () => {
       <div className={cn("w-full h-full relative overflow-hidden  LaunchpadContainer  ", {})}>
         {/* <div className="flex justify-center items-center w-full h-full bg-red-800 bg-opacity-50">TESWT</div> */}
 
-        <Image
+        {variant != "MOBILE" && <Image
           src="/static/images/wallpapers/dark.png"
           className="w-full h-full blur-lg absolute inset-y-0 scale-125 z-10"
           alt="launchpad-bg"
           width={100}
           height={100}
-        />
+        />}
         <motion.div
           initial="hidden"
           animate={"visible"}
           exit="hidden"
           variants={containerVariants}
-          className="w-full h-full blur-lg absolute inset-y-0 bg-black bg-opacity-50 scale-125 z-10"
+          className="w-full h-full blur-lg absolute inset-y-0 md:bg-black md:bg-opacity-50 scale-125 z-10"
         ></motion.div>
 
         <motion.div
@@ -103,7 +109,7 @@ const LaunchPad = () => {
           id="content"
           className="absolute top-0 left-0 w-full h-full z-20"
         >
-          <SearchBar />
+          {variant != "MOBILE" && <SearchBar />}
           {appChunks.length > 0 ? (
             <Swiper
               pagination={appChunks.length > 1 ? pagination : false}
@@ -128,6 +134,14 @@ const LaunchPad = () => {
               No Results
             </p>
           )}
+          {variant === "MOBILE" && <div className="flex mt-4 justify-center align-middle">
+            <div className="Search w-20 h-7 relative bg-neutral-800/50 rounded-2xl backdrop-blur-3xl">
+              <div className="Content h-full w-full justify-center items-center gap-1 inline-flex">
+                <IconSearch color="white" fontSize={"20px"} />
+                <div className="Search text-center text-white text-xs font-medium font-['SF Pro Text'] leading-none">Search</div>
+              </div>
+            </div></div>}
+          
         </motion.div>
       </div>
     </LaunchpadContext.Provider>

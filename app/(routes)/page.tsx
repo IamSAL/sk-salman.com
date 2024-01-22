@@ -8,24 +8,8 @@ import { cn } from "app/helpers/utils"
 
 import { IAppTemplate } from "types"
 import { useWindowSize } from "react-use"
-import MobileView from "app/components/ios/MobileView"
+import HomeScreen from "app/components/ios/HomeScreen"
 
-// export const metadata: Metadata = {
-//   title: "gMac",
-//   twitter: {
-//     card: "summary_large_image",
-//   },
-//   openGraph: {
-//     url: "https://next-enterprise.vercel.app/",
-//     images: [
-//       {
-//         width: 1200,
-//         height: 630,
-//         url: "https://raw.githubusercontent.com/Blazity/next-enterprise/main/project-logo.png",
-//       },
-//     ],
-//   },
-// }
 
 export default function Web() {
  const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
@@ -53,7 +37,7 @@ export default function Web() {
       </div>
 
       <div className="text-black md:hidden h-full">
-       <MobileView/>
+       <HomeScreen/>
       </div>
     </>
   )

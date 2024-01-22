@@ -11,8 +11,8 @@ const AppSlides = ({ apps }: TProps) => {
   const [animeParent, setAnimations] = useAutoAnimate()
 
   return (
-    <div className="h-[70vh] px-36">
-      <div ref={animeParent} className="apps grid grid-cols-7 gap-14">
+    <div className="md:h-[70vh] md:px-36 px-4">
+      <div ref={animeParent} className="apps grid grid-cols-4 md:grid-cols-7 md:gap-14 gap-8">
         {apps?.map((app, idx) => {
           return (
             <AppLauncher key={app.id} appId={app.id}>
