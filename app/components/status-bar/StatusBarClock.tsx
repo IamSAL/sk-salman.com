@@ -3,11 +3,11 @@ import NiceModal from "@ebay/nice-modal-react"
 import React, { useEffect, useState } from "react"
 import { CONSTANTS } from "app/helpers/constants"
 import StatusBarItem from "./StatusBarItem"
-type Props={
-  variant?:"MOBILE"
+type Props = {
+  variant?: "MOBILE"
 }
-const StatusBarClock = ({variant}:Props) => {
-  const [currentTime, setcurrentTime] = useState("")
+const StatusBarClock = ({ variant }: Props) => {
+  const [currentTime, setcurrentTime] = useState(new Date().toLocaleTimeString())
   useEffect(() => {
     const timer = setInterval(() => {
       setcurrentTime(new Date().toLocaleTimeString())
@@ -17,6 +17,9 @@ const StatusBarClock = ({variant}:Props) => {
       clearInterval(timer)
     }
   }, [])
+  if (typeof window == "undefined") {
+    return null;
+  }
   if (variant === "MOBILE") {
     return currentTime;
   }

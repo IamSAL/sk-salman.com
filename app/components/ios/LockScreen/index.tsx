@@ -1,33 +1,46 @@
-import React, { useState } from 'react'
-import StatusBarMobile from '../../status-bar/StatusBarMobile'
+import React, { useRef, useState } from "react"
 
-import DockMobile from '../..//dock/DockMobile'
-import LaunchPad from 'app/apps/Launchpad'
-import BottomBar from './BottomBar'
-import { Drawer, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from 'app/components/ui/Drawer'
-import { Button } from 'app/components/Button/Button'
-import HomeScreen from '../HomeScreen'
+import StatusBarMobile from "app/components/status-bar/StatusBarMobile"
+import { Drawer, DrawerContent, DrawerOverlay } from "app/components/ui/DefaultDrawer"
+import BottomBar from "./BottomBar"
 
 const LockScreen = () => {
-    const [open, setopen] = useState(true)
+    const contentRef = useRef<React.ElementRef<'div'>>(null)
     return (
-        <Drawer open={open} >
-            <DrawerContent onClick={()=>setopen(false)} className='h-full w-full p-0 m-0 absolute top-0 left-0 border-0 z-[99] data-[state=open]:animate-none data-[state=closed]:animate-out data-[state=closed]:slide-out-to-top-0     data-[state=open]:zoom-in-0'>
-                <main className="h-full w-full">
-                    <div className="h-full w-full  bg-white bg-center bg-cover wallpaper">
-                        <StatusBarMobile />
-                        <div className="Date w-full mix-blend-overlay text-center text-white text-opacity-60 text-xl font-medium mt-4 font-['SF Pro Display'] leading-normal tracking-tight">Hi, I am</div>
-                        <div className="Time w-full text-center text-white text-6xl font-normal font-['SF Pro Display'] mt-2">Sk Salman</div>
-                        <BottomBar />
+        <>
+            <Drawer open direction="top" modal onDrag={(e) => {
+                if (contentRef.current) {
+                    contentRef.current.style.opacity = ((e.clientY / window.innerHeight)+0.35).toString();
+                }
 
-                        <div className="Homeindicator w-full h-8 px-36 pt-5 pb-2 justify-center items-center inline-flex absolute bottom-0">
-                            <div className="HomeIndicator w-32 h-1 bg-white rounded-full" />
+            }}
+                onRelease={(e) => {
+                    if (contentRef.current) {
+                        contentRef.current.style.opacity = "1";
+                    }
+
+                }}
+            >
+                <DrawerContent className="border-0 bg-transparent outline-none" ref={contentRef}>
+                    <main className="h-screen w-full border-0" >
+                        <div className="wallpaper h-full  w-full bg-white bg-cover bg-center">
+                            <StatusBarMobile />
+                            <div className="Date font-['SF Pro Display'] mt-4 w-full text-center text-xl font-medium leading-normal tracking-tight text-white text-opacity-60 mix-blend-overlay">
+                                Hi, I am
+                            </div>
+                            <div className="Time font-['SF Pro Display'] mt-2 w-full text-center text-6xl font-normal text-white">
+                                Sk Salman
+                            </div>
+                            <BottomBar />
+
+                            <div className="Homeindicator absolute bottom-0 inline-flex h-8 w-full items-center justify-center px-36 pb-2 pt-5">
+                                <div className="HomeIndicator h-1 w-32 rounded-full bg-white" />
+                            </div>
                         </div>
-                    </div>
-                </main>
-            </DrawerContent>
-        </Drawer>
-
+                    </main>
+                </DrawerContent>
+            </Drawer>
+        </>
     )
 }
 

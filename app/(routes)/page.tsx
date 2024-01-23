@@ -39,8 +39,8 @@ export default function Web() {
 
       <div className="text-black md:hidden h-full">
         <HomeScreen/>
-      
       </div>
+    
     </>
   )
 }

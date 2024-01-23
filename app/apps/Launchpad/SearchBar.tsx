@@ -1,11 +1,12 @@
-import React, { startTransition } from "react"
+import React, { startTransition, useRef } from "react"
+import { MdKeyboardVoice } from "react-icons/md";
 import { useDebounce } from "react-use"
+import IconSearch from "app/assets/icons/System/Search.svg"
 import { useLaunchpadContext } from "./context"
-
 const SearchBar = () => {
   const { setsearchTerm } = useLaunchpadContext()
   const [val, setVal] = React.useState("")
-
+  const ref = useRef<React.ElementRef<'input'>>(null)
   const [, cancel] = useDebounce(
     () => {
       startTransition(() => {
@@ -17,16 +18,15 @@ const SearchBar = () => {
   )
 
   return (
-    <div className="my-12 flex w-full justify-center">
-      <form className="flex items-center" action="#">
+    <div className="flex w-full justify-center items-center">
+      <form className="flex items-center w-full" action="#">
         <label htmlFor="voice-search" className="sr-only">
           Search
         </label>
-        <div className="relative w-full">
-          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-            {/* <IconControl /> */}
-          </div>
+        <div className="relative w-full flex  h-10 items-center justify-between p-2 rounded-lg  bg-white/25  text-sm text-white">
+          <div onClick={() => ref.current?.focus()}> <IconSearch color="white" fontSize={"30px"} /></div>
           <input
+            ref={ref}
             type="text"
             id="voice-search"
             onInput={(e) => {
@@ -38,10 +38,11 @@ const SearchBar = () => {
                 setVal(inputStr)
               }
             }}
-            className="block h-8 w-full rounded-lg border border-gray-600 bg-gray-500 bg-opacity-25 p-2 pl-10 text-sm text-white"
+            className="p-2 block bg-transparent outline-none grow"
             placeholder="Search"
             required
           />
+          <div><MdKeyboardVoice color="white" className="block" size={20} /></div>
         </div>
       </form>
     </div>
