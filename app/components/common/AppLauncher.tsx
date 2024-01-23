@@ -1,5 +1,7 @@
+import { useRouter } from "next/navigation"
 import React, { Children } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import { useWindowSize } from "react-use"
 import { startApp, terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { AppState } from "app/core/redux/redux"
 import { setMaximized } from "app/core/redux/system/system.slice"
@@ -13,12 +15,21 @@ export interface IAppLauncherProps {
 
 const AppLauncher = ({ children, appId }: IAppLauncherProps) => {
   const dispatch = useDispatch()
+  const router = useRouter()
   const app = apps.find((app) => app.id == appId)
   const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
   const runningInstance = runningApps.find((instance) => instance.id === appId)
-
+  const { width } = useWindowSize()
+  const isMobile = width < 1000;
   const launchApp = () => {
+
     if (app) {
+      if (isMobile) {
+        dispatch(startApp(app))
+        router.push(app.id.toString());
+        return;
+
+      }
       switch (app.config.template) {
         case IAppTemplate.IMMERSIVE:
           if (runningInstance) {

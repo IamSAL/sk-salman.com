@@ -38,7 +38,8 @@ export interface IApp {
     website?: string // App's official website URL
   }
   // UI and Layout
-  component: () => JSX.Element // The React component that represents the app
+  component: () => JSX.Element // The React component that represents the app,
+  mobileComponent?: () => JSX.Element // The React component that represents the app
   config: {
     isHidden: boolean
     initTitle?: string // Initial window title

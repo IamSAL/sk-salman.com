@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const konstaConfig = require("konsta/config")
 const { pick, omit } = require("lodash")
 const colors = require("tailwindcss/colors")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = konstaConfig({
   darkMode: "class",
   content: [
     "./index.html",
@@ -87,4 +88,4 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-}
+})

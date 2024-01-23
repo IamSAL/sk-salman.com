@@ -8,6 +8,7 @@ const initialState: ISystemState = {
   widgets: [],
   DockStatus: DOCK_STATUS.NORMAL,
   isLocked: true,
+  size: "mobile",
 }
 
 export const systemSlice = createSlice({
@@ -53,6 +54,7 @@ interface ISystemState {
   widgets: Array<ISystemWidget>
   DockStatus: DOCK_STATUS
   isLocked: boolean
+  size: "mobile" | "desktop" | "tab"
 }
 export interface General {
   Appearance: string

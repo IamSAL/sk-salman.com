@@ -12437,6 +12437,11 @@ klona@^2.0.4:
   resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.6.tgz#85bffbf819c03b2f53270412420a4555ef882e22"
   integrity sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==
 
+konsta@^3.1.2:
+  version "3.1.2"
+  resolved "https://registry.yarnpkg.com/konsta/-/konsta-3.1.2.tgz#860f24a41c9e5f2667966ff8203ea585a7305adf"
+  integrity sha512-Tle0sd+awLdJHeDaCDXjhcJdABauV6bUcWpFyJJGr8WcJbw8Klfdhwi6txam4ljggkuKtPtzictQwg9fdYUVBQ==
+
 language-subtag-registry@~0.3.2:
   version "0.3.22"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.22.tgz#2e1500861b2e457eba7e7ae86877cbd08fa1fd1d"

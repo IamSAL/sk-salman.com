@@ -3,6 +3,7 @@
 import AppStore from "app/apps/AppStore"
 import Calendar from "app/apps/Calendar"
 import Contacts from "app/apps/Contacts"
+import ContactsMobile from "app/apps/Contacts/ContactsMobile"
 import Finder from "app/apps/Finder"
 import LaunchPad from "app/apps/Launchpad"
 import Mail from "app/apps/Mail"
@@ -13,6 +14,7 @@ import Safari from "app/apps/Safari"
 import SystemPreferences from "app/apps/SystemPreferences"
 import VsCode from "app/apps/VsCode"
 import WidgetsEditor from "app/apps/WidgetsEditor"
+import ComponentMobileTemp from "app/components/common/ComponentMobileTemp"
 import WidgetWeather from "app/components/widgets-bar/WidgetWeather"
 import { IApp, IAppTemplate } from "types"
 import { generateRandomApps, generateRandomWidgets } from "./generators"
@@ -26,6 +28,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/ios-weather.png",
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Weather", // The title of the app
       description: "Weather.com forecasts", // A short description or tooltip
@@ -74,6 +77,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Finder.png",
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Finder", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -99,6 +103,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Launchpad.png",
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Launchpad", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -125,6 +130,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/App-store.png",
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "AppStore", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -150,6 +156,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Mail.png",
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Mail", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -176,6 +183,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Safari.png",
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Launchpad", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -207,6 +215,7 @@ export const apps: IApp[] = [
       version: "0.0.1", // App version number
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     component: Photos,
     config: {
       isHidden: false,
@@ -224,6 +233,7 @@ export const apps: IApp[] = [
     id: 6,
     name: "System Preferences",
     status: {},
+    mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
       png: "/static/images/icons/PNG/Settings.png",
@@ -253,6 +263,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Calendar.png",
     },
     status: {},
+    mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Calendar", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -275,6 +286,7 @@ export const apps: IApp[] = [
     id: 8,
     name: "Messages",
     status: {},
+    mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/app-icons-messages.svg",
       png: "/static/images/icons/PNG/Messages.png",
@@ -301,6 +313,7 @@ export const apps: IApp[] = [
     id: 9,
     name: "Maps",
     status: {},
+    mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/app-icons-maps.svg",
       png: "/static/images/icons/PNG/Maps.png",
@@ -326,6 +339,7 @@ export const apps: IApp[] = [
     id: 10,
     name: "Contacts",
     status: {},
+
     icon: {
       svg: "/static/images/icons/app-icons-contacts.svg",
       png: "/static/images/icons/PNG/Contacts.png",
@@ -336,6 +350,7 @@ export const apps: IApp[] = [
       version: "0.0.1", // App version number
     },
     component: Contacts,
+    mobileComponent: ContactsMobile,
     config: {
       isHidden: false,
       initTitle: "Contacts",
@@ -352,6 +367,7 @@ export const apps: IApp[] = [
     id: 11,
     name: "Visual Studio Code",
     status: {},
+    mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
       png: "/static/images/icons/PNG/vscode-app.png",
@@ -377,6 +393,7 @@ export const apps: IApp[] = [
     id: 12,
     name: "Widgets Editor",
     status: {},
+    mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
       png: "/static/images/icons/PNG/widget-icon.png",
