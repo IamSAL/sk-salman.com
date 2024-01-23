@@ -1,4 +1,3 @@
-
 .dock-container {
   position: absolute;
   bottom: 12px;
@@ -34,7 +33,15 @@
 }
 
 .wallpaper {
-  background-image: url('https://9to5mac.com/wp-content/uploads/sites/6/2020/06/wwdc6.jpg?quality=82&strip=all');
+  background-image: url("https://9to5mac.com/wp-content/uploads/sites/6/2020/06/wwdc6.jpg?quality=82&strip=all");
+}
+
+.wallpaper-sal-blue {
+  background-image: url("/static/images/wallpapers/sal_blue.jpg");
+}
+
+.wallpaper-sal-green {
+  background-image: url("/static/images/wallpapers/sal_green.jpg");
 }
 
 .bg-frosted {

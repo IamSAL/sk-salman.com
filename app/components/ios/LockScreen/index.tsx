@@ -6,11 +6,12 @@ import BottomBar from "./BottomBar"
 
 const LockScreen = () => {
     const contentRef = useRef<React.ElementRef<'div'>>(null)
+
     return (
         <>
             <Drawer open direction="top" modal onDrag={(e) => {
                 if (contentRef.current) {
-                    contentRef.current.style.opacity = ((e.clientY / window.innerHeight)+0.35).toString();
+                    contentRef.current.style.opacity = ((e.clientY / window.innerHeight) + 0.35).toString();
                 }
 
             }}
@@ -23,7 +24,7 @@ const LockScreen = () => {
             >
                 <DrawerContent className="border-0 bg-transparent outline-none" ref={contentRef}>
                     <main className="h-screen w-full border-0" >
-                        <div className="wallpaper h-full  w-full bg-white bg-cover bg-center">
+                        <div className="wallpaper-sal-green h-full  w-full bg-white bg-cover bg-center">
                             <StatusBarMobile />
                             <div className="Date font-['SF Pro Display'] mt-4 w-full text-center text-xl font-medium leading-normal tracking-tight text-white text-opacity-60 mix-blend-overlay">
                                 Hi, I am

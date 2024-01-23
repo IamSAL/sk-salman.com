@@ -25,7 +25,7 @@ const AppSlider = () => {
         ignoreWidthPercentage: 5,
     })
 
-    const [appChunks, setappChunks] = useState<IApp[][]>(_.chunk(apps, CHUNK_SIZE))
+    const [appChunks, setappChunks] = useState<IApp[][]>([_.take(apps, CHUNK_SIZE)])
     const { searchTerm } = useLaunchpadContext()
 
     useEffect(() => {
