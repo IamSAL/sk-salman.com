@@ -2,21 +2,21 @@
 import Link from "next/link"
 import React from "react"
 import { useSelector } from "react-redux"
-import useMousePosition from "app/helpers/hooks/useMousePosition"
 import { AppState } from "app/core/redux/redux"
+import useMousePosition from "app/helpers/hooks/useMousePosition"
 import { apps } from "app/misc/placeholder-data/apps"
 import { DOCK_STATUS } from "types"
 import DockItem from "./DockItem"
 // million-ignore
 const Dock = () => {
   const { isTouchingBottom } = useMousePosition({ offsetTop: 0, offsetBottom: 100 })
-  const { isMaximized, DockStatus } = useSelector((state: AppState) => state.system)
+  const { isMaximized, DockStatus, isLocked } = useSelector((state: AppState) => state.system)
   const isDockHovered = false
 
   const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
   const shouldShow =
     (isTouchingBottom || !isMaximized || isDockHovered || DockStatus === DOCK_STATUS.STICKY) &&
-    DockStatus !== DOCK_STATUS.HIDDEN
+    DockStatus !== DOCK_STATUS.HIDDEN && !isLocked
 
   const allDockApps = runningApps
     .concat(apps.filter((app) => (app.config.isDefault || app.config.isPinned) && !app.config.isHidden))

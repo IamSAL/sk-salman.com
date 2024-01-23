@@ -23,7 +23,7 @@ const SearchBar = () => {
         <label htmlFor="voice-search" className="sr-only">
           Search
         </label>
-        <div className="relative w-full flex  h-10 items-center justify-between p-2 rounded-lg  bg-white/25  text-sm text-white">
+        <div className="relative w-full flex  h-10 md:h-8 md:border border-white/25 items-center justify-between p-2 rounded-lg  bg-white/25  text-sm text-white">
           <div onClick={() => ref.current?.focus()}> <IconSearch color="white" fontSize={"30px"} /></div>
           <input
             ref={ref}
@@ -42,7 +42,7 @@ const SearchBar = () => {
             placeholder="Search"
             required
           />
-          <div><MdKeyboardVoice color="white" className="block" size={20} /></div>
+          <div className="md:hidden"><MdKeyboardVoice color="white" className="block" size={20} /></div>
         </div>
       </form>
     </div>

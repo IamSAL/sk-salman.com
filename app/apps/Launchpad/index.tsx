@@ -16,6 +16,7 @@ import { LaunchpadContext } from "./context"
 import SearchBar from "./SearchBar"
 
 
+import SearchBarDesktop from "./SearchBarDesktop"
 import SearchBarMobile from "./SearchBarMobile"
 
 
@@ -88,7 +89,7 @@ const LaunchPad = ({ variant }: Props) => {
           id="content"
           className="absolute top-0 left-0 w-full h-full z-20"
         >
-          {variant != "MOBILE" && <SearchBar />}
+          {variant != "MOBILE" && <SearchBarDesktop />}
           <AppSlider />
           {variant === "MOBILE" && <div onClick={() => setisSearchFocused(true)}>
             <SearchBarMobile /></div>}

@@ -1,20 +1,20 @@
 "use client"
 import { Metadata } from "next"
 import { useSelector } from "react-redux"
+import { useWindowSize } from "react-use"
 import { AppWindow, Dock, StatusBar } from "app/components"
 import AppImmersive from "app/components/app-window/AppImmersive"
+import HomeScreen from "app/components/ios/HomeScreen"
+import DesktopLockScreen from "app/components/lock-screen"
 import { AppState } from "app/core/redux/redux"
 import { cn } from "app/helpers/utils"
 
 import { IAppTemplate } from "types"
-import { useWindowSize } from "react-use"
-import HomeScreen from "app/components/ios/HomeScreen"
-import LockScreen from "app/components/ios/LockScreen"
 
 
 export default function Web() {
- const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
-  const {width}=useWindowSize()
+  const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
+
   return (
     <>
       <div
@@ -22,6 +22,7 @@ export default function Web() {
           `bg-[url('/static/images/wallpapers/dark.svg')] w-screen h-screen bg-no-repeat bg-cover relative md:block hidden`
         )}
       >
+        <DesktopLockScreen />
         <StatusBar />
         <div className="AppsContainer">
           {runningApps.map((app, idx) => {
@@ -37,10 +38,10 @@ export default function Web() {
 
       </div>
 
-      <div className="text-black md:hidden h-full">
-        <HomeScreen/>
+      <div className="text-black mobile-only block md:hidden h-full">
+        <HomeScreen />
       </div>
-    
+
     </>
   )
 }

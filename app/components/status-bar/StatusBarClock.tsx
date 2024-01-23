@@ -1,6 +1,8 @@
 "use client"
 import NiceModal from "@ebay/nice-modal-react"
 import React, { useEffect, useState } from "react"
+import { useSelector } from "react-redux"
+import { AppState } from "app/core/redux/redux"
 import { CONSTANTS } from "app/helpers/constants"
 import StatusBarItem from "./StatusBarItem"
 type Props = {
@@ -8,6 +10,7 @@ type Props = {
 }
 const StatusBarClock = ({ variant }: Props) => {
   const [currentTime, setcurrentTime] = useState(new Date().toLocaleTimeString())
+  const isLocked = useSelector((state: AppState) => state.system.isLocked)
   useEffect(() => {
     const timer = setInterval(() => {
       setcurrentTime(new Date().toLocaleTimeString())
@@ -27,7 +30,10 @@ const StatusBarClock = ({ variant }: Props) => {
   return (
     <div
       onClick={async () => {
-        await NiceModal.show(CONSTANTS.MODALS.WIDGETS_BAR)
+        if (!isLocked) {
+          await NiceModal.show(CONSTANTS.MODALS.WIDGETS_BAR)
+        }
+
       }}
     >
       <StatusBarItem type="text" label={currentTime} className="min-w-[90px]" />

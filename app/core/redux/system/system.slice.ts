@@ -7,6 +7,7 @@ const initialState: ISystemState = {
   isMaximized: false,
   widgets: [],
   DockStatus: DOCK_STATUS.NORMAL,
+  isLocked: true,
 }
 
 export const systemSlice = createSlice({
@@ -25,6 +26,12 @@ export const systemSlice = createSlice({
     addWidget: (state, action: PayloadAction<ISystemWidget>) => {
       return { ...state, widgets: [...state.widgets, { id: uuid(), ...action.payload }] }
     },
+    lockScreen: (state) => {
+      return { ...state, isLocked: true }
+    },
+    unlockScreen: (state) => {
+      return { ...state, isLocked: false }
+    },
     removeWidget: (state, action: PayloadAction<ISystemWidget>) => {
       return {
         ...state,
@@ -34,7 +41,8 @@ export const systemSlice = createSlice({
   },
 })
 
-export const { setMaximized, addWidget, removeWidget, setWidgets, setDockStatus } = systemSlice.actions
+export const { setMaximized, addWidget, removeWidget, setWidgets, setDockStatus, lockScreen, unlockScreen } =
+  systemSlice.actions
 export default systemSlice.reducer
 export type ISystemWidget = { id?: string; widget: IWidget; size: ISizes; order?: number }
 interface ISystemState {
@@ -44,6 +52,7 @@ interface ISystemState {
   Sound: Sound
   widgets: Array<ISystemWidget>
   DockStatus: DOCK_STATUS
+  isLocked: boolean
 }
 export interface General {
   Appearance: string

@@ -6,6 +6,7 @@ interface BoxCountOptions {
     ignoreWidthPercentage: number;
     ignoreHeightPercentage: number;
     gapPercentage: number;
+    mode: "screen" | "container"
 }
 
 const useBoxCount = ({
@@ -20,6 +21,7 @@ const useBoxCount = ({
     const calculateTotalBoxes = () => {
         const screenWidth = window.innerWidth;
         const screenHeight = window.innerHeight;
+
 
         const effectiveScreenWidth = screenWidth * (1 - ignoreWidthPercentage / 100);
         const effectiveScreenHeight = screenHeight * (1 - ignoreHeightPercentage / 100);

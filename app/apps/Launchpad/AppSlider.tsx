@@ -23,6 +23,7 @@ const AppSlider = () => {
         gapPercentage: 2.5,
         ignoreHeightPercentage: 25,
         ignoreWidthPercentage: 5,
+        mode: "screen"
     })
 
     const [appChunks, setappChunks] = useState<IApp[][]>([_.take(apps, CHUNK_SIZE)])
@@ -59,7 +60,7 @@ const AppSlider = () => {
                     })}
                 </Swiper>
             ) : (
-                <p className="flex h-[60%]  items-center justify-center text-center text-4xl font-light text-white fade-in-10">
+                <p className="flex h-[60%]  items-center justify-center text-center md:text-4xl  font-light text-white fade-in-10">
                     No Results
                 </p>
             )}
