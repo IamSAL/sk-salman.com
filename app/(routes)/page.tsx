@@ -1,7 +1,5 @@
 "use client"
-import { Metadata } from "next"
 import { useSelector } from "react-redux"
-import { useWindowSize } from "react-use"
 import { AppWindow, Dock, StatusBar } from "app/components"
 import AppImmersive from "app/components/app-window/AppImmersive"
 import HomeScreen from "app/components/ios/HomeScreen"

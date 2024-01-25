@@ -5,7 +5,9 @@ import RightSide from './RightSide';
 
 
 const StatusBarMobile = () => {
-
+    if (typeof window === "undefined") {
+        return null;
+    }
     return (
         <>
 
