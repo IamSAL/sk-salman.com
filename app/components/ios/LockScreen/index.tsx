@@ -15,6 +15,7 @@ const LockScreen = () => {
     const isMobile = width < 1000
     const isLocked = useSelector((state: AppState) => state.system.isLocked)
     const dispatch = useDispatch()
+    console.log({ isLocked })
     return (
         <>
             {isMobile && (

@@ -24,12 +24,6 @@ const AppLauncher = ({ children, appId }: IAppLauncherProps) => {
   const launchApp = () => {
 
     if (app) {
-      if (isMobile) {
-        dispatch(startApp(app))
-        router.push(app.id.toString());
-        return;
-
-      }
       switch (app.config.template) {
         case IAppTemplate.IMMERSIVE:
           if (runningInstance) {

@@ -149,8 +149,8 @@ const AppWindowMobile = React.memo((props: IAppProps) => {
 
   return (
     <AppContext.Provider value={appContextValues}>
-      <div className="absolute top-0 w-full z-99">      <StatusBarMobile /></div>
-      <div className="relative h-full w-full ">
+      <div className=" w-full z-[999] bg-black/70 h-14 bg-">      <StatusBarMobile /></div>
+      <div className="relative h-full w-full">
         <AppBody
           component={app.mobileComponent}
           updateProgramData={updateProgramData(disk)}

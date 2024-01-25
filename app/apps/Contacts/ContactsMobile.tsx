@@ -6,20 +6,22 @@ import {
     NavbarBackLink,
     Page,
 } from 'konsta/react';
-import { useRouter } from 'next/navigation';
 import React from 'react';
+import { useAppContext } from 'app/components/app-window/appContext';
 
 export default function ContactsMobile() {
     const isPreview = document.location.href.includes('examplePreview');
-    const router = useRouter()
+    const { onTerminate } = useAppContext()
     return (
         <Page>
             <Navbar
+
                 title="Contacts List"
+
                 left={!isPreview && <NavbarBackLink onClick={() => {
-                    router.back()
+                    onTerminate()
                 }} />}
-            />
+            ></Navbar>
             <List strongIos>
                 <ListGroup >
                     <ListItem title="A" groupTitle contacts />

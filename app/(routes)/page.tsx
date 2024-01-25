@@ -18,6 +18,7 @@ export default function Web() {
   return (
     <>
       <div
+
         className={cn(
           `bg-[url('/static/images/wallpapers/dark.svg')] w-screen h-screen bg-no-repeat bg-cover relative md:block hidden`
         )}
@@ -38,7 +39,10 @@ export default function Web() {
 
       </div>
 
-      <div className="text-black mobile-only block md:hidden h-full">
+      <div onContextMenu={(e) => {
+        e.preventDefault();
+      }
+      } className="text-black mobile-only block md:hidden h-full">
         <HomeScreen />
       </div>
 
