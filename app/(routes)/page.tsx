@@ -41,7 +41,7 @@ export default function Web() {
       <div onContextMenu={(e) => {
         e.preventDefault();
       }
-      } className="text-black mobile-only block md:hidden h-full bg-white">
+      } className="text-black mobile-only block md:hidden h-full ">
         <HomeScreen />
       </div>
       <script src="//cdn.jsdelivr.net/npm/eruda"></script>

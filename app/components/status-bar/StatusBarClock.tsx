@@ -11,7 +11,7 @@ type Props = {
   variant?: "MOBILE"
 }
 const StatusBarClock = ({ variant }: Props) => {
-  const [currentTime, setcurrentTime] = useState(new Date().toLocaleTimeString())
+  const [currentTime, setcurrentTime] = useState(DateTimeUtil.getCurrentTime())
   const isLocked = useSelector((state: AppState) => state.system.isLocked)
   useEffect(() => {
     const timer = setInterval(() => {

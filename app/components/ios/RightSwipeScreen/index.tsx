@@ -30,8 +30,8 @@ const RightSwipeScreen = ({ onClose, onSwiping }: Props) => {
             <div {...handlers} className="wallpaper h-full pt-4  w-full bg-white bg-cover bg-center">
                 <div className="w-full h-full flex justify-center items-center">
                     <div onClick={() => {
-                        onClose?.()
                         dispatch(lockScreen())
+                        onClose?.()
 
                     }}
                         className="p-5 bg-black/30 rounded-full"

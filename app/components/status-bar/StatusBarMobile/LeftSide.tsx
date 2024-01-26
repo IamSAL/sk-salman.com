@@ -9,19 +9,22 @@ import StatusBarClock from "../StatusBarClock"
 const LeftSide = () => {
     const swipeBarRef = useRef<React.ElementRef<"div">>({} as any)
     const [lastTouchY, setLastTouchY] = useState(0)
-
+    const [isScreenVisible, setisScreenVisible] = useState(false)
     const openNotificationBar = () => {
         swipeBarRef.current.style.top = 0 + "px"
         swipeBarRef.current.style.transitionDuration = "0.5s"
         swipeBarRef.current.style.opacity = "1"
+        setisScreenVisible(true)
     }
     const closeNotificationBar = () => {
         swipeBarRef.current.style.top = "-" + window.screen.height + "px"
         swipeBarRef.current.style.transitionDuration = "0.5s"
         swipeBarRef.current.style.opacity = "0"
+        setisScreenVisible(false)
     }
 
     const moveNotificationBar = (e: SwipeEventData) => {
+        setisScreenVisible(true)
         const touchY = e.absY
         setLastTouchY(touchY || 0)
         swipeBarRef.current.style.top = ((touchY || 0) - window.screen.height).toString() + "px"
@@ -63,6 +66,7 @@ const LeftSide = () => {
                 style={{
                     top: -window.screen.height,
                     left: 0,
+                    display: isScreenVisible ? "block" : "none"
                 }}
             >
                 <div className="h-screen bg-black/40">
