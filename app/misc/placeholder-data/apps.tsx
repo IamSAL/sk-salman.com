@@ -15,6 +15,7 @@ import SystemPreferences from "app/apps/SystemPreferences"
 import VsCode from "app/apps/VsCode"
 import WidgetsEditor from "app/apps/WidgetsEditor"
 import ComponentMobileTemp from "app/components/common/ComponentMobileTemp"
+import RecentAppScreen from "app/components/ios/RecentAppScreen"
 import WidgetWeather from "app/components/widgets-bar/WidgetWeather"
 import { IApp, IAppTemplate } from "types"
 import { generateRandomApps, generateRandomWidgets } from "./generators"
@@ -394,6 +395,32 @@ export const apps: IApp[] = [
     name: "Widgets Editor",
     status: {},
     mobileComponent: ComponentMobileTemp,
+    icon: {
+      svg: "/static/images/icons/ios-weather.svg",
+      png: "/static/images/icons/PNG/widget-icon.png",
+    },
+    metadata: {
+      title: "Widgets", // The title of the app
+      description: "System default launcher", // A short description or tooltip
+      version: "0.0.1", // App version number
+    },
+    component: WidgetsEditor as any,
+    config: {
+      isHidden: false,
+      initTitle: "Widgets",
+      initWindowWidth: 640,
+      initWindowHeight: 480,
+      startMaximized: true,
+      isPinned: true,
+      isDefault: true,
+      template: IAppTemplate.IMMERSIVE,
+    },
+  },
+  {
+    id: 101,
+    name: "Recent Apps",
+    status: {},
+    mobileComponent: RecentAppScreen,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
       png: "/static/images/icons/PNG/widget-icon.png",

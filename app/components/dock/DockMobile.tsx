@@ -1,13 +1,13 @@
 
+import _ from "lodash"
 import Link from "next/link"
 import React from "react"
 import { useSelector } from "react-redux"
-import useMousePosition from "app/helpers/hooks/useMousePosition"
 import { AppState } from "app/core/redux/redux"
+import useMousePosition from "app/helpers/hooks/useMousePosition"
 import { apps } from "app/misc/placeholder-data/apps"
 import { DOCK_STATUS } from "types"
 import DockItem from "./DockItem"
-import _ from "lodash"
 // million-ignore
 const Dock = () => {
     const { isTouchingBottom } = useMousePosition({ offsetTop: 0, offsetBottom: 100 })
@@ -28,15 +28,15 @@ const Dock = () => {
     const defaultApps = allDockApps.filter((app) => app.config.isDefault && app.config.isPinned)
 
     return (
-        <div className="dock-container z-[9]" style={{ display: shouldShow ? "flex" : "none" }}>
+        <div className="bg-red-500 " style={{ display: shouldShow ? "flex" : "none" }}>
             <div className="w-96 h-24 flex items-center justify-center gap-2.5 mx-2 bg-neutral-100/50 dark:bg-black/20  rounded-3xl backdrop-blur-3xl">
                 <div className="flex w-full items-center justify-center">
                     <div className="flex justify-center gap-4 ">
-                        {_.take(allDockApps,4) .map((app, idx) => (
+                        {_.take(allDockApps, 4).map((app, idx) => (
                             <DockItem key={app.name} app={app} />
                         ))}
                     </div>
-                  
+
                 </div>
             </div>
         </div>
