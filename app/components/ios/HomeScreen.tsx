@@ -24,29 +24,27 @@ const HomeScreen = () => {
     const RecentApp = apps.find((app) => app.id == 101)
     const handles = useSwipeable({
         onSwipedUp: (e) => {
-
-            console.log("swipe up", e.deltaY)
+            // const swipedFromBottom = (window.screen.height - e.initial[1])! < 150;
             if (e.deltaY < -50 && RecentApp) {
-                console.log("start app")
                 dispatch(startApp(RecentApp))
             }
         }
     })
     return (
-        <div {...handles} className="relative h-full w-full wallpaper bg-cover bg-center flex flex-col justify-around">
-            <div className="pb-14 h-[5vh] overflow-hidden bg-red-300">
+        <div className="relative h-full w-full wallpaper bg-cover bg-center flex flex-col justify-between ">
+            <LockScreen />
+            <AppScreen />
+            <div className="pb-14 overflow-hidden ">
                 <div className="absolute w-full top-0 left-0 z-[100]">
                     <StatusBarMobile />
                 </div>
             </div>
-            <LockScreen />
-            <AppScreen />
 
-            <div className="bg-green-500">
-                <div className="h-[75vh] overflow-hidden">
+            <div className="flex flex-col justify-between">
+                <div className="h-[72vh] overflow-hidden ">
                     <LaunchPad variant="MOBILE" />
                 </div>
-                <div className="h-[20vh]  overflow-hidden relative flex flex-col justify-center bg-yellow-500">
+                <div {...handles} className="h-[20vh]  overflow-hidden relative ">
                     <DockMobile />
                 </div>
             </div>

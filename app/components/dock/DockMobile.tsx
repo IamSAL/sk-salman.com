@@ -15,7 +15,7 @@ const Dock = () => {
     const isDockHovered = false
 
     const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
-    const shouldShow =
+    const shouldShow = true ||
         (isTouchingBottom || !isMaximized || isDockHovered || DockStatus === DOCK_STATUS.STICKY) &&
         DockStatus !== DOCK_STATUS.HIDDEN
 
@@ -28,7 +28,7 @@ const Dock = () => {
     const defaultApps = allDockApps.filter((app) => app.config.isDefault && app.config.isPinned)
 
     return (
-        <div className="bg-red-500 " style={{ display: shouldShow ? "flex" : "none" }}>
+        <div className="w-full justify-center" style={{ display: shouldShow ? "flex" : "none" }}>
             <div className="w-96 h-24 flex items-center justify-center gap-2.5 mx-2 bg-neutral-100/50 dark:bg-black/20  rounded-3xl backdrop-blur-3xl">
                 <div className="flex w-full items-center justify-center">
                     <div className="flex justify-center gap-4 ">
