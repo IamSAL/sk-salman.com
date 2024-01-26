@@ -1,4 +1,5 @@
 
+"use client"
 import React, { useRef } from 'react'
 import { SwipeEventData, useSwipeable } from "react-swipeable"
 import BottomBar from '../LockScreen/BottomBar'
@@ -20,8 +21,9 @@ const LeftSwipeScreen = ({ onClose, onSwiping }: Props) => {
         },
 
     });
+
     return (
-        <main className="h-screen w-full border-0" ref={container}>
+        <div className="h-screen w-full border-0" ref={container}>
             <div {...handlers} className="wallpaper h-full pt-4  w-full bg-white bg-cover bg-center">
                 <div className="Date font-['SF Pro Display'] w-full text-center text-xl font-medium leading-normal tracking-tight text-white text-opacity-60 mix-blend-overlay">
                     Hi, I am
@@ -35,7 +37,7 @@ const LeftSwipeScreen = ({ onClose, onSwiping }: Props) => {
                     <div className="HomeIndicator h-1 w-32 rounded-full bg-white" />
                 </div>
             </div>
-        </main>
+        </div>
     )
 }
 

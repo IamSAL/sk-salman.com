@@ -32,6 +32,7 @@ const RightSwipeScreen = ({ onClose, onSwiping }: Props) => {
                     <div onClick={() => {
                         onClose?.()
                         dispatch(lockScreen())
+
                     }}
                         className="p-5 bg-black/30 rounded-full"
                     ><TbLock size={25} /></div>

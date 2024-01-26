@@ -21,6 +21,7 @@ export default function Web() {
           `bg-[url('/static/images/wallpapers/dark.svg')] w-screen h-screen bg-no-repeat bg-cover relative md:block hidden`
         )}
       >
+
         <DesktopLockScreen />
         <StatusBar />
         <div className="AppsContainer">
@@ -40,9 +41,10 @@ export default function Web() {
       <div onContextMenu={(e) => {
         e.preventDefault();
       }
-      } className="text-black mobile-only block md:hidden h-full">
+      } className="text-black mobile-only block md:hidden h-full bg-white">
         <HomeScreen />
       </div>
+      <script src="//cdn.jsdelivr.net/npm/eruda"></script>
 
     </>
   )

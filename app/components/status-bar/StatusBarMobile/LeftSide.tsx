@@ -31,7 +31,7 @@ const LeftSide = () => {
 
     const handlers = useSwipeable({
         onSwiping: (e) => {
-
+            console.log("swiped left")
             moveNotificationBar(e)
         },
         onSwiped: (e) => {
@@ -57,7 +57,7 @@ const LeftSide = () => {
                 ref={swipeBarRef}
                 className={cn("absolute z-[9999] w-full")}
                 style={{
-                    top: -window.innerHeight,
+                    top: -window.screen.height,
                     left: 0,
                 }}
             >
