@@ -40,7 +40,7 @@ const StatusBarClock = ({ variant }: Props) => {
 
       }}
     >
-      <StatusBarItem type="text" label={currentTime} className="min-w-[90px] dark:text-black" />
+      <StatusBarItem type="text" label={currentTime} className="min-w-[90px] text-white" />
     </div>
   )
 }

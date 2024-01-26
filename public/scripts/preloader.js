@@ -11,8 +11,7 @@ function trackPageLoadingProgress(callback) {
 
     // Check if all resources are loaded
     if (loadedResources === totalResources) {
-      // All resources are loaded
-      // You can perform any additional actions here
+      console.log("all resource loaded")
     }
   }
 
@@ -44,6 +43,7 @@ function trackPageLoadingProgress(callback) {
       progressBar.style.width = `100%`
     }
     if (loader) {
+      console.log("loader found")
       setTimeout(() => {
         loader.classList.add(...["duration-1000", "opacity-0"])
       }, 1000)
@@ -54,7 +54,6 @@ function trackPageLoadingProgress(callback) {
   })
 }
 
-// Example of using the function
 trackPageLoadingProgress((percentage) => {
   const logo = document.getElementById("preloader-logo")
   const progressBar = document.querySelector("#preloader-progress")

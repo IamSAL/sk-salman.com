@@ -1,4 +1,5 @@
 "use client"
+import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { AppWindow, Dock, StatusBar } from "app/components"
 import AppImmersive from "app/components/app-window/AppImmersive"
@@ -12,7 +13,23 @@ import { IAppTemplate } from "types"
 
 export default function Web() {
   const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
-
+  useEffect(() => {
+    const progressBar = document.querySelector("#preloader-progress")
+    const loader = document.getElementById("globalLoader")
+    if (progressBar) {
+      //@ts-expect-error
+      progressBar.style.width = `100%`
+    }
+    if (loader) {
+      setTimeout(() => {
+        loader.classList.add(...["duration-1000", "opacity-0"])
+      }, 1000)
+      setTimeout(() => {
+        loader.remove()
+      }, 2000)
+    }
+    return () => { }
+  }, [])
   return (
     <>
       <div
