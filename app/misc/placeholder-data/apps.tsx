@@ -1,6 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 
 import AppStore from "app/apps/AppStore"
+import Blog from "app/apps/Blog"
+import BlogMobile from "app/apps/Blog/BlogMobile"
 import Calendar from "app/apps/Calendar"
 import Contacts from "app/apps/Contacts"
 import ContactsMobile from "app/apps/Contacts/ContactsMobile"
@@ -392,6 +394,32 @@ export const apps: IApp[] = [
     },
   },
   {
+    id: 111,
+    name: "Blog",
+    status: {},
+    mobileComponent: BlogMobile,
+    icon: {
+      svg: "/static/images/icons/ios-weather.svg",
+      png: "/static/images/icons/PNG/hashnode.png",
+    },
+    metadata: {
+      title: "Blog", // The title of the app
+      description: "Salman's blog at hashnode", // A short description or tooltip
+      version: "0.0.1", // App version number
+    },
+    component: Blog,
+    config: {
+      isHidden: false,
+      initTitle: "Blog",
+      initWindowWidth: 640,
+      initWindowHeight: 480,
+      startMaximized: true,
+      isPinned: true,
+      isDefault: true,
+      template: IAppTemplate.WINDOW,
+    },
+  },
+  {
     id: 12,
     name: "Widgets Editor",
     status: {},
@@ -438,7 +466,7 @@ export const apps: IApp[] = [
       initWindowWidth: 640,
       initWindowHeight: 480,
       startMaximized: true,
-      isPinned: true,
+      isPinned: false,
       isDefault: true,
       template: IAppTemplate.IMMERSIVE,
     },
