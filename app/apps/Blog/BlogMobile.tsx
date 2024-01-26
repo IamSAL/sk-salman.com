@@ -11,7 +11,7 @@ import React from 'react';
 
 import { useAppContext } from 'app/components/app-window/appContext';
 
-
+//TODO: Embed hasnode react tw template
 const BlogMobile = () => {
     const isPreview = document.location.href.includes('examplePreview');
     const { onTerminate } = useAppContext()
