@@ -1,6 +1,6 @@
 import _ from 'lodash'
 import Image from "next/image"
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useSwipeable } from 'react-swipeable'
 import { Pagination } from 'swiper/modules'
@@ -16,18 +16,18 @@ type Props = {
 
 }
 const RecentAppScreen = () => {
-  const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
   const dispatch = useDispatch();
-  const { app: currentApp } = useAppContext()
+  const recentAppIDs = useSelector((state: AppState) => state.memory.recentAppIDs)
   const handles = useSwipeable({
     onSwipedDown: (e) => {
-      console.log(e)
-      if (e.deltaY > 50 && currentApp) {
-        dispatch(terminateApp(currentApp.id))
+      if (e.deltaY > 50) {
+        //close recent app
+        dispatch(terminateApp(101))
       }
     }
   })
-  const recentApps = runningApps.filter(app => app.id != currentApp?.id)
+
+  const recentApps = useMemo(() => apps.filter(app => recentAppIDs.find(id => id === app.id) && app.id !== 101), [recentAppIDs])
   return (
     <div {...handles} className='h-screen w-screen  absolute top-0 left-0  py-5 '>
       {

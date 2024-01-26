@@ -20,18 +20,16 @@ const AppLauncher = ({ children, appId }: IAppLauncherProps) => {
   const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
   const runningInstance = runningApps.find((instance) => instance.id === appId)
   const { width } = useWindowSize()
+  const isMobile = width < 1000;
   const launchApp = () => {
 
     if (app) {
-
       switch (app.config.template) {
         case IAppTemplate.IMMERSIVE:
           if (runningInstance) {
             dispatch(terminateApp(app.id))
           }
-          break;
         case IAppTemplate.WINDOW:
-          console.log("hit case 2")
           //close all immersive apps
           runningApps.forEach((runningApp) => {
             if (runningApp.config.template === IAppTemplate.IMMERSIVE) {

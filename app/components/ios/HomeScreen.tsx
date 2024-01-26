@@ -1,5 +1,5 @@
 import _ from "lodash"
-import React from "react"
+import React, { useRef } from "react"
 
 import { useDispatch, useSelector } from "react-redux"
 import { useSwipeable } from "react-swipeable"
@@ -17,16 +17,23 @@ const HomeScreen = () => {
     const foregroundApp = _.last(runningApps)
     const dispatch = useDispatch();
     const RecentApp = apps.find((app) => app.id == 101)
+    const [val, setVal] = React.useState("")
+    const ref = useRef<React.ElementRef<'div'>>({} as any)
     const handles = useSwipeable({
-        onSwipedUp: (e) => {
+        onSwiping: (e) => {
             // const swipedFromBottom = (window.screen.height - e.initial[1])! < 150;
+            //ref.current.style.filter = `blur(${e.velocity}px)`
             if (e.deltaY < -50 && RecentApp) {
                 dispatch(startApp(RecentApp))
             }
+        },
+        onSwiped: () => {
+            //ref.current.style.filter = `blur(${0}px)`
         }
+
     })
     return (
-        <div className="relative h-full w-full wallpaper bg-cover bg-center flex flex-col justify-between ">
+        <div className="relative h-full w-full wallpaper bg-cover bg-center flex flex-col justify-between " ref={ref}>
             <LockScreen />
             <AppScreen />
             <div className="pb-14 overflow-hidden ">

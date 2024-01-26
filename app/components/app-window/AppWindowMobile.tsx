@@ -61,29 +61,7 @@ const AppWindowMobile = React.memo((props: IAppProps) => {
   })
   const [oldDimensions, setoldDimensions] = useState(dimensions)
 
-  const handleDrag = (e: any, ui: any) => {
-    console.log({ ui })
-    updateDimensions((prev) => {
-      const { x, y } = prev.delta
-      return { ...prev, delta: { ...prev.delta, x: x + ui.deltaX, y: y + ui.deltaY } }
-    })
-  }
 
-  const handleResize = (e: any, direction: string, ref: any, d: any) => {
-    setisResizing(false)
-    if (!app.status.isMAXIMIZED) {
-      updateDimensions((prev) => {
-        return {
-          ...prev,
-          style: {
-            ...prev.style,
-            width: prev.style.width + d.width,
-            height: prev.style.height + d.height,
-          },
-        }
-      })
-    }
-  }
 
   const maximize = () => {
     dispatch(setMaximized(true))

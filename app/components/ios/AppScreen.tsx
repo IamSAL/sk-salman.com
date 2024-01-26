@@ -61,7 +61,7 @@ const appWindowAnimations: Variants = {
 
 const AppScreen = () => {
     const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
-    const foregroundApp = _.last(runningApps.filter(app => !app.status.isHidden && app.status.isFOREGROUND))
+    const foregroundApp = _.last(runningApps)
     const ref = useRef<React.ElementRef<"div">>(null)
 
     const getAppWindow = () => {

@@ -1,7 +1,7 @@
 import app from "next/app"
 import { IApp, TAppStatus } from "types"
 
-export const updateAppsInstances = (data:any, app: IApp) => {
+export const updateAppsInstances = (data: any, app: IApp) => {
   if (data.some((runningApp: IApp) => runningApp.id == app.id)) {
     return data
   }
@@ -11,7 +11,7 @@ export const updateAppsInstances = (data:any, app: IApp) => {
 
 export const updateAppStatuses = (prevApps: IApp[], app: IApp, newStatus: Partial<TAppStatus>) => {
   let newApps: any = JSON.parse(JSON.stringify(prevApps))
-  return newApps?.map((instance:IApp) => {
+  return newApps?.map((instance: IApp) => {
     if (instance.id === app.id) {
       Object.assign(instance.status, newStatus)
     }
@@ -19,8 +19,13 @@ export const updateAppStatuses = (prevApps: IApp[], app: IApp, newStatus: Partia
   })
 }
 
-export const removeAppInstance = (data: IApp[], appId:any) => {
+export const removeAppInstance = (data: IApp[], appId: any) => {
   let newData: IApp[] = []
   newData = data.filter((instance) => instance.id !== appId)
   return newData
+}
+
+export const appendRecentAppId = (prevIds: number[], appId: number) => {
+  const filteredList = prevIds.filter((prevId) => prevId != appId)
+  return [...filteredList, appId]
 }
