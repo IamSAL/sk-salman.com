@@ -12,7 +12,7 @@ const StatusBarMobile = () => {
         <>
 
 
-            <div className="Statusbar w-full  h-14 justify-center items-center inline-flex gap-3" >
+            <div className="Statusbar w-full  h-14 justify-center items-center inline-flex gap-3 " >
                 <LeftSide />
                 <div className="DynamicIsland self-stretch flex-col justify-center items-center inline-flex">
                     <div className="StatusbarDynamicisland w-32 h-9 bg-black rounded-full justify-center items-start gap-2 inline-flex">

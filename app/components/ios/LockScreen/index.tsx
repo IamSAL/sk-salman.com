@@ -25,7 +25,7 @@ const LockScreen = () => {
                     modal
                     onDrag={(e) => {
                         if (contentRef.current) {
-                            contentRef.current.style.opacity = (e.clientY / window.innerHeight + 0.35).toString()
+                            contentRef.current.style.opacity = (e.clientY / window.screen.height + 0.35).toString()
                         }
                     }}
                     onRelease={(e) => {

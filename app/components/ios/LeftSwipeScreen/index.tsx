@@ -14,7 +14,7 @@ const LeftSwipeScreen = ({ onClose, onSwiping }: Props) => {
             onClose?.()
         },
         onSwiping: (e) => {
-            container.current.style.opacity = ((1 - (e.absY / window.innerHeight + 0.35))).toString()
+            container.current.style.opacity = ((1 - (e.absY / window.screen.height + 0.35))).toString()
         },
         onSwiped: (e) => {
             container.current.style.opacity = "1"

@@ -16,7 +16,7 @@ const LeftSide = () => {
         swipeBarRef.current.style.opacity = "1"
     }
     const closeNotificationBar = () => {
-        swipeBarRef.current.style.top = "-" + window.innerHeight + "px"
+        swipeBarRef.current.style.top = "-" + window.screen.height + "px"
         swipeBarRef.current.style.transitionDuration = "0.5s"
         swipeBarRef.current.style.opacity = "0"
     }
@@ -24,19 +24,19 @@ const LeftSide = () => {
     const moveNotificationBar = (e: SwipeEventData) => {
         const touchY = e.absY
         setLastTouchY(touchY || 0)
-        swipeBarRef.current.style.top = ((touchY || 0) - window.innerHeight).toString() + "px"
+        swipeBarRef.current.style.top = ((touchY || 0) - window.screen.height).toString() + "px"
         swipeBarRef.current.style.transitionDuration = "0s"
-        swipeBarRef.current.style.opacity = ((e.absY / window.innerHeight + 0.35)).toString()
+        swipeBarRef.current.style.opacity = ((e.absY / window.screen.height + 0.35)).toString()
     }
 
     const handlers = useSwipeable({
         onSwiping: (e) => {
-            console.log("swiped left")
+
             moveNotificationBar(e)
         },
         onSwiped: (e) => {
             console.log("swipe end called")
-            const halfScreenHeight = window.innerHeight / 3
+            const halfScreenHeight = window.screen.height / 3
             if (lastTouchY > halfScreenHeight) {
                 openNotificationBar()
             } else {
@@ -49,6 +49,10 @@ const LeftSide = () => {
         onSwipedUp: (e) => {
             closeNotificationBar()
         },
+
+        onTouchStartOrOnMouseDown: (e) => {
+            console.log("swiped the left bar")
+        }
     })
 
     return (
@@ -70,7 +74,7 @@ const LeftSide = () => {
                 className="LeftSide inline-flex shrink grow basis-0 flex-col items-center justify-center gap-2 self-stretch pb-0.5 pl-2.5"
             >
                 <div className="StatusbarTime inline-flex h-5 w-14 items-center justify-center rounded-3xl pt-px">
-                    <div className="Time font-['SF Pro Text'] h-5 w-14 whitespace-nowrap text-center text-base font-semibold leading-tight text-black">
+                    <div className="Time font-['SF Pro Text'] h-5 w-14 whitespace-nowrap text-center text-base font-semibold leading-tight ">
                         {" "}
                         <StatusBarClock variant="MOBILE" />
                     </div>

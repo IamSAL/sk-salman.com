@@ -20,7 +20,7 @@ const useBoxCount = ({
 
     const calculateTotalBoxes = () => {
         const screenWidth = window.innerWidth;
-        const screenHeight = window.innerHeight;
+        const screenHeight = window.screen.height;
 
 
         const effectiveScreenWidth = screenWidth * (1 - ignoreWidthPercentage / 100);

@@ -149,7 +149,7 @@ const AppWindowMobile = React.memo((props: IAppProps) => {
 
   return (
     <AppContext.Provider value={appContextValues}>
-      <div className=" w-full z-[999] bg-black/70 h-14 bg-">      <StatusBarMobile /></div>
+      <div className=" w-full z-[999] bg-[#272931]  h-14 ">      <StatusBarMobile /></div>
       <div className="relative h-full w-full">
         <AppBody
           component={app.mobileComponent}
