@@ -11,7 +11,7 @@ import { useAppContext } from 'app/components/app-window/appContext';
 
 export default function ContactsMobile() {
     const isPreview = document.location.href.includes('examplePreview');
-    const { onTerminate } = useAppContext()
+    const { onHide } = useAppContext()
     return (
         <Page>
             <Navbar
@@ -19,7 +19,7 @@ export default function ContactsMobile() {
                 title="Contacts List"
 
                 left={!isPreview && <NavbarBackLink onClick={() => {
-                    onTerminate()
+                    onHide()
                 }} />}
             ></Navbar>
             <List strongIos>

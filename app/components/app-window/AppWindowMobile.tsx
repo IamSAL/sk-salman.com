@@ -155,6 +155,7 @@ const AppWindowMobile = React.memo((props: IAppProps) => {
         </div>
       </div>
       <div className="relative h-full w-full">
+        {app.name}
         <AppBody
           component={app.mobileComponent}
           updateProgramData={updateProgramData(disk)}

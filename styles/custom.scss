@@ -48,3 +48,18 @@
   backdrop-filter: blur(5px);
   background-color: rgb(255 255 255/ 20%);
 }
+
+.recent-apps {
+  .swiper {
+    &-container {
+      height: 400px;
+    }
+
+    &-slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}

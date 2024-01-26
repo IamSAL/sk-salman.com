@@ -8,14 +8,14 @@ import { useAppContext } from '../app-window/appContext';
 
 export default function ComponentMobileTemp() {
     const isPreview = document.location.href.includes('examplePreview');
-    const { onTerminate } = useAppContext()
+    const { onHide } = useAppContext()
     const { app } = useAppContext()
     return (
         <Page>
             <Navbar
                 title={app?.name}
                 left={!isPreview && <NavbarBackLink onClick={() => {
-                    onTerminate()
+                    onHide()
                 }} />}
             />
             <div className="flex justify-center items-center w-full h-full">

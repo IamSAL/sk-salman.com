@@ -61,7 +61,7 @@ const appWindowAnimations: Variants = {
 
 const AppScreen = () => {
     const runningApps = useSelector((appState: AppState) => appState.memory.appsInstances)
-    const foregroundApp = _.last(runningApps)
+    const foregroundApp = _.last(runningApps.filter(app => !app.status.isHidden && app.status.isFOREGROUND))
     const ref = useRef<React.ElementRef<"div">>(null)
 
     const getAppWindow = () => {
@@ -102,7 +102,7 @@ const AppScreen = () => {
         }
     }
     return (
-        <div className={cn("app-screen absolute left-0 top-0 h-full w-full", {})} ref={ref}>
+        <div className={cn("app-screen absolute left-0 top-0 h-full w-full", {})} ref={ref} data-app-name={foregroundApp?.name}>
             <AnimatePresence>{foregroundApp && getAppWindow()}</AnimatePresence>
         </div>
     )
