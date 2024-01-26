@@ -6,8 +6,9 @@ import { useSelector } from "react-redux"
 import { AppState } from "app/core/redux/redux"
 import useMousePosition from "app/helpers/hooks/useMousePosition"
 import { apps } from "app/misc/placeholder-data/apps"
-import { DOCK_STATUS } from "types"
+import { DOCK_STATUS, IApp } from "types"
 import DockItem from "./DockItem"
+import AppLauncher from "../common/AppLauncher"
 // million-ignore
 const Dock = () => {
     const { isTouchingBottom } = useMousePosition({ offsetTop: 0, offsetBottom: 100 })
@@ -32,8 +33,10 @@ const Dock = () => {
             <div className="w-96 h-24 flex items-center justify-center gap-2.5 mx-2 bg-neutral-100/50 dark:bg-black/20  rounded-3xl backdrop-blur-3xl">
                 <div className="flex w-full items-center justify-center">
                     <div className="flex justify-center gap-4 ">
-                        {_.take(allDockApps, 4).map((app, idx) => (
-                            <DockItem key={app.name} app={app} />
+                        {_.take(allDockApps, 4).map((app: IApp, idx) => (
+                            <AppLauncher key={app.name} appId={app.id}>
+                                <DockItem app={app} />
+                            </AppLauncher>
                         ))}
                     </div>
 
