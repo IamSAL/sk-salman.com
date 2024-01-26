@@ -41,7 +41,7 @@ const SearchScreen = () => {
                     <div className="m-4 rounded-3xl  bg-gray-500/45 p-4 ">
                         <AppSlider />
                     </div>
-                    <div className="fixed bottom-0 flex w-full z-[99999]  justify-center bg-black/30 p-4 py-6 ">
+                    <div className="fixed bottom-0 flex w-full z-[99999]  justify-center bg-black/30 p-4 py-10 ">
                         <SearchBar />
                     </div>
                 </motion.div>}

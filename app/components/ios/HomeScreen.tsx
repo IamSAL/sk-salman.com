@@ -33,7 +33,7 @@ const HomeScreen = () => {
 
     })
     return (
-        <div className="relative h-full w-full wallpaper bg-cover bg-center flex flex-col justify-between " ref={ref}>
+        <div className="relative h-full w-full wallpaper-sal-blue bg-cover bg-center flex flex-col justify-between " ref={ref}>
             <LockScreen />
             <AppScreen />
             <div className="pb-14 overflow-hidden ">
