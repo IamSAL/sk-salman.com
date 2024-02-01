@@ -7,6 +7,7 @@ export type TAppStatus = {
   isHidden: boolean
 }
 export type ISizes = "S" | "M" | "L"
+export type APP_SUPPORTS = "DESKTOP" | "MOBILE" | "ALL"
 export type WidgetProps = {
   size?: ISizes
   className?: string
@@ -49,6 +50,7 @@ export interface IApp {
     isPinned: boolean
     isDefault: boolean
     template: IAppTemplate
+    supports: Array<APP_SUPPORTS>
   }
   // Windows and Tabs (if applicable)
   windows?: IAppWindow[] // An array of open windows or tabs
