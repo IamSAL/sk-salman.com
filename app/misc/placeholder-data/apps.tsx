@@ -32,6 +32,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/ios-weather.png",
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Weather", // The title of the app
@@ -81,6 +82,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Finder.png",
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Finder", // The title of the app
@@ -107,6 +109,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Launchpad.png",
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Launchpad", // The title of the app
@@ -134,6 +137,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/App-store.png",
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "AppStore", // The title of the app
@@ -160,6 +164,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Mail.png",
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Mail", // The title of the app
@@ -187,6 +192,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Safari.png",
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Launchpad", // The title of the app
@@ -219,6 +225,7 @@ export const apps: IApp[] = [
       version: "0.0.1", // App version number
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     component: Photos,
     config: {
@@ -237,6 +244,7 @@ export const apps: IApp[] = [
     id: 6,
     name: "System Preferences",
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
@@ -267,6 +275,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Calendar.png",
     },
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Calendar", // The title of the app
@@ -290,6 +299,7 @@ export const apps: IApp[] = [
     id: 8,
     name: "Messages",
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/app-icons-messages.svg",
@@ -317,6 +327,7 @@ export const apps: IApp[] = [
     id: 9,
     name: "Maps",
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/app-icons-maps.svg",
@@ -343,6 +354,7 @@ export const apps: IApp[] = [
     id: 10,
     name: "Contacts",
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
 
     icon: {
       svg: "/static/images/icons/app-icons-contacts.svg",
@@ -371,6 +383,7 @@ export const apps: IApp[] = [
     id: 11,
     name: "Visual Studio Code",
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
@@ -423,6 +436,7 @@ export const apps: IApp[] = [
     id: 12,
     name: "Widgets Editor",
     status: {},
+    supports: ["DESKTOP"],
     mobileComponent: ComponentMobileTemp,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
@@ -449,6 +463,7 @@ export const apps: IApp[] = [
     id: 101,
     name: "Recent Apps",
     status: {},
+    supports: ["MOBILE"],
     mobileComponent: RecentAppScreen,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
@@ -461,7 +476,7 @@ export const apps: IApp[] = [
     },
     component: WidgetsEditor as any,
     config: {
-      isHidden: false,
+      isHidden: true,
       initTitle: "Widgets",
       initWindowWidth: 640,
       initWindowHeight: 480,

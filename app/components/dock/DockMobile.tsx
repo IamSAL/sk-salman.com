@@ -21,7 +21,7 @@ const Dock = () => {
         DockStatus !== DOCK_STATUS.HIDDEN
 
     const allDockApps = runningApps
-        .concat(apps.filter((app) => (app.config.isDefault || app.config.isPinned) && !app.config.isHidden))
+        .concat(apps.filter((app) => (app.config.isDefault || app.config.isPinned) && !app.config.isHidden && app.supports.includes("MOBILE")))
         .filter((app, index, self) => self.findIndex((tempApp) => tempApp.id === app.id) === index)
         .sort((a, b) => a.id - b.id)
 

@@ -9,6 +9,7 @@ import { apps } from "app/misc/placeholder-data/apps"
 import _ from "lodash"
 import useBoxCount from "app/helpers/hooks/useBoxCount"
 import { useLaunchpadContext } from "./context"
+import { useWindowSize } from "react-use"
 type Props = {}
 const pagination = {
     clickable: true,
@@ -26,17 +27,28 @@ const AppSlider = () => {
         mode: "screen"
     })
 
-    const [appChunks, setappChunks] = useState<IApp[][]>([_.take(apps, CHUNK_SIZE)])
+    const { width } = useWindowSize()
+    const isMobile = width < 1000
+
+    const [appChunks, setappChunks] = useState<IApp[][]>([_.take(apps, CHUNK_SIZE || 25)])
     const { searchTerm } = useLaunchpadContext()
 
     useEffect(() => {
-        console.log({ CHUNK_SIZE })
+
         startTransition(() => {
-            const matchingApps = apps.filter((app) => app.name.toLowerCase().includes(searchTerm))
-            setappChunks(_.chunk(matchingApps, CHUNK_SIZE || 28))
+            const matchingApps = apps.filter((app) => {
+                const matchedName = app.name.toLowerCase().includes(searchTerm);
+                let matchedType = true;
+                if (isMobile) {
+                    matchedType = app.supports?.includes("MOBILE")
+                }
+                return matchedName && matchedType && !app.config.isHidden;
+
+            })
+            setappChunks(_.chunk(matchingApps, isMobile ? CHUNK_SIZE : 28))
         })
         return () => { }
-    }, [searchTerm, CHUNK_SIZE])
+    }, [searchTerm, CHUNK_SIZE, isMobile])
 
     return (
         <>
