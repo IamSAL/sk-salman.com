@@ -109,7 +109,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Launchpad.png",
     },
     status: {},
-    supports: ["DESKTOP", "MOBILE"],
+    supports: ["DESKTOP"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
       title: "Launchpad", // The title of the app
@@ -318,7 +318,7 @@ export const apps: IApp[] = [
       initWindowHeight: 480,
       startMaximized: true,
       isDefault: true,
-      isPinned: false,
+      isPinned: true,
       template: IAppTemplate.WINDOW,
     },
     widgets: generateRandomWidgets(2, 8),
@@ -410,6 +410,7 @@ export const apps: IApp[] = [
     id: 111,
     name: "Blog",
     status: {},
+    supports: ["DESKTOP", "MOBILE"],
     mobileComponent: BlogMobile,
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
