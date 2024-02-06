@@ -6,6 +6,8 @@ import BlogMobile from "app/apps/Blog/BlogMobile"
 import Calendar from "app/apps/Calendar"
 import Contacts from "app/apps/Contacts"
 import ContactsMobile from "app/apps/Contacts/ContactsMobile"
+import FaceTime from "app/apps/FaceTime"
+import FaceTimeMobile from "app/apps/FaceTime/FaceTimeMobile"
 import Finder from "app/apps/Finder"
 import LaunchPad from "app/apps/Launchpad"
 import Mail from "app/apps/Mail"
@@ -511,6 +513,34 @@ export const apps: IApp[] = [
       initTitle: "Launchpad",
       initWindowWidth: 640,
       initWindowHeight: 480,
+      startMaximized: false,
+      isDefault: true,
+      isPinned: true,
+      template: IAppTemplate.WINDOW,
+    },
+    widgets: generateRandomWidgets(3, 7),
+  },
+  {
+    id: 103,
+    name: "FaceTime",
+    icon: {
+      svg: "/static/images/icons/ios-weather.svg",
+      png: "/static/images/icons/PNG/Face-time.png",
+    },
+    status: {},
+    supports: ["DESKTOP"],
+    mobileComponent: FaceTimeMobile,
+    metadata: {
+      title: "FaceTime", // The title of the app
+      description: "System default launcher", // A short description or tooltip
+      version: "0.0.1", // App version number
+    },
+    component: FaceTime,
+    config: {
+      isHidden: false,
+      initTitle: "Launchpad",
+      initWindowWidth: 852,
+      initWindowHeight: 637,
       startMaximized: false,
       isDefault: true,
       isPinned: true,
