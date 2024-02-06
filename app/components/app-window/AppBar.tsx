@@ -11,7 +11,7 @@ const AppBar = () => {
   const { AppBarElement } = useAppContext()
   return (
     <>
-      <div className="NavigationBar">{AppBarElement}</div>
+      <div className="NavigationBar absolute top-0 w-full z-50">{AppBarElement}</div>
     </>
   )
 }

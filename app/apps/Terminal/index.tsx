@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { useAppContext } from "app/components/app-window/appContext"
 import CommonStatusBar from "app/components/common/CommonStatusBar"
 import CalendarAppBar from "./TerminalAppBar"
+import TerminalBody from "./TerminalBody"
 
 const Terminal = () => {
   const appContext = useAppContext()
@@ -12,7 +13,9 @@ const Terminal = () => {
     setStatusBarElement(<CommonStatusBar />)
     return () => { }
   }, [setAppBarElement, setStatusBarElement])
-  return <div>Terminal</div>
+  return <>
+    <TerminalBody />
+  </>
 }
 
 export default Terminal

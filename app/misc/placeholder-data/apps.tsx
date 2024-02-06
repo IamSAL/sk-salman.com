@@ -490,11 +490,11 @@ export const apps: IApp[] = [
   },
 
   {
-    id: 7,
+    id: 102,
     name: "Terminal",
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
-      png: "/static/images/icons/PNG/Calendar.png",
+      png: "/static/images/icons/PNG/Terminal.png",
     },
     status: {},
     supports: ["DESKTOP"],
@@ -510,8 +510,8 @@ export const apps: IApp[] = [
       initTitle: "Launchpad",
       initWindowWidth: 640,
       initWindowHeight: 480,
-      startMaximized: true,
-      isDefault: false,
+      startMaximized: false,
+      isDefault: true,
       isPinned: true,
       template: IAppTemplate.WINDOW,
     },

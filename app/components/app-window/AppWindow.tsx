@@ -38,7 +38,7 @@ const AppWindow = React.memo((props: IAppProps) => {
   const dispatch = useDispatch()
   const { innerWidth: windowWidth, innerHeight: windowHeight } =
     typeof window != "undefined" ? window : { innerWidth: 1024, innerHeight: 768 }
-  const leftOffset = (w:any) => NumberUtil.modifyNumByRndPerc((windowWidth - w) * 0.25, 20)
+  const leftOffset = (w: any) => NumberUtil.modifyNumByRndPerc((windowWidth - w) * 0.25, 20)
   const topOffset = (h: any) => NumberUtil.modifyNumByRndPerc((windowHeight - h) * 0.5, 10)
   const initWindowHeight = app.config?.initWindowHeight || defaultHeight
   const initWindowWidth = app.config?.initWindowWidth || defaultWidth
@@ -60,7 +60,7 @@ const AppWindow = React.memo((props: IAppProps) => {
   })
   const [oldDimensions, setoldDimensions] = useState(dimensions)
 
-  const handleDrag = (e:any, ui:any) => {
+  const handleDrag = (e: any, ui: any) => {
     console.log({ ui })
     updateDimensions((prev) => {
       const { x, y } = prev.delta
@@ -68,7 +68,7 @@ const AppWindow = React.memo((props: IAppProps) => {
     })
   }
 
-  const handleResize = (e:any, direction:string, ref:any, d:any) => {
+  const handleResize = (e: any, direction: string, ref: any, d: any) => {
     setisResizing(false)
     if (!app.status.isMAXIMIZED) {
       updateDimensions((prev) => {
@@ -139,7 +139,7 @@ const AppWindow = React.memo((props: IAppProps) => {
     if (app.status.isFOREGROUND) {
       dispatch(setActiveAppContext(appContextValues))
     }
-    return () => {}
+    return () => { }
   }, [appContextValues, app, StatusBarElement, dispatch])
 
   useEffect(() => {
@@ -169,17 +169,15 @@ const AppWindow = React.memo((props: IAppProps) => {
           }}
         >
           <Resizable
-            className={`border-white ${
-              app.status.isMAXIMIZED ? "rounded-[0px]" : "rounded-[10px]"
-            }  flex flex-col overflow-hidden  bg-white bg-opacity-50 shadow-lg backdrop-blur-md transition-all duration-75 dark:bg-black dark:bg-opacity-50  ${
-              isResizing ? "border-0" : ""
-            }`}
+            className={`border-white ${app.status.isMAXIMIZED ? "rounded-[0px]" : "rounded-[10px]"
+              }  flex flex-col overflow-hidden  bg-white bg-opacity-50 shadow-lg backdrop-blur-md transition-all duration-75 dark:bg-black dark:bg-opacity-50  ${isResizing ? "border-0" : ""
+              }`}
             onResizeStart={() => setisResizing(true)}
             size={{ width: dimensions.style.width, height: dimensions.style.height }}
             onResizeStop={handleResize}
           >
             <AppBar />
-            <div className="relative h-full w-full ">
+            <div className="relative h-full w-full pt-12">
               <AppBody
                 component={app.component}
                 updateProgramData={updateProgramData(disk)}
@@ -193,5 +191,5 @@ const AppWindow = React.memo((props: IAppProps) => {
   )
 })
 
-AppWindow.displayName ="AppWindow"
+AppWindow.displayName = "AppWindow"
 export default AppWindow
