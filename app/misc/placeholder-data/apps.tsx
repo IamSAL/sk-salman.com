@@ -15,6 +15,7 @@ import Photos from "app/apps/Photos"
 import RecentAppScreen from "app/apps/RecentApps"
 import Safari from "app/apps/Safari"
 import SystemPreferences from "app/apps/SystemPreferences"
+import Terminal from "app/apps/Terminal"
 import VsCode from "app/apps/VsCode"
 import WidgetsEditor from "app/apps/WidgetsEditor"
 import ComponentMobileTemp from "app/components/common/ComponentMobileTemp"
@@ -203,8 +204,8 @@ export const apps: IApp[] = [
     config: {
       isHidden: false,
       initTitle: "Launchpad",
-      initWindowWidth: 800,
-      initWindowHeight: 500,
+      initWindowWidth: 1024,
+      initWindowHeight: 768,
       startMaximized: true,
       isDefault: true,
       isPinned: false,
@@ -487,5 +488,35 @@ export const apps: IApp[] = [
       template: IAppTemplate.IMMERSIVE,
     },
   },
+
+  {
+    id: 7,
+    name: "Terminal",
+    icon: {
+      svg: "/static/images/icons/ios-weather.svg",
+      png: "/static/images/icons/PNG/Calendar.png",
+    },
+    status: {},
+    supports: ["DESKTOP"],
+    mobileComponent: ComponentMobileTemp,
+    metadata: {
+      title: "Terminal", // The title of the app
+      description: "System default launcher", // A short description or tooltip
+      version: "0.0.1", // App version number
+    },
+    component: Terminal,
+    config: {
+      isHidden: false,
+      initTitle: "Launchpad",
+      initWindowWidth: 640,
+      initWindowHeight: 480,
+      startMaximized: true,
+      isDefault: false,
+      isPinned: true,
+      template: IAppTemplate.WINDOW,
+    },
+    widgets: generateRandomWidgets(3, 7),
+  },
+
   ...generateRandomApps(45),
 ]

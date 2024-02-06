@@ -2,17 +2,17 @@
 import React, { useEffect } from "react"
 import { useAppContext } from "app/components/app-window/appContext"
 import CommonStatusBar from "app/components/common/CommonStatusBar"
-import TerminalAppBar from "./CalendarAppBar"
+import CalendarAppBar from "./TerminalAppBar"
 
-const Calendar = () => {
+const Terminal = () => {
   const appContext = useAppContext()
   const { setAppBarElement, setStatusBarElement } = appContext
   useEffect(() => {
-    setAppBarElement(<TerminalAppBar />)
+    setAppBarElement(<CalendarAppBar />)
     setStatusBarElement(<CommonStatusBar />)
     return () => { }
   }, [setAppBarElement, setStatusBarElement])
-  return <div>Calendar</div>
+  return <div>Terminal</div>
 }
 
-export default Calendar
+export default Terminal
