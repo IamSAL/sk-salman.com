@@ -16,6 +16,7 @@ import RecentAppScreen from "app/apps/RecentApps"
 import Safari from "app/apps/Safari"
 import SystemPreferences from "app/apps/SystemPreferences"
 import Terminal from "app/apps/Terminal"
+import TerminalMobile from "app/apps/Terminal/TerminalMobile"
 import VsCode from "app/apps/VsCode"
 import WidgetsEditor from "app/apps/WidgetsEditor"
 import ComponentMobileTemp from "app/components/common/ComponentMobileTemp"
@@ -497,8 +498,8 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Terminal.png",
     },
     status: {},
-    supports: ["DESKTOP"],
-    mobileComponent: ComponentMobileTemp,
+    supports: ["DESKTOP", "MOBILE"],
+    mobileComponent: TerminalMobile,
     metadata: {
       title: "Terminal", // The title of the app
       description: "System default launcher", // A short description or tooltip
