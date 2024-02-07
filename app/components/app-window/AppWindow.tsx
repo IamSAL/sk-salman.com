@@ -9,15 +9,30 @@ import { useClickAway } from "react-use"
 import { setActiveAppContext, terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { setMaximized } from "app/core/redux/system/system.slice"
 import { getProgramData, initDisk, NumberUtil, updateProgramData } from "app/helpers/utils"
-import { IApp } from "types"
+import { IApp, IPortfolio, IPortfolioType } from "types"
 import AppBar from "./AppBar"
 import { AppContext, IAppContext } from "./appContext"
+import CommonPortfolioAppBar from "./PortfolioAppBars"
+import CommonStatusBar from "../common/CommonStatusBar"
 
 const defaultHeight = 480
 const defaultWidth = 640
 
 const AppBody = React.memo(
-  ({ component, ...props }: any) => component?.(props),
+  ({ component, app, ...props }: any) => {
+    if ((app as IApp).launcherType === "APP") {
+      return component?.(props)
+    } else {
+      const portfolio = app as IPortfolio
+      if (portfolio.type === IPortfolioType.EMBED) {
+        return <div>EMBEDED APP</div>
+      } else if (portfolio.type === IPortfolioType.INFO) {
+        return <div>INFO APP</div>
+      } else if (portfolio.type === IPortfolioType.INTERNAL) {
+        return component?.(props)
+      }
+    }
+  },
   () => true
 )
 
@@ -45,8 +60,8 @@ const AppWindow = React.memo((props: IAppProps) => {
   const programRef = useRef(null)
   const [disk] = useState(initDisk(app.id, app.metadata.version || 1))
 
-  const [AppBarElement, setAppBarElement] = useState(<></>)
-  const [StatusBarElement, setStatusBarElement] = useState<JSX.Element | null>(null)
+  const [AppBarElement, setAppBarElement] = useState(app.launcherType === "PORTFOLIO" ? CommonPortfolioAppBar : <></>)
+  const [StatusBarElement, setStatusBarElement] = useState<JSX.Element | null>(app.launcherType === "PORTFOLIO" ? CommonStatusBar : null)
   const [isResizing, setisResizing] = useState(false)
 
   const [dimensions, updateDimensions] = useState({
@@ -179,6 +194,7 @@ const AppWindow = React.memo((props: IAppProps) => {
             <AppBar />
             <div className="relative h-full w-full pt-12">
               <AppBody
+                app={app}
                 component={app.component}
                 updateProgramData={updateProgramData(disk)}
                 getProgramData={getProgramData(disk)}

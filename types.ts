@@ -13,6 +13,7 @@ export type WidgetProps = {
   className?: string
   isEditing?: boolean
 }
+
 export interface IWidget {
   name: string
   description: string
@@ -24,6 +25,7 @@ export interface IApp {
   // Basic Information
   id: number
   name: string
+  launcherType: "APP" | "PORTFOLIO"
   icon: {
     svg: string
     png: string
@@ -145,3 +147,41 @@ export interface TerminalData {
   content?: JSX.Element | string
   children?: TerminalData[]
 }
+export type ExcludeFields<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+export type PORTFOLIO_TAGS =
+  | "WEBSITE"
+  | "APP"
+  | "CLI"
+  | "PET"
+  | "BUSINESS"
+  | "WORDPRESS"
+  | "REACT"
+  | "FLUTTER"
+  | "NATIVE"
+
+export type IGalleryItem = { type: "image" | "video" | "document"; path: string }
+
+export enum IPortfolioType {
+  INTERNAL,
+  EMBED,
+  INFO,
+  EXTERNAL,
+}
+
+interface CommonPortfolioProps extends ExcludeFields<IApp, "component"> {
+  thumbnailPath: string
+  gallery: Array<IGalleryItem>
+  tags: Array<PORTFOLIO_TAGS>
+}
+
+type EmbedProps = CommonPortfolioProps & { type: IPortfolioType.EMBED; iframeURL: string; exploreURL?: string }
+type ExternalProps = CommonPortfolioProps & { type: IPortfolioType.EXTERNAL; iframeURL?: never; exploreURL: string }
+type InfoProps = CommonPortfolioProps & { type: IPortfolioType.INFO; iframeURL?: never; exploreURL?: string }
+type InternalProps = CommonPortfolioProps & {
+  type: IPortfolioType.INTERNAL
+  component: IApp["component"]
+  iframeURL?: never
+  exploreURL?: string
+}
+
+export type IPortfolio = EmbedProps | ExternalProps | InfoProps | InternalProps

@@ -24,10 +24,11 @@ import WidgetsEditor from "app/apps/WidgetsEditor"
 import ComponentMobileTemp from "app/components/common/ComponentMobileTemp"
 
 import WidgetWeather from "app/components/widgets-bar/WidgetWeather"
-import { IApp, IAppTemplate } from "types"
+import { IApp, IAppTemplate, IPortfolio } from "types"
 import { generateRandomApps, generateRandomWidgets } from "./generators"
+import { Portfolios } from "./portfolios"
 
-export const apps: IApp[] = [
+export const apps: Array<IApp> = [
   {
     id: 13,
     name: "Weather",
@@ -36,6 +37,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/ios-weather.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
@@ -86,6 +88,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Finder.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
@@ -113,6 +116,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Launchpad.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
@@ -141,6 +145,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/App-store.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
@@ -168,6 +173,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Mail.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
@@ -196,6 +202,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Safari.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
@@ -229,6 +236,7 @@ export const apps: IApp[] = [
       version: "0.0.1", // App version number
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     component: Photos,
@@ -248,6 +256,7 @@ export const apps: IApp[] = [
     id: 6,
     name: "System Preferences",
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
@@ -279,6 +288,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Calendar.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     metadata: {
@@ -303,6 +313,7 @@ export const apps: IApp[] = [
     id: 8,
     name: "Messages",
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
@@ -331,6 +342,7 @@ export const apps: IApp[] = [
     id: 9,
     name: "Maps",
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
@@ -358,6 +370,7 @@ export const apps: IApp[] = [
     id: 10,
     name: "Contacts",
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
 
     icon: {
@@ -387,6 +400,7 @@ export const apps: IApp[] = [
     id: 11,
     name: "Visual Studio Code",
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: ComponentMobileTemp,
     icon: {
@@ -414,6 +428,7 @@ export const apps: IApp[] = [
     id: 111,
     name: "Blog",
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: BlogMobile,
     icon: {
@@ -441,6 +456,7 @@ export const apps: IApp[] = [
     id: 12,
     name: "Widgets Editor",
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP"],
     mobileComponent: ComponentMobileTemp,
     icon: {
@@ -468,6 +484,7 @@ export const apps: IApp[] = [
     id: 101,
     name: "Recent Apps",
     status: {},
+    launcherType: "APP",
     supports: ["MOBILE"],
     mobileComponent: RecentAppScreen,
     icon: {
@@ -500,6 +517,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Terminal.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
     mobileComponent: TerminalMobile,
     metadata: {
@@ -528,6 +546,7 @@ export const apps: IApp[] = [
       png: "/static/images/icons/PNG/Face-time.png",
     },
     status: {},
+    launcherType: "APP",
     supports: ["DESKTOP"],
     mobileComponent: FaceTimeMobile,
     metadata: {
@@ -548,6 +567,6 @@ export const apps: IApp[] = [
     },
     widgets: generateRandomWidgets(3, 7),
   },
-
-  ...generateRandomApps(45),
+  ...Portfolios as IApp[],
+  ...generateRandomApps(35),
 ]

@@ -2,7 +2,7 @@ import withBundleAnalyzer from "@next/bundle-analyzer"
 import withPlugins from "next-compose-plugins"
 
 import { env } from "./env.mjs"
-import {withSVGr} from "./scripts/withSVGr.mjs"
+import { withSVGr } from "./scripts/withSVGr.mjs"
 
 /**
  * @type {import('next').NextConfig}
