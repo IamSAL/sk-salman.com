@@ -9,16 +9,30 @@ import { useClickAway } from "react-use"
 import { setActiveAppContext, terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { setMaximized } from "app/core/redux/system/system.slice"
 import { getProgramData, initDisk, NumberUtil, updateProgramData } from "app/helpers/utils"
-import { IApp } from "types"
+import { IApp, IPortfolio, IPortfolioType } from "types"
 import AppBar from "./AppBar"
 import { AppContext, IAppContext } from "./appContext"
+import ComponentMobileTemp from "../common/ComponentMobileTemp"
 import StatusBarMobile from "../status-bar/StatusBarMobile"
 
 const defaultHeight = 480
 const defaultWidth = 640
 
 const AppBody = React.memo(
-  ({ component, ...props }: any) => component?.(props),
+  ({ component, app, ...props }: any) => {
+    if ((app as IApp).launcherType === "APP") {
+      return component?.(props)
+    } else {
+      const portfolio = app as IPortfolio
+      if (portfolio.type === IPortfolioType.EMBED) {
+        return <ComponentMobileTemp />
+      } else if (portfolio.type === IPortfolioType.INFO) {
+        return <ComponentMobileTemp />
+      } else if (portfolio.type === IPortfolioType.INTERNAL) {
+        return component?.(props)
+      }
+    }
+  },
   () => true
 )
 
@@ -134,6 +148,7 @@ const AppWindowMobile = React.memo((props: IAppProps) => {
       </div>
       <div className="relative h-full w-full">
         <AppBody
+          app={app}
           component={app.mobileComponent}
           updateProgramData={updateProgramData(disk)}
           getProgramData={getProgramData(disk)}

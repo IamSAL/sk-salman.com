@@ -35,6 +35,7 @@ const generateRandomApps = (count: number, appId?: number): IApp[] => {
         png: "/static/images/icons/PNG/app-icons-placeholder.png",
       },
       status: {},
+      launcherType: "APP",
       metadata: {
         title: chance.name({}), // The title of the app
         description: chance.paragraph(), // A short description or tooltip
