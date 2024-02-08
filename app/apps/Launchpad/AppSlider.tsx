@@ -71,7 +71,7 @@ const AppSlider = () => {
                         )
                     })}
                 </Swiper>
-            ) : (-
+            ) : (
                 <p className="flex h-[60%]  items-center justify-center text-center md:text-4xl  font-light text-white fade-in-10">
                     No Results
                 </p>

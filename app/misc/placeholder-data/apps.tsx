@@ -568,5 +568,4 @@ export const apps: Array<IApp> = [
     widgets: generateRandomWidgets(3, 7),
   },
   ...Portfolios as IApp[],
-  ...generateRandomApps(35),
 ]
