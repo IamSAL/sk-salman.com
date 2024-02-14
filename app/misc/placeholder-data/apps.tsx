@@ -13,6 +13,7 @@ import LaunchPad from "app/apps/Launchpad"
 import Mail from "app/apps/Mail"
 import Maps from "app/apps/Maps"
 import Messages from "app/apps/Messages"
+import MessagesMobile from "app/apps/Messages/MessagesMobile"
 import Photos from "app/apps/Photos"
 import RecentAppScreen from "app/apps/RecentApps"
 import Safari from "app/apps/Safari"
@@ -315,7 +316,7 @@ export const apps: Array<IApp> = [
     status: {},
     launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
-    mobileComponent: ComponentMobileTemp,
+    mobileComponent: MessagesMobile,
     icon: {
       svg: "/static/images/icons/app-icons-messages.svg",
       png: "/static/images/icons/PNG/Messages.png",
