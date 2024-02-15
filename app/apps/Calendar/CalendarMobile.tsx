@@ -23,7 +23,7 @@ export default function CalendarMobile() {
                     onTerminate()
                 }} />}
             />
-            <div className="w-full h-full">
+            <div className="w-full h-full bg-white">
                 <Calendly />
             </div>
         </Page>
