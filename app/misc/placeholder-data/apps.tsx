@@ -5,6 +5,7 @@ import AppStoreMobile from "app/apps/AppStore/AppStoreMobile"
 import Blog from "app/apps/Blog"
 import BlogMobile from "app/apps/Blog/BlogMobile"
 import Calendar from "app/apps/Calendar"
+import CalendarMobile from "app/apps/Calendar/CalendarMobile"
 import Contacts from "app/apps/Contacts"
 import ContactsMobile from "app/apps/Contacts/ContactsMobile"
 import FaceTime from "app/apps/FaceTime"
@@ -292,7 +293,7 @@ export const apps: Array<IApp> = [
     status: {},
     launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
-    mobileComponent: ComponentMobileTemp,
+    mobileComponent: CalendarMobile,
     metadata: {
       title: "Calendar", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -302,8 +303,8 @@ export const apps: Array<IApp> = [
     config: {
       isHidden: false,
       initTitle: "Launchpad",
-      initWindowWidth: 640,
-      initWindowHeight: 480,
+      initWindowWidth: 581,
+      initWindowHeight: 700,
       startMaximized: true,
       isDefault: false,
       isPinned: true,

@@ -6,7 +6,7 @@ import Toolbar from "app/components/common/toolbars/Toolbar"
 
 const TerminalAppBar = () => {
   return (
-    <div className="flex h-12 w-full items-center justify-between bg-white px-4">
+    <div className="flex h-12 w-full items-center justify-between bg-white px-4 border-b border-solid">
       <div className="control flex items-center gap-2">
         <AppControl />
       </div>

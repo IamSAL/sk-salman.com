@@ -3,6 +3,7 @@ import React, { useEffect } from "react"
 import { useAppContext } from "app/components/app-window/appContext"
 import CommonStatusBar from "app/components/common/CommonStatusBar"
 import TerminalAppBar from "./CalendarAppBar"
+import Calendly from "./Calendly"
 
 const Calendar = () => {
   const appContext = useAppContext()
@@ -12,7 +13,9 @@ const Calendar = () => {
     setStatusBarElement(<CommonStatusBar />)
     return () => { }
   }, [setAppBarElement, setStatusBarElement])
-  return <div>Calendar</div>
+  return <div className="w-full h-full bg-white">
+    <Calendly />
+  </div>
 }
 
 export default Calendar

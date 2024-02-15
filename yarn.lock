@@ -14890,6 +14890,11 @@ re-resizable@^6.9.11:
   resolved "https://registry.yarnpkg.com/re-resizable/-/re-resizable-6.9.11.tgz#f356e27877f12d926d076ab9ad9ff0b95912b475"
   integrity sha512-a3hiLWck/NkmyLvGWUuvkAmN1VhwAz4yOhS6FdMTaxCUVN9joIWkT11wsO68coG/iEYuwn+p/7qAmfQzRhiPLQ==
 
+react-calendly@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/react-calendly/-/react-calendly-4.3.0.tgz#96337d51288797d449554b7f35f8619c34d0191b"
+  integrity sha512-JFZzYhyJBaoZDseB3UqzeOx1rbzCK24nr5pqH/6zJEh7CZ/pn5R49rkIJ0g5E7j5WQ3K7xBSgBD7WgM36v3gZw==
+
 react-colorful@^5.1.2:
   version "5.6.1"
   resolved "https://registry.yarnpkg.com/react-colorful/-/react-colorful-5.6.1.tgz#7dc2aed2d7c72fac89694e834d179e32f3da563b"
