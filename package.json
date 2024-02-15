@@ -59,6 +59,7 @@
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
     "framer-motion": "^10.18.0",
+    "framework7-icons": "^5.0.5",
     "immutability-helper": "^3.1.1",
     "konsta": "^3.1.2",
     "lodash": "^4.17.21",
