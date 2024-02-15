@@ -52,6 +52,7 @@
     "@semantic-release/release-notes-generator": "^12.1.0",
     "@svgr/webpack": "^8.1.0",
     "@t3-oss/env-nextjs": "^0.7.1",
+    "@tailwindcss/line-clamp": "^0.4.4",
     "@vercel/otel": "^0.3.0",
     "chance": "^1.1.11",
     "class-variance-authority": "^0.7.0",

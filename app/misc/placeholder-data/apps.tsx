@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
 import AppStore from "app/apps/AppStore"
+import AppStoreMobile from "app/apps/AppStore/AppStoreMobile"
 import Blog from "app/apps/Blog"
 import BlogMobile from "app/apps/Blog/BlogMobile"
 import Calendar from "app/apps/Calendar"
@@ -148,7 +149,7 @@ export const apps: Array<IApp> = [
     status: {},
     launcherType: "APP",
     supports: ["DESKTOP", "MOBILE"],
-    mobileComponent: ComponentMobileTemp,
+    mobileComponent: AppStoreMobile,
     metadata: {
       title: "AppStore", // The title of the app
       description: "System default launcher", // A short description or tooltip
@@ -158,8 +159,8 @@ export const apps: Array<IApp> = [
     config: {
       isHidden: false,
       initTitle: "Launchpad",
-      initWindowWidth: 640,
-      initWindowHeight: 480,
+      initWindowWidth: 1306,
+      initWindowHeight: 804,
       startMaximized: true,
       isDefault: true,
       isPinned: false,

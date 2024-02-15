@@ -2,6 +2,7 @@
 import React, { useEffect } from "react"
 import { useAppContext } from "app/components/app-window/appContext"
 import CommonStatusBar from "app/components/common/CommonStatusBar"
+import AppDetail from "./AppDetail"
 import AppStoreAppBar from "./AppStoreAppBar"
 
 const AppStore = () => {
@@ -9,9 +10,9 @@ const AppStore = () => {
   useEffect(() => {
     setAppBarElement(AppStoreAppBar)
     setStatusBarElement(<CommonStatusBar />)
-    return () => {}
+    return () => { }
   }, [])
-  return <div>App Store</div>
+  return <div className="w-full h-full "><AppDetail /></div>
 }
 
 export default AppStore

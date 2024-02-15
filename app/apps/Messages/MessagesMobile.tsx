@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+//@ts-ignore
 import { ArrowUpCircleFill, CameraFill } from 'framework7-icons/react';
 import {
     Icon,
