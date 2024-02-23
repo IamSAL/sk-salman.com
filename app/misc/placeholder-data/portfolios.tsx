@@ -3,9 +3,32 @@
 import Calendar from "app/apps/Calendar"
 import ComponentMobileTemp from "app/components/common/ComponentMobileTemp"
 
-import { IAppTemplate, IPortfolio, IPortfolioType } from "types"
+import { IAppTemplate, IFeatureItem, IGalleryItem, IInfoItem, IPortfolio, IPortfolioType } from "types"
 import { generateRandomWidgets } from "./generators"
-
+const tempGallery: Array<IGalleryItem> = [
+    {
+        type: "image",
+        path: "https://www.digitaltrends.com/wp-content/uploads/2021/07/macos-monterey-shortcuts-intro.jpg?fit=720%2C480&p=1",
+    },
+    {
+        type: "image",
+        path: "https://beebom.com/wp-content/uploads/2023/06/ss-on-mac.jpg?w=750&quality=75",
+    },
+    {
+        type: "image",
+        path: "https://www.lifewire.com/thmb/SJ_8H9mQcftOP09XuJZId8PjXwU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-take-a-screenshot-on-a-macbook-air-04-87f9a9e30bfb4e948b815b85c54dbb77.jpg",
+    },
+    {
+        type: "image",
+        path: "https://cdsassets.apple.com/live/7WUAS350/images/macos/monterey/macos-monterey-mba-screenshot-toolbar.jpg",
+    },
+    {
+        type: "image",
+        path: "https://eshop.macsales.com/blog/wp-content/uploads/2018/07/Screen-Shot-2018-07-26-at-12.30.23-PM-e1532629940114.jpg",
+    },
+]
+const tempFeatures: Array<IFeatureItem> = [{ title: "LANGUAGE", value: "TS", footer: "+4 More" }, { title: "LANGUAGE", value: "TS", footer: "+4 More" }, { title: "LANGUAGE", value: "TS", footer: "+2 More" }, { title: "TECH", value: "TS", footer: "+4 More" }, { title: "LANGUAGE", value: "TS", footer: "+4 More" }]
+const tempInfos: Array<IInfoItem> = [{ name: "Size", value: "29.7 MB" }, { name: "Size", value: "29.7 MB" }, { name: "Size", value: "29.7 MB" }, { name: "Size", value: "49.7 MB" }, { name: "Size", value: "22.7 MB" }, { name: "Size", value: "29.7 MB" }]
 export const Portfolios: IPortfolio[] = [
     {
         id: 104,
@@ -21,7 +44,8 @@ export const Portfolios: IPortfolio[] = [
         metadata: {
             title: "ExternalPortfolio", // The title of the app
             description: "System default launcher", // A short description or tooltip
-            version: "0.0.1", // App version number
+            version: "0.0.1",
+            source: "https://github.com/IamSAL", // App version number
         },
         component: Calendar,
         config: {
@@ -37,7 +61,9 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INTERNAL,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
     },
@@ -55,7 +81,8 @@ export const Portfolios: IPortfolio[] = [
         metadata: {
             title: "ExternalPortfolio", // The title of the app
             description: "System default launcher", // A short description or tooltip
-            version: "0.0.1", // App version number
+            version: "0.0.1",
+            source: "https://github.com/IamSAL", // App version number
         },
         config: {
             isHidden: false,
@@ -70,7 +97,9 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.EXTERNAL,
         exploreURL: "https://iamsal.github.io/Dhaka-Bus-Route/home.html",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
     },
@@ -87,7 +116,8 @@ export const Portfolios: IPortfolio[] = [
         metadata: {
             title: "EmbedPortfolio", // The title of the app
             description: "System default launcher", // A short description or tooltip
-            version: "0.0.1", // App version number
+            version: "0.0.1",
+            source: "https://github.com/IamSAL", // App version number
         },
         config: {
             isHidden: false,
@@ -102,9 +132,12 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.EMBED,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+
         iframeURL: "",
     },
     {
@@ -120,7 +153,8 @@ export const Portfolios: IPortfolio[] = [
         metadata: {
             title: "InfoPortfolio", // The title of the app
             description: "System default launcher", // A short description or tooltip
-            version: "0.0.1", // App version number
+            version: "0.0.1",
+            source: "https://github.com/IamSAL", // App version number
         },
         config: {
             isHidden: false,
@@ -135,9 +169,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
 
     {
@@ -154,6 +194,7 @@ export const Portfolios: IPortfolio[] = [
             title: "BdGeoHopp",
             description: "Description for BdGeoHopp",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -168,9 +209,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 388,
@@ -186,6 +233,7 @@ export const Portfolios: IPortfolio[] = [
             title: "BgAi",
             description: "Description for BgAi",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -200,9 +248,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 639,
@@ -218,6 +272,7 @@ export const Portfolios: IPortfolio[] = [
             title: "BodywiseGym",
             description: "Description for BodywiseGym",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -232,9 +287,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 778,
@@ -250,6 +311,7 @@ export const Portfolios: IPortfolio[] = [
             title: "CovidStats",
             description: "Description for CovidStats",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -264,9 +326,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 324,
@@ -282,6 +350,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Damasf",
             description: "Description for Damasf",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -296,9 +365,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 565,
@@ -314,6 +389,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Dan",
             description: "Description for Dan",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -328,9 +404,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 757,
@@ -346,6 +428,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Darkoin",
             description: "Description for Darkoin",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -360,9 +443,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 649,
@@ -378,6 +467,7 @@ export const Portfolios: IPortfolio[] = [
             title: "DhakaBusRoute",
             description: "Description for DhakaBusRoute",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -392,9 +482,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 258,
@@ -410,6 +506,7 @@ export const Portfolios: IPortfolio[] = [
             title: "DocbotPredictor",
             description: "Description for DocbotPredictor",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -424,9 +521,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 975,
@@ -442,6 +545,7 @@ export const Portfolios: IPortfolio[] = [
             title: "DristiAi",
             description: "Description for DristiAi",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -456,9 +560,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 140,
@@ -474,6 +584,7 @@ export const Portfolios: IPortfolio[] = [
             title: "EvepacificMedia",
             description: "Description for EvepacificMedia",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -488,9 +599,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 395,
@@ -506,6 +623,7 @@ export const Portfolios: IPortfolio[] = [
             title: "ExpertContractorz",
             description: "Description for ExpertContractorz",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -520,9 +638,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 233,
@@ -538,6 +662,7 @@ export const Portfolios: IPortfolio[] = [
             title: "ForksInn",
             description: "Description for ForksInn",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -552,9 +677,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 671,
@@ -570,6 +701,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Fruitality",
             description: "Description for Fruitality",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -584,9 +716,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 388,
@@ -602,6 +740,7 @@ export const Portfolios: IPortfolio[] = [
             title: "GoriberFigma",
             description: "Description for GoriberFigma",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -616,9 +755,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 953,
@@ -634,6 +779,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Hoi",
             description: "Description for Hoi",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -648,9 +794,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 226,
@@ -666,6 +818,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Konatraders",
             description: "Description for Konatraders",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -680,9 +833,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 240,
@@ -698,6 +857,7 @@ export const Portfolios: IPortfolio[] = [
             title: "LightingIndex",
             description: "Description for LightingIndex",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -712,9 +872,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 546,
@@ -730,6 +896,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Mirnet",
             description: "Description for Mirnet",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -744,9 +911,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 708,
@@ -762,6 +935,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Mylifemobile",
             description: "Description for Mylifemobile",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -776,9 +950,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 339,
@@ -794,6 +974,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Paribahan",
             description: "Description for Paribahan",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -808,9 +989,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 157,
@@ -826,6 +1013,7 @@ export const Portfolios: IPortfolio[] = [
             title: "PuppetGround",
             description: "Description for PuppetGround",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -840,9 +1028,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 939,
@@ -858,6 +1052,7 @@ export const Portfolios: IPortfolio[] = [
             title: "SimpleCalcJs",
             description: "Description for SimpleCalcJs",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -872,9 +1067,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 362,
@@ -890,6 +1091,7 @@ export const Portfolios: IPortfolio[] = [
             title: "SimpleJsRunner",
             description: "Description for SimpleJsRunner",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -904,9 +1106,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 421,
@@ -922,6 +1130,7 @@ export const Portfolios: IPortfolio[] = [
             title: "SmSolver",
             description: "Description for SmSolver",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -936,9 +1145,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 652,
@@ -954,6 +1169,7 @@ export const Portfolios: IPortfolio[] = [
             title: "SmbCapitalPartners",
             description: "Description for SmbCapitalPartners",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -968,9 +1184,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 761,
@@ -986,6 +1208,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Sockettle",
             description: "Description for Sockettle",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1000,9 +1223,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 845,
@@ -1018,6 +1247,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Tavaas",
             description: "Description for Tavaas",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1032,9 +1262,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 496,
@@ -1050,6 +1286,7 @@ export const Portfolios: IPortfolio[] = [
             title: "TeamLookup",
             description: "Description for TeamLookup",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1064,9 +1301,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 836,
@@ -1082,6 +1325,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Tuneupmaster.ca",
             description: "Description for Tuneupmaster.ca",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1096,9 +1340,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 62,
@@ -1114,6 +1364,7 @@ export const Portfolios: IPortfolio[] = [
             title: "UrbanRiders",
             description: "Description for UrbanRiders",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1128,9 +1379,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 171,
@@ -1146,6 +1403,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Verimap",
             description: "Description for Verimap",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1160,9 +1418,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 30,
@@ -1178,6 +1442,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Wbh",
             description: "Description for Wbh",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1192,9 +1457,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 202,
@@ -1210,6 +1481,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Wcit",
             description: "Description for Wcit",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1224,9 +1496,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 231,
@@ -1242,6 +1520,7 @@ export const Portfolios: IPortfolio[] = [
             title: "Win4local",
             description: "Description for Win4local",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1256,9 +1535,15 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
     {
         id: 894,
@@ -1274,6 +1559,7 @@ export const Portfolios: IPortfolio[] = [
             title: "XiangbuGroup",
             description: "Description for XiangbuGroup",
             version: "0.0.1",
+            source: "https://github.com/IamSAL",
         },
         config: {
             isHidden: false,
@@ -1288,8 +1574,14 @@ export const Portfolios: IPortfolio[] = [
         widgets: generateRandomWidgets(3, 7),
         type: IPortfolioType.INFO,
         exploreURL: "",
-        gallery: [],
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
         tags: [],
         thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
     },
 ]

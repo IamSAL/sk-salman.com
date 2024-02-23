@@ -140,34 +140,34 @@ export const apps: Array<IApp> = [
     },
   },
 
-  {
-    id: 2,
-    name: "App Store",
-    icon: {
-      svg: "/static/images/icons/ios-weather.svg",
-      png: "/static/images/icons/PNG/App-store.png",
-    },
-    status: {},
-    launcherType: "APP",
-    supports: ["DESKTOP", "MOBILE"],
-    mobileComponent: AppStoreMobile,
-    metadata: {
-      title: "AppStore", // The title of the app
-      description: "System default launcher", // A short description or tooltip
-      version: "0.0.1", // App version number
-    },
-    component: AppStore,
-    config: {
-      isHidden: false,
-      initTitle: "Launchpad",
-      initWindowWidth: 1306,
-      initWindowHeight: 804,
-      startMaximized: true,
-      isDefault: true,
-      isPinned: false,
-      template: IAppTemplate.WINDOW,
-    },
-  },
+  // {
+  //   id: 2,
+  //   name: "App Store",
+  //   icon: {
+  //     svg: "/static/images/icons/ios-weather.svg",
+  //     png: "/static/images/icons/PNG/App-store.png",
+  //   },
+  //   status: {},
+  //   launcherType: "APP",
+  //   supports: ["DESKTOP", "MOBILE"],
+  //   mobileComponent: AppStoreMobile,
+  //   metadata: {
+  //     title: "AppStore", // The title of the app
+  //     description: "System default launcher", // A short description or tooltip
+  //     version: "0.0.1", // App version number
+  //   },
+  //   component: AppStore,
+  //   config: {
+  //     isHidden: false,
+  //     initTitle: "Launchpad",
+  //     initWindowWidth: 1306,
+  //     initWindowHeight: 804,
+  //     startMaximized: true,
+  //     isDefault: true,
+  //     isPinned: false,
+  //     template: IAppTemplate.WINDOW,
+  //   },
+  // },
   {
     id: 3,
     name: "Mail",

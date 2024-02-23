@@ -6,6 +6,7 @@ import Draggable from "react-draggable"
 // import './Program.scss';
 import { useDispatch } from "react-redux"
 import { useClickAway } from "react-use"
+import AppStore from "app/apps/AppStore"
 import { setActiveAppContext, terminateApp, updateAppStatus } from "app/core/redux/memory/memory.slice"
 import { setMaximized } from "app/core/redux/system/system.slice"
 import { getProgramData, initDisk, NumberUtil, updateProgramData } from "app/helpers/utils"
@@ -27,7 +28,7 @@ const AppBody = React.memo(
       if (portfolio.type === IPortfolioType.EMBED) {
         return <div>EMBEDED APP</div>
       } else if (portfolio.type === IPortfolioType.INFO) {
-        return <div>INFO APP</div>
+        return <AppStore />
       } else if (portfolio.type === IPortfolioType.INTERNAL) {
         return component?.(props)
       }

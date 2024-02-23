@@ -10,8 +10,9 @@ import 'swiper/css/navigation';
 
 import { Navigation, Pagination } from 'swiper/modules';
 import { cn } from 'app/helpers/utils';
+import { IFeatureItem } from 'types';
 
-const BadgeSlider = () => {
+const BadgeSlider = ({ badges }: { badges: Array<IFeatureItem> }) => {
 
     const config = {
         slidesPerView: 3,
@@ -42,16 +43,16 @@ const BadgeSlider = () => {
                 // className="mySwiper"
                 {...config}
             >
-                {[1, 2, 3, 4, 5, 6, 7, 8].map((i, idx) => {
+                {badges.map((badge, idx) => {
                     return <SwiperSlide key={idx}>
                         <div className="flex items-center ">
                             <div key={idx} className="badge pl-6  flex flex-col  justify-center items-center">
-                                <h4 className='text-gray-600 font-bold'>LANGUAGE</h4>
+                                <h4 className='text-gray-600 font-bold'>{badge.title}</h4>
                                 <div className="font-bold text-gray-400 text-2xl">
-                                    TS
+                                    {badge.value}
                                 </div>
                                 <div className="badge-footer text-gray-400">
-                                    +4 More
+                                    {badge.footer}
                                 </div>
                             </div>
                             <div className={cn("bg-white/20 md:ml-12 ml-6   h-[60px] p-[1px] ", {

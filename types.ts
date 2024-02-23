@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export type Role = "ADMIN" | "USER"
 
 export type TAppStatus = {
@@ -39,6 +41,8 @@ export interface IApp {
     version?: string // App version number
     author?: string // App author or developer
     website?: string // App's official website URL
+    source?: string
+    details?: string
   }
   // UI and Layout
   component: () => JSX.Element // The React component that represents the app,
@@ -160,6 +164,15 @@ export type PORTFOLIO_TAGS =
   | "NATIVE"
 
 export type IGalleryItem = { type: "image" | "video" | "document"; path: string }
+export type IFeatureItem = {
+  title: string
+  value: string | ReactNode
+  footer: string
+}
+export type IInfoItem = {
+  name: string
+  value: string
+}
 
 export enum IPortfolioType {
   INTERNAL,
@@ -172,11 +185,18 @@ interface CommonPortfolioProps extends ExcludeFields<IApp, "component"> {
   thumbnailPath: string
   gallery: Array<IGalleryItem>
   tags: Array<PORTFOLIO_TAGS>
+  details?: string
+  features?: Array<IFeatureItem>
+  infos?: Array<IInfoItem>
 }
 
 type EmbedProps = CommonPortfolioProps & { type: IPortfolioType.EMBED; iframeURL: string; exploreURL?: string }
 type ExternalProps = CommonPortfolioProps & { type: IPortfolioType.EXTERNAL; iframeURL?: never; exploreURL: string }
-type InfoProps = CommonPortfolioProps & { type: IPortfolioType.INFO; iframeURL?: never; exploreURL?: string }
+export type InfoProps = CommonPortfolioProps & {
+  type: IPortfolioType.INFO
+  iframeURL?: never
+  exploreURL?: string
+}
 type InternalProps = CommonPortfolioProps & {
   type: IPortfolioType.INTERNAL
   component: IApp["component"]
