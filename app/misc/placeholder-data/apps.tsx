@@ -32,6 +32,7 @@ import { generateRandomApps, generateRandomWidgets } from "./generators"
 import { Portfolios } from "./portfolios"
 
 export const apps: Array<IApp> = [
+  ...Portfolios as IApp[],
   {
     id: 13,
     name: "Weather",
@@ -113,7 +114,7 @@ export const apps: Array<IApp> = [
   },
   {
     id: 1,
-    name: "Launchpad",
+    name: "Portfolio",
     icon: {
       svg: "/static/images/icons/ios-weather.svg",
       png: "/static/images/icons/PNG/Launchpad.png",
@@ -135,7 +136,7 @@ export const apps: Array<IApp> = [
       initWindowHeight: 480,
       startMaximized: true,
       isDefault: true,
-      isPinned: false,
+      isPinned: true,
       template: IAppTemplate.IMMERSIVE,
     },
   },
@@ -306,7 +307,7 @@ export const apps: Array<IApp> = [
       initWindowWidth: 581,
       initWindowHeight: 700,
       startMaximized: true,
-      isDefault: false,
+      isDefault: true,
       isPinned: true,
       template: IAppTemplate.WINDOW,
     },
@@ -336,7 +337,7 @@ export const apps: Array<IApp> = [
       initWindowHeight: 480,
       startMaximized: true,
       isDefault: true,
-      isPinned: true,
+      isPinned: false,
       template: IAppTemplate.WINDOW,
     },
     widgets: generateRandomWidgets(2, 8),
@@ -422,8 +423,8 @@ export const apps: Array<IApp> = [
       initWindowWidth: 927,
       initWindowHeight: 652,
       startMaximized: true,
-      isDefault: true,
-      isPinned: false,
+      isDefault: false,
+      isPinned: true,
       template: IAppTemplate.WINDOW,
     },
   },
@@ -535,7 +536,7 @@ export const apps: Array<IApp> = [
       initWindowWidth: 640,
       initWindowHeight: 480,
       startMaximized: false,
-      isDefault: true,
+      isDefault: false,
       isPinned: true,
       template: IAppTemplate.WINDOW,
     },
@@ -565,10 +566,9 @@ export const apps: Array<IApp> = [
       initWindowHeight: 637,
       startMaximized: false,
       isDefault: true,
-      isPinned: true,
+      isPinned: false,
       template: IAppTemplate.WINDOW,
     },
     widgets: generateRandomWidgets(3, 7),
-  },
-  ...Portfolios as IApp[],
+  }
 ]

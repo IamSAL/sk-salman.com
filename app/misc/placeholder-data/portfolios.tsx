@@ -1584,4 +1584,43 @@ export const Portfolios: IPortfolio[] = [
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
                     Dolor, error! Mollitia, similique consectetur.`,
     },
+    {
+        id: 895,
+        name: "Gadget X",
+        icon: {
+            svg: "/static/images/icons/ios-weather.svg",
+            png: "/static/images/icons/PNG/gadgetx.png",
+        },
+        status: {},
+        launcherType: "PORTFOLIO",
+        supports: ["DESKTOP", "MOBILE"],
+        metadata: {
+            title: "Gadget X",
+            description: "Gadget store by woocommerce.",
+            version: "0.0.1",
+            source: "https://github.com/IamSAL",
+        },
+        config: {
+            isHidden: false,
+            initTitle: "Launchpad",
+            initWindowWidth: 640,
+            initWindowHeight: 480,
+            startMaximized: true,
+            isDefault: false,
+            isPinned: false,
+            template: IAppTemplate.WINDOW,
+        },
+        widgets: generateRandomWidgets(3, 7),
+        type: IPortfolioType.EXTERNAL,
+        exploreURL: "https://bdgadgetx.com/",
+        gallery: tempGallery,
+        features: tempFeatures,
+        infos: tempInfos,
+        tags: [],
+        thumbnailPath: "",
+        details: `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero numquam quod a quae nemo sed dolorem doloribus quasi eligendi similique? Voluptatem vel ducimus, sit fuga corrupti ipsam officiis quis, dolorem consequatur quod, ipsum officia eaque nulla eligendi? Omnis eveniet quasi sint sed odit perspiciatis, eius minus error nihil officiis iusto pariatur labore qui dolorum libero? Laudantium quam dolore voluptas minus pariatur maiores! Alias consectetur reiciendis neque perspiciatis labore explicabo ducimus sed autem quod repellendus ipsum, id consequatur esse deserunt rem ad aut. Similique accusamus ullam impedit laudantium quis dolor nesciunt ratione culpa dolorem labore ex ipsum tempora beatae quaerat sapiente, saepe magni temporibus vel iure nisi, eum autem aperiam ut mollitia. Quod dicta rerum, vel ut veniam necessitatibus in itaque atque, ducimus voluptatibus laboriosam a impedit ipsum eligendi laborum porro ratione eius tempore accusamus explicabo, facilis expedita ad maiores! Dolor consequuntur quos quaerat tempore reprehenderit aperiam odit, placeat, exercitationem voluptate fuga possimus, expedita error voluptas illo ex tempora optio! Est excepturi tempore eos ipsa nemo molestiae, ut repellat iure ipsum minus. Nam deleniti officiis ea, perferendis veritatis soluta ratione doloremque tempore assumenda totam praesentium explicabo tenetur non iure exercitationem. Quam, fugit labore. Quas dolore ea ipsum. Cupiditate ea quod, provident veniam pariatur cum reprehenderit sint rem dignissimos nemo doloribus voluptas eaque possimus non nostrum, debitis odio, quia quam quisquam consequuntur. Impedit sapiente ipsam fugiat, mollitia omnis suscipit quidem quo quaerat quas veniam, doloremque nam! Tenetur provident architecto, excepturi maxime molestiae incidunt, alias vero earum eligendi recusandae expedita esse. Iste, corrupti!
+                    Lorem ipsum dolor sit amet consectetur adipisicing.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic dolor magnam sapiente dolorum eum accusamus doloremque vero! Reiciendis corrupti rem quisquam dolore nesciunt? Repellat, in? Voluptatibus laborum dignissimos necessitatibus. Magni minus cum eos nobis commodi sunt voluptatum sed ex, quasi labore debitis. Mollitia quos asperiores laudantium blanditiis optio deleniti voluptate error dolorem? Culpa repudiandae sint ullam eveniet veritatis. Voluptate totam repellat dolore ut similique dolorem.
+                    Dolor, error! Mollitia, similique consectetur.`,
+    },
 ]

@@ -25,8 +25,9 @@ const Dock = () => {
 
   // Filter apps into different categories
   const defaultApps = allDockApps.filter((app) => app.config.isDefault && app.config.isPinned)
-  const pinnedApps = allDockApps.filter((app) => app.config.isPinned && !app.config.isDefault)
   const otherRunningApps = allDockApps.filter((app) => !defaultApps.some((tempApp) => tempApp.id === app.id))
+  //TODO:IMPLEMENT APP PREVIEWS
+  const AppPreviews = otherRunningApps.filter((app) => !app.config.isDefault)
 
   return (
     <div className="dock-container z-[9999]" style={{ display: shouldShow ? "flex" : "none" }}>
@@ -43,12 +44,13 @@ const Dock = () => {
               <DockItem key={app.name} app={app} />
             ))}
           </div>
-          <div className="h-12 w-px bg-white bg-opacity-25" />
+
+          {/* <div className="h-12 w-px bg-white bg-opacity-25" />
           <div className="flex  justify-center">
-            {pinnedApps.map((app, idx) => (
+            {AppPreviews.map((app, idx) => (
               <DockItem key={app.name} app={app} />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
